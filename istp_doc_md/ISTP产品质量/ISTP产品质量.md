@@ -1,169 +1,171 @@
-# 1. 功能性
+# ISTP产品质量
 
-## 1.1. 协议识别
+## 1. 功能性
 
-### 1.1.1. 功能说明
+### 1.1. 协议识别
+
+#### 1.1.1. 功能说明
 
 流量经过ISTP，通过协议五元组信息，协议字段相关内容，识别是否为该种协议
 
-### 1.1.2. 发布的标准
+#### 1.1.2. 发布的标准
 
 协议识别功能包含3种识别方式，分别为AI识别，端口识别，代码识别。
 
-> AI识别**：**共计100种协议，协议范围如下
+> AI识别：共计100种协议，协议范围如下
 
-| **序号** | **识别方式** | **协议名称**                 |
-|----------|--------------|------------------------------|
-| 1        | AI识别       | 853                          |
-| 2        | AI识别       | BACnet                       |
-| 3        | AI识别       | Beckhoff_AMS_ADS             |
-| 4        | AI识别       | C37.118_1PMU_TCP             |
-| 5        | AI识别       | C37.118_1PMU_UDP             |
-| 6        | AI识别       | CIP                          |
-| 7        | AI识别       | CoAP                         |
-| 8        | AI识别       | COTP                         |
-| 9        | AI识别       | DHCP                         |
-| 10       | AI识别       | DICOM_Echo                   |
-| 11       | AI识别       | DNP3                         |
-| 12       | AI识别       | ENIP                         |
-| 13       | AI识别       | FF_LR_UDP                    |
-| 14       | AI识别       | Focas                        |
-| 15       | AI识别       | GDW_376.1                    |
-| 16       | AI识别       | GE_EGD                       |
-| 17       | AI识别       | GE_SRTP                      |
-| 18       | AI识别       | Gryphon                      |
-| 19       | AI识别       | HartIP_TCP                   |
-| 20       | AI识别       | HartIP_UDP                   |
-| 21       | AI识别       | HL7                          |
-| 22       | AI识别       | HollySys_DCS_MACS            |
-| 23       | AI识别       | HollySys_LK-UDP_6000         |
-| 24       | AI识别       | HollySys_PLC                 |
-| 25       | AI识别       | HoneyWell                    |
-| 26       | AI识别       | HSRP                         |
-| 27       | AI识别       | HTTP                         |
-| 28       | AI识别       | ICCP                         |
-| 29       | AI识别       | IEC103                       |
-| 30       | AI识别       | IEC60870-5-104               |
-| 31       | AI识别       | IEC61850-MMS                 |
-| 32       | AI识别       | ifix2ifix                    |
-| 33       | AI识别       | ISAKMP                       |
-| 34       | AI识别       | KerberosAuthenticationSystem |
-| 35       | AI识别       | KingView_TCP_2001            |
-| 36       | AI识别       | LDAP_TCP_SASL_Digest         |
-| 37       | AI识别       | LON                          |
-| 38       | AI识别       | LPD                          |
-| 39       | AI识别       | Microsoft_SQL_Server         |
-| 40       | AI识别       | MITSUBISHI MELSEC_Q\_UDP     |
-| 41       | AI识别       | MITSUBISHI_MELSEC_L\_TCP     |
-| 42       | AI识别       | Modbus_ASCII                 |
-| 43       | AI识别       | Modbus_RTU                   |
-| 44       | AI识别       | Modbus_TCP                   |
-| 45       | AI识别       | Modbus_UDP                   |
-| 46       | AI识别       | Modbus_UMAS                  |
-| 47       | AI识别       | MOXA_E1242_UDP               |
-| 48       | AI识别       | MQTT                         |
-| 49       | AI识别       | Omron_FINS_TCP               |
-| 50       | AI识别       | Omron_FINS_UDP               |
-| 51       | AI识别       | OPC_DA                       |
-| 52       | AI识别       | OPC_UA                       |
-| 53       | AI识别       | OpenSafety_UDP               |
-| 54       | AI识别       | Oracle_TCP                   |
-| 55       | AI识别       | Ovation                      |
-| 56       | AI识别       | PCWORX                       |
-| 57       | AI识别       | PHONENIX_CONTACT             |
-| 58       | AI识别       | PTPv1                        |
-| 59       | AI识别       | PTPv2                        |
-| 60       | AI识别       | Redlion_Crimson3             |
-| 61       | AI识别       | RSSP_1                       |
-| 62       | AI识别       | Siemens_Profinet_IO_CM       |
-| 63       | AI识别       | Siemens_S7                   |
-| 64       | AI识别       | Siemens_S7Plus               |
-| 65       | AI识别       | SinecH1                      |
-| 66       | AI识别       | SIP                          |
-| 67       | AI识别       | SMB                          |
-| 68       | AI识别       | SNMPv1                       |
-| 69       | AI识别       | SNMPv3                       |
-| 70       | AI识别       | Supcon_JX300                 |
-| 71       | AI识别       | TFTP                         |
-| 72       | AI识别       | TLS_HTTPs                    |
-| 73       | AI识别       | Tridium_Niagara_Fox          |
-| 74       | AI识别       | VNC_UDP                      |
-| 75       | AI识别       | Wago_CoDeSys                 |
-| 76       | AI识别       | Yokogawa_Vnet_IP             |
-| 77       | AI识别       | 安控_sl304                   |
-| 78       | AI识别       | 步科Kinco                    |
-| 79       | AI识别       | 大工计控                     |
-| 80       | AI识别       | 丹东华通_2000R               |
-| 81       | AI识别       | 昆仑通态 MCGS                |
-| 82       | AI识别       | 力控实时数据库               |
-| 83       | AI识别       | 南大傲拓                     |
-| 84       | AI识别       | 南大奥拓_NA-RTU              |
-| 85       | AI识别       | 上海新华DCS TCP（XHICAN）    |
-| 86       | AI识别       | 松下Panasonic                |
-| 87       | AI识别       | 上海新华DCS UDP              |
-| 88       | AI识别       | 研华Advantech                |
-| 89       | AI识别       | 中自DCS                      |
-| 90       | AI识别       | Emerson_Deltav               |
-| 91       | AI识别       | GSK                          |
-| 92       | AI识别       | HNC                          |
-| 93       | AI识别       | MEMOBUS_UDP                  |
-| 94       | AI识别       | IPMI                         |
-| 95       | AI识别       | Wonderware_Service           |
-| 96       | AI识别       | ShangHaiYangBang_BX_5E       |
-| 97       | AI识别       | Wonderware_Suitelink         |
-| 98       | AI识别       | Wonderware_NmxSvc_tcp        |
-| 99       | AI识别       | Wonderware_NmxSvc_udp        |
-| 100      | AI识别       | HoneyWell_tcp                |
+| **序号** | **识别方式** | **协议名称**                     |
+| ------ | -------- | ---------------------------- |
+| 1      | AI识别     | 853                          |
+| 2      | AI识别     | BACnet                       |
+| 3      | AI识别     | Beckhoff\_AMS\_ADS           |
+| 4      | AI识别     | C37.118\_1PMU\_TCP           |
+| 5      | AI识别     | C37.118\_1PMU\_UDP           |
+| 6      | AI识别     | CIP                          |
+| 7      | AI识别     | CoAP                         |
+| 8      | AI识别     | COTP                         |
+| 9      | AI识别     | DHCP                         |
+| 10     | AI识别     | DICOM\_Echo                  |
+| 11     | AI识别     | DNP3                         |
+| 12     | AI识别     | ENIP                         |
+| 13     | AI识别     | FF\_LR\_UDP                  |
+| 14     | AI识别     | Focas                        |
+| 15     | AI识别     | GDW\_376.1                   |
+| 16     | AI识别     | GE\_EGD                      |
+| 17     | AI识别     | GE\_SRTP                     |
+| 18     | AI识别     | Gryphon                      |
+| 19     | AI识别     | HartIP\_TCP                  |
+| 20     | AI识别     | HartIP\_UDP                  |
+| 21     | AI识别     | HL7                          |
+| 22     | AI识别     | HollySys\_DCS\_MACS          |
+| 23     | AI识别     | HollySys\_LK-UDP\_6000       |
+| 24     | AI识别     | HollySys\_PLC                |
+| 25     | AI识别     | HoneyWell                    |
+| 26     | AI识别     | HSRP                         |
+| 27     | AI识别     | HTTP                         |
+| 28     | AI识别     | ICCP                         |
+| 29     | AI识别     | IEC103                       |
+| 30     | AI识别     | IEC60870-5-104               |
+| 31     | AI识别     | IEC61850-MMS                 |
+| 32     | AI识别     | ifix2ifix                    |
+| 33     | AI识别     | ISAKMP                       |
+| 34     | AI识别     | KerberosAuthenticationSystem |
+| 35     | AI识别     | KingView\_TCP\_2001          |
+| 36     | AI识别     | LDAP\_TCP\_SASL\_Digest      |
+| 37     | AI识别     | LON                          |
+| 38     | AI识别     | LPD                          |
+| 39     | AI识别     | Microsoft\_SQL\_Server       |
+| 40     | AI识别     | MITSUBISHI MELSEC\_Q\_UDP    |
+| 41     | AI识别     | MITSUBISHI\_MELSEC\_L\_TCP   |
+| 42     | AI识别     | Modbus\_ASCII                |
+| 43     | AI识别     | Modbus\_RTU                  |
+| 44     | AI识别     | Modbus\_TCP                  |
+| 45     | AI识别     | Modbus\_UDP                  |
+| 46     | AI识别     | Modbus\_UMAS                 |
+| 47     | AI识别     | MOXA\_E1242\_UDP             |
+| 48     | AI识别     | MQTT                         |
+| 49     | AI识别     | Omron\_FINS\_TCP             |
+| 50     | AI识别     | Omron\_FINS\_UDP             |
+| 51     | AI识别     | OPC\_DA                      |
+| 52     | AI识别     | OPC\_UA                      |
+| 53     | AI识别     | OpenSafety\_UDP              |
+| 54     | AI识别     | Oracle\_TCP                  |
+| 55     | AI识别     | Ovation                      |
+| 56     | AI识别     | PCWORX                       |
+| 57     | AI识别     | PHONENIX\_CONTACT            |
+| 58     | AI识别     | PTPv1                        |
+| 59     | AI识别     | PTPv2                        |
+| 60     | AI识别     | Redlion\_Crimson3            |
+| 61     | AI识别     | RSSP\_1                      |
+| 62     | AI识别     | Siemens\_Profinet\_IO\_CM    |
+| 63     | AI识别     | Siemens\_S7                  |
+| 64     | AI识别     | Siemens\_S7Plus              |
+| 65     | AI识别     | SinecH1                      |
+| 66     | AI识别     | SIP                          |
+| 67     | AI识别     | SMB                          |
+| 68     | AI识别     | SNMPv1                       |
+| 69     | AI识别     | SNMPv3                       |
+| 70     | AI识别     | Supcon\_JX300                |
+| 71     | AI识别     | TFTP                         |
+| 72     | AI识别     | TLS\_HTTPs                   |
+| 73     | AI识别     | Tridium\_Niagara\_Fox        |
+| 74     | AI识别     | VNC\_UDP                     |
+| 75     | AI识别     | Wago\_CoDeSys                |
+| 76     | AI识别     | Yokogawa\_Vnet\_IP           |
+| 77     | AI识别     | 安控\_sl304                    |
+| 78     | AI识别     | 步科Kinco                      |
+| 79     | AI识别     | 大工计控                         |
+| 80     | AI识别     | 丹东华通\_2000R                  |
+| 81     | AI识别     | 昆仑通态 MCGS                    |
+| 82     | AI识别     | 力控实时数据库                      |
+| 83     | AI识别     | 南大傲拓                         |
+| 84     | AI识别     | 南大奥拓\_NA-RTU                 |
+| 85     | AI识别     | 上海新华DCS TCP（XHICAN）          |
+| 86     | AI识别     | 松下Panasonic                  |
+| 87     | AI识别     | 上海新华DCS UDP                  |
+| 88     | AI识别     | 研华Advantech                  |
+| 89     | AI识别     | 中自DCS                        |
+| 90     | AI识别     | Emerson\_Deltav              |
+| 91     | AI识别     | GSK                          |
+| 92     | AI识别     | HNC                          |
+| 93     | AI识别     | MEMOBUS\_UDP                 |
+| 94     | AI识别     | IPMI                         |
+| 95     | AI识别     | Wonderware\_Service          |
+| 96     | AI识别     | ShangHaiYangBang\_BX\_5E     |
+| 97     | AI识别     | Wonderware\_Suitelink        |
+| 98     | AI识别     | Wonderware\_NmxSvc\_tcp      |
+| 99     | AI识别     | Wonderware\_NmxSvc\_udp      |
+| 100    | AI识别     | HoneyWell\_tcp               |
 
 > 端口识别：共计22种协议，协议范围如下
 
-| **序号** | **识别方式** | **协议名称**         |
-|----------|--------------|----------------------|
-| 1        | 端口识别     | ATG                  |
-| 2        | 端口识别     | CSPv4_2222           |
-| 3        | 端口识别     | CSPv4_6000           |
-| 4        | 端口识别     | DNS_UDP              |
-| 5        | 端口识别     | Echo_TCP             |
-| 6        | 端口识别     | ENIP_UDP             |
-| 7        | 端口识别     | FF_FMS               |
-| 8        | 端口识别     | FF_SM                |
-| 9        | 端口识别     | FTP                  |
-| 10       | 端口识别     | Lantronix            |
-| 11       | 端口识别     | LLMNR                |
-| 12       | 端口识别     | NetBios_NS           |
-| 13       | 端口识别     | NTP                  |
-| 14       | 端口识别     | POP3                 |
-| 15       | 端口识别     | PowerLink_UDP        |
-| 16       | 端口识别     | SMTP                 |
-| 17       | 端口识别     | SSH                  |
-| 18       | 端口识别     | Syslog_WinServer2003 |
-| 19       | 端口识别     | Telnet               |
-| 20       | 端口识别     | VxWorks_Debug_Reboot |
-| 21       | 端口识别     | ZigBee_UDP           |
-| 22       | 端口识别     | 易控                 |
+| **序号** | **识别方式** | **协议名称**               |
+| ------ | -------- | ---------------------- |
+| 1      | 端口识别     | ATG                    |
+| 2      | 端口识别     | CSPv4\_2222            |
+| 3      | 端口识别     | CSPv4\_6000            |
+| 4      | 端口识别     | DNS\_UDP               |
+| 5      | 端口识别     | Echo\_TCP              |
+| 6      | 端口识别     | ENIP\_UDP              |
+| 7      | 端口识别     | FF\_FMS                |
+| 8      | 端口识别     | FF\_SM                 |
+| 9      | 端口识别     | FTP                    |
+| 10     | 端口识别     | Lantronix              |
+| 11     | 端口识别     | LLMNR                  |
+| 12     | 端口识别     | NetBios\_NS            |
+| 13     | 端口识别     | NTP                    |
+| 14     | 端口识别     | POP3                   |
+| 15     | 端口识别     | PowerLink\_UDP         |
+| 16     | 端口识别     | SMTP                   |
+| 17     | 端口识别     | SSH                    |
+| 18     | 端口识别     | Syslog\_WinServer2003  |
+| 19     | 端口识别     | Telnet                 |
+| 20     | 端口识别     | VxWorks\_Debug\_Reboot |
+| 21     | 端口识别     | ZigBee\_UDP            |
+| 22     | 端口识别     | 易控                     |
 
 > 代码识别：共计18种协议，协议范围如下
 
-| **序号** | **识别方式** | **协议名称**          |
-|----------|--------------|-----------------------|
-| 1        | 代码识别     | CDP                   |
-| 2        | 代码识别     | EtherCAT_L2           |
-| 3        | 代码识别     | HoneyWell_FTE         |
-| 4        | 代码识别     | IEC61850-GOOSE协议    |
-| 5        | 代码识别     | IEC61850-SMV协议      |
-| 6        | 代码识别     | LLC                   |
-| 7        | 代码识别     | LLDP                  |
-| 8        | 代码识别     | OpenSafety_SercosIII  |
-| 9        | 代码识别     | PowerLink_Layer2      |
-| 10       | 代码识别     | SchneiderFoxboro_IA   |
-| 11       | 代码识别     | Siemens_Profinet_DCP  |
-| 12       | 代码识别     | Siemens_Profinet_MRP  |
-| 13       | 代码识别     | Siemens_S5            |
-| 14       | 代码识别     | Siemens_Profinet_PTCP |
-| 15       | 代码识别     | TTE_PCF               |
-| 16       | 代码识别     | Siemens_Profinet_MRRT |
-| 17       | 代码识别     | Siemens_Profinet_RTC3 |
-| 18       | 代码识别     | Siemens_Profinet_RTC1 |
+| **序号** | **识别方式** | **协议名称**                |
+| ------ | -------- | ----------------------- |
+| 1      | 代码识别     | CDP                     |
+| 2      | 代码识别     | EtherCAT\_L2            |
+| 3      | 代码识别     | HoneyWell\_FTE          |
+| 4      | 代码识别     | IEC61850-GOOSE协议        |
+| 5      | 代码识别     | IEC61850-SMV协议          |
+| 6      | 代码识别     | LLC                     |
+| 7      | 代码识别     | LLDP                    |
+| 8      | 代码识别     | OpenSafety\_SercosIII   |
+| 9      | 代码识别     | PowerLink\_Layer2       |
+| 10     | 代码识别     | SchneiderFoxboro\_IA    |
+| 11     | 代码识别     | Siemens\_Profinet\_DCP  |
+| 12     | 代码识别     | Siemens\_Profinet\_MRP  |
+| 13     | 代码识别     | Siemens\_S5             |
+| 14     | 代码识别     | Siemens\_Profinet\_PTCP |
+| 15     | 代码识别     | TTE\_PCF                |
+| 16     | 代码识别     | Siemens\_Profinet\_MRRT |
+| 17     | 代码识别     | Siemens\_Profinet\_RTC3 |
+| 18     | 代码识别     | Siemens\_Profinet\_RTC1 |
 
 协议识别测试标准
 
@@ -175,63 +177,57 @@
 
 Bacnet协议报文如下图所示
 
-<img src="产品质量_li_img/media/image1.png"
-style="width:5.76806in;height:1.34097in" />
+![](产品质量\_li\_img/media/image1.png)
 
 ISTP Web显示结果如下图所示
 
-<img src="产品质量_li_img/media/image2.png"
-style="width:5.76806in;height:1.7in" />
+![](产品质量\_li\_img/media/image2.png)
 
 > 端口识别：
 
 易控协议报文如下图所示
 
-<img src="产品质量_li_img/media/image3.png"
-style="width:5.76806in;height:2.05417in" />
+![](产品质量\_li\_img/media/image3.png)
 
 ISTP Release显示结果如下图所示
 
-<img src="产品质量_li_img/media/image4.png"
-style="width:5.76806in;height:1.18542in" />
+![](产品质量\_li\_img/media/image4.png)
 
 > 代码识别：
 
-Siemens_Profinet_MRP协议报文如下图所示
+Siemens\_Profinet\_MRP协议报文如下图所示
 
-<img src="产品质量_li_img/media/image5.png"
-style="width:5.76806in;height:0.97431in" />
+![](产品质量\_li\_img/media/image5.png)
 
 ISTP Web显示结果如下图所示
 
-<img src="产品质量_li_img/media/image6.png"
-style="width:5.76806in;height:1.60903in" />
+![](产品质量\_li\_img/media/image6.png)
 
-## 1.2. 协议解析
+### 1.2. 协议解析
 
-### 1.2.1. 功能说明
+#### 1.2.1. 功能说明
 
 如果将工业设备比喻为人，那么工业协议就是指语言。不同的语言想要实现对话交流，就需要翻译，将传达的信息转化双方都能理解的一种形式，这就是协议解析。协议解析指的是面对不同协议的工业设备实现数据采集传输的能力，通过协议解析将设备连接起来并转换同一种协议，这样就能方便连接到更多的平台和设备，实现统一化的系统架构与集约化的生产。
 
 ISTP支持49种协议的解析。
 
-### 1.2.2. 发布的标准
+#### 1.2.2. 发布的标准
 
-#### 1.2.2.1. MMS
+**1.2.2.1. MMS**
 
 支持15种字段的解析，主要字段如下所示：
 
-> mms_pdu
+> mms\_pdu
 >
-> invoke_id
+> invoke\_id
 >
 > service
 >
-> variable_access_specification
+> variable\_access\_specification
 >
 > objects
 >
-> variable_specification
+> variable\_specification
 >
 > objectName
 >
@@ -261,73 +257,71 @@ ISTP支持49种协议的解析。
 
 > 报文中服务为read的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image7.png"
-style="width:5.76806in;height:3.79722in" />
+![](产品质量\_li\_img/media/image7.png)
 
 > ISTP对报文中服务为read的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image8.png"
-style="width:5.76806in;height:1.25139in" />
+![](产品质量\_li\_img/media/image8.png)
 
-#### 1.2.2.2. BACNET
+**1.2.2.2. BACNET**
 
 支持28种字段的解析，主要字段如下所示：
 
-> lpdu_bvlc_type
+> lpdu\_bvlc\_type
 >
-> lpdu_bvlc_func
+> lpdu\_bvlc\_func
 >
-> lpdu_ip
+> lpdu\_ip
 >
-> lpdu_port
+> lpdu\_port
 >
-> npdu_version
+> npdu\_version
 >
-> npdu_control
+> npdu\_control
 >
-> npdu_dnet
+> npdu\_dnet
 >
-> npdu_dlen
+> npdu\_dlen
 >
-> npdu_hop_cnt
+> npdu\_hop\_cnt
 >
-> apdu_type
+> apdu\_type
 >
-> apdu_service_choice
+> apdu\_service\_choice
 >
-> lpdu_bvlc_time_to_live
+> lpdu\_bvlc\_time\_to\_live
 >
-> apdu_max_resp
+> apdu\_max\_resp
 >
-> apdu_max_segs
+> apdu\_max\_segs
 >
-> apdu_seg_resp_acpt
+> apdu\_seg\_resp\_acpt
 >
-> apdu_invoke_id
+> apdu\_invoke\_id
 >
-> lpdu_bvlc_result
+> lpdu\_bvlc\_result
 >
-> apdu_service_ack_choice
+> apdu\_service\_ack\_choice
 >
-> apdu_error_choice
+> apdu\_error\_choice
 >
-> npdu_snet
+> npdu\_snet
 >
-> npdu_slen
+> npdu\_slen
 >
-> npdu_sadr_type
+> npdu\_sadr\_type
 >
-> npdu_sadr
+> npdu\_sadr
 >
-> apdu_reason
+> apdu\_reason
 >
-> npdu_dadr_mstp_arcnet
+> npdu\_dadr\_mstp\_arcnet
 >
-> npdu_dadr_type
+> npdu\_dadr\_type
 >
-> npdu_sadr_mstp_arcnet
+> npdu\_sadr\_mstp\_arcnet
 >
-> npdu_msg_type
+> npdu\_msg\_type
 
 发布标准：
 
@@ -339,16 +333,13 @@ style="width:5.76806in;height:1.25139in" />
 
 > 报文中功能码为Original-Unicast-NPDU (0x0a)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image9.png"
-style="width:5.76806in;height:4.34097in" />
+![](产品质量\_li\_img/media/image9.png)
 
-> ISTP对报文中功能码为Original-Unicast-NPDU
-> (0x0a)的帧的检测情况如下图所示：
+> ISTP对报文中功能码为Original-Unicast-NPDU (0x0a)的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image10.png"
-style="width:5.76806in;height:0.73819in" />
+![](产品质量\_li\_img/media/image10.png)
 
-#### 1.2.2.3. CoAp
+**1.2.2.3. CoAp**
 
 支持12种字段的解析，主要字段如下所示：
 
@@ -358,21 +349,21 @@ style="width:5.76806in;height:0.73819in" />
 >
 > code
 >
-> message_id
+> message\_id
 >
-> token_length
+> token\_length
 >
-> payload_len
+> payload\_len
 >
-> options_num
+> options\_num
 >
-> option_type
+> option\_type
 >
 > delta
 >
-> uri_len
+> uri\_len
 >
-> uri_value
+> uri\_value
 >
 > token
 
@@ -386,15 +377,13 @@ style="width:5.76806in;height:0.73819in" />
 
 > 报文中Code为Empty Message (0)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image11.png"
-style="width:5.76806in;height:2.80833in" />
+![](产品质量\_li\_img/media/image11.png)
 
 > ISTP对报文中Code为Empty Message (0)的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image12.png"
-style="width:5.76806in;height:0.65417in" />
+![](产品质量\_li\_img/media/image12.png)
 
-#### 1.2.2.4. DNP3 TCP
+**1.2.2.4. DNP3 TCP**
 
 支持5种字段的解析，主要字段如下所示：
 
@@ -402,11 +391,11 @@ style="width:5.76806in;height:0.65417in" />
 >
 > source
 >
-> function_code
+> function\_code
 >
-> object_obj
+> object\_obj
 >
-> object_var
+> object\_var
 
 发布标准：
 
@@ -418,15 +407,13 @@ style="width:5.76806in;height:0.65417in" />
 
 > 报文中功能码为Read (0x01)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image13.png"
-style="width:5.76806in;height:5.38542in" />
+![](产品质量\_li\_img/media/image13.png)
 
 > ISTP对报文中功能码为Read (0x01)的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image14.png"
-style="width:5.76806in;height:0.53611in" />
+![](产品质量\_li\_img/media/image14.png)
 
-#### 1.2.2.5. DNP3 UDP
+**1.2.2.5. DNP3 UDP**
 
 支持5种字段的解析，主要字段如下所示：
 
@@ -434,11 +421,11 @@ style="width:5.76806in;height:0.53611in" />
 >
 > source
 >
-> function_code
+> function\_code
 >
-> object_obj
+> object\_obj
 >
-> object_var
+> object\_var
 
 发布标准：
 
@@ -450,19 +437,17 @@ style="width:5.76806in;height:0.53611in" />
 
 > 报文中功能码为Read (0x01)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image15.png"
-style="width:5.76806in;height:5.36944in" />
+![](产品质量\_li\_img/media/image15.png)
 
 > 报文中功能码为Read (0x01)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image16.png"
-style="width:5.76806in;height:0.56736in" />
+![](产品质量\_li\_img/media/image16.png)
 
-#### 1.2.2.6. ENIP
+**1.2.2.6. ENIP**
 
 支持4种字段的解析，主要字段如下所示：
 
-> encap_cmd
+> encap\_cmd
 >
 > services
 >
@@ -480,19 +465,17 @@ style="width:5.76806in;height:0.56736in" />
 
 > 报文中Command为Send Unit Data (0x0070)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image17.png"
-style="width:5.76806in;height:5.12708in" />
+![](产品质量\_li\_img/media/image17.png)
 
 > ISTP对报文中Command为Send Unit Data (0x0070)的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image18.png"
-style="width:5.76806in;height:0.61875in" />
+![](产品质量\_li\_img/media/image18.png)
 
-#### 1.2.2.7. CIP_COMMON
+**1.2.2.7. CIP\_COMMON**
 
 支持4种字段的解析，主要字段如下所示：
 
-encap_cmd
+encap\_cmd
 
 services
 
@@ -510,26 +493,23 @@ service
 
 > 报文中服务字段为Get Attributes All (0x01)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image19.png"
-style="width:5.76806in;height:3.06597in" />
+![](产品质量\_li\_img/media/image19.png)
 
-> ISTP对报文中服务字段为Get Attributes All
-> (0x01)的帧的检测情况如下图所示：
+> ISTP对报文中服务字段为Get Attributes All (0x01)的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image20.png"
-style="width:5.76806in;height:0.59028in" />
+![](产品质量\_li\_img/media/image20.png)
 
-#### 1.2.2.8. CIP_Logix5000
+**1.2.2.8. CIP\_Logix5000**
 
 支持6种字段的解析，主要字段如下所示：
 
-encap_cmd
+encap\_cmd
 
 services
 
 service
 
-pIOI_len
+pIOI\_len
 
 pIOI
 
@@ -545,19 +525,17 @@ pIOI
 
 > 报文中服务为0x4c的情况如下图所示：
 
-<img src="产品质量_li_img/media/image21.png"
-style="width:5.76806in;height:2.03403in" />
+![](产品质量\_li\_img/media/image21.png)
 
 > ISTP对报文中服务为0x4c的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image22.png"
-style="width:5.76806in;height:0.61389in" />
+![](产品质量\_li\_img/media/image22.png)
 
-#### 1.2.2.9. CIP_PCCC
+**1.2.2.9. CIP\_PCCC**
 
 支持6种字段的解析，主要字段如下所示：
 
-encap_cmd
+encap\_cmd
 
 services
 
@@ -565,9 +543,9 @@ service
 
 iclass
 
-pccc_cmd
+pccc\_cmd
 
-> pccc_fnc
+> pccc\_fnc
 
 发布标准：
 
@@ -579,15 +557,13 @@ pccc_cmd
 
 > 报文中服务为0x4b的情况如下图所示：
 
-<img src="产品质量_li_img/media/image23.png"
-style="width:5.76806in;height:5.16806in" />
+![](产品质量\_li\_img/media/image23.png)
 
 > ISTP检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image24.png"
-style="width:5.76806in;height:0.79306in" />
+![](产品质量\_li\_img/media/image24.png)
 
-#### 1.2.2.10. Etrol_SL304_TCP
+**1.2.2.10. Etrol\_SL304\_TCP**
 
 支持4种字段的解析，主要字段如下所示：
 
@@ -609,25 +585,23 @@ style="width:5.76806in;height:0.79306in" />
 
 > 报文中dtype为0x01的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image25.png"
-style="width:5.76806in;height:1.38472in" />
+![](产品质量\_li\_img/media/image25.png)
 
 > ISTP对报文中dtype为0x01的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image26.png"
-style="width:5.76806in;height:0.5625in" />
+![](产品质量\_li\_img/media/image26.png)
 
-#### 1.2.2.11. Focas
+**1.2.2.11. Focas**
 
 支持4种字段的解析，主要字段如下所示：
 
 > dir
 >
-> function_code
+> function\_code
 >
-> send_flag
+> send\_flag
 >
-> data_len
+> data\_len
 
 发布标准：
 
@@ -639,37 +613,35 @@ style="width:5.76806in;height:0.5625in" />
 
 > 报文中功能码为1的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image27.png"
-style="width:5.76806in;height:1.43056in" />
+![](产品质量\_li\_img/media/image27.png)
 
 > ISTP对报文中功能码为1的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image28.png"
-style="width:5.76806in;height:0.52222in" />
+![](产品质量\_li\_img/media/image28.png)
 
-#### 1.2.2.12. GDW 3761
+**1.2.2.12. GDW 3761**
 
 支持11种字段的解析，主要字段如下所示：
 
-protocol_id
+protocol\_id
 
-frame_len
+frame\_len
 
 dir
 
 prm
 
-fcb_acd
+fcb\_acd
 
 fcv
 
-func_code
+func\_code
 
-afn_code
+afn\_code
 
-term_address
+term\_address
 
-master_address
+master\_address
 
 type
 
@@ -683,21 +655,19 @@ type
 
 > 报文中功能码为9的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image29.png"
-style="width:5.76806in;height:1.2625in" />
+![](产品质量\_li\_img/media/image29.png)
 
 > ISTP对报文中功能码为9的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image30.png"
-style="width:5.76806in;height:0.60208in" />
+![](产品质量\_li\_img/media/image30.png)
 
-#### 1.2.2.13. GOOSE
+**1.2.2.13. GOOSE**
 
 支持18种字段的解析，主要字段如下所示：
 
-> d_mac
+> d\_mac
 >
-> s_mac
+> s\_mac
 >
 > APPID
 >
@@ -741,37 +711,35 @@ style="width:5.76806in;height:0.60208in" />
 
 > 报文中APPID为 0x0001 (1)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image31.png"
-style="width:5.76806in;height:6.95208in" />
+![](产品质量\_li\_img/media/image31.png)
 
 > ISTP对报文中APPID为 0x0001 (1)的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image32.png"
-style="width:5.76806in;height:0.92569in" />
+![](产品质量\_li\_img/media/image32.png)
 
-#### 1.2.2.14. HartIP_TCP
+**1.2.2.14. HartIP\_TCP**
 
 支持99种字段的解析，主要字段如下所示：
 
 > version
 >
-> message_type
+> message\_type
 >
-> message_id
+> message\_id
 >
 > status
 >
-> sequence_number
+> sequence\_number
 >
-> message_length
+> message\_length
 >
-> host_type
+> host\_type
 >
-> inactivity_close_timer
+> inactivity\_close\_timer
 >
-> frame_type
+> frame\_type
 >
-> long_address
+> long\_address
 >
 > command
 >
@@ -779,89 +747,89 @@ style="width:5.76806in;height:0.92569in" />
 >
 > checksum
 >
-> response_code
+> response\_code
 >
-> device_status
+> device\_status
 >
-> expansion_code
+> expansion\_code
 >
-> expanded_device_type
+> expanded\_device\_type
 >
-> minimum_number_of_request_preambles
+> minimum\_number\_of\_request\_preambles
 >
-> hart_universal_revision
+> hart\_universal\_revision
 >
-> device_revision
+> device\_revision
 >
-> device_software_revision
+> device\_software\_revision
 >
-> hardware_rev_and_physical_signaling
+> hardware\_rev\_and\_physical\_signaling
 >
 > flags
 >
-> device_id
+> device\_id
 >
-> minimum_number_of_response_preambles
+> minimum\_number\_of\_response\_preambles
 >
-> maximum_number_of_device_variables
+> maximum\_number\_of\_device\_variables
 >
-> configuration_change_counter
+> configuration\_change\_counter
 >
-> extended_device_status
+> extended\_device\_status
 >
-> manufacturer_id
+> manufacturer\_id
 >
-> private_label
+> private\_label
 >
-> device_profile
+> device\_profile
 >
-> short_address
+> short\_address
 >
-> pv_units
+> pv\_units
 >
 > pv
 >
-> pv_loop_current
+> pv\_loop\_current
 >
-> pv_percent_range
+> pv\_percent\_range
 >
-> sv_units
+> sv\_units
 >
 > sv
 >
-> tv_units
+> tv\_units
 >
 > tv
 >
-> qv_units
+> qv\_units
 >
 > qv
 >
-> poll_address
+> poll\_address
 >
-> loop_current_mode
+> loop\_current\_mode
 >
-> primary_variable_classification
+> primary\_variable\_classification
 >
-> secondary_variable_classification
+> secondary\_variable\_classification
 >
-> tertiary_variable_classification
+> tertiary\_variable\_classification
 >
-> quaternary_variable_classification
+> quaternary\_variable\_classification
 >
 > slots
 >
-> slot0_data_timestamp
+> slot0\_data\_timestamp
 >
-> device_variable
+> device\_variable
 >
-> device_variable_classification
+> device\_variable\_classification
 >
 > units
 >
-> device_variable_value
+> device\_variable\_value
 >
-> device_variable_status
+> device\_variable\_status
 >
 > message
 >
@@ -875,79 +843,79 @@ style="width:5.76806in;height:0.92569in" />
 >
 > year
 >
-> transducer_serail_number
+> transducer\_serail\_number
 >
-> transducer_limit_min_span_units
+> transducer\_limit\_min\_span\_units
 >
-> upper_transducer_limit
+> upper\_transducer\_limit
 >
-> lower_transducer_limit
+> lower\_transducer\_limit
 >
-> minimum_span
+> minimum\_span
 >
-> pv_alarm_selection_code
+> pv\_alarm\_selection\_code
 >
-> pv_transfer_function_code
+> pv\_transfer\_function\_code
 >
-> pv_upper_and_lower_range_values_units
+> pv\_upper\_and\_lower\_range\_values\_units
 >
-> pv_upper_range_value
+> pv\_upper\_range\_value
 >
-> pv_lower_range_value
+> pv\_lower\_range\_value
 >
-> pv_damping_value
+> pv\_damping\_value
 >
-> write_protect_code
+> write\_protect\_code
 >
 > reserved
 >
-> pv_analog_channel_flags
+> pv\_analog\_channel\_flags
 >
-> final_assembly_number
+> final\_assembly\_number
 >
-> command_number
+> command\_number
 >
-> index_of_first_discrete_variable
+> index\_of\_first\_discrete\_variable
 >
-> number_of_discrete_variables
+> number\_of\_discrete\_variables
 >
-> timestamp_for_most_recent_discrete_change
+> timestamp\_for\_most\_recent\_discrete\_change
 >
-> discrete_variable_state
+> discrete\_variable\_state
 >
-> discrete_variable_status
+> discrete\_variable\_status
 >
-> device_specific_status
+> device\_specific\_status
 >
-> device_operating_mode
+> device\_operating\_mode
 >
-> standardized_status_0
+> standardized\_status\_0
 >
-> standardized_status_1
+> standardized\_status\_1
 >
-> analog_channel_saturated
+> analog\_channel\_saturated
 >
-> standardized_status_2
+> standardized\_status\_2
 >
-> standardized_status_3
+> standardized\_status\_3
 >
-> analog_channel_fixed
+> analog\_channel\_fixed
 >
-> io_card
+> io\_card
 >
 > channel
 >
-> embedded_command_delimiter
+> embedded\_command\_delimiter
 >
-> embedded_command
+> embedded\_command
 >
-> command_byte_count
+> command\_byte\_count
 >
-> number_of_commands
+> number\_of\_commands
 >
 > commands
 >
-> command_numuber
+> command\_numuber
 >
 > preambles
 
@@ -961,37 +929,35 @@ style="width:5.76806in;height:0.92569in" />
 
 > 报文中Message Type为Publish (2)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image33.png"
-style="width:5.76806in;height:4.91042in" />
+![](产品质量\_li\_img/media/image33.png)
 
 > ISTP对报文中Message Type为Publish (2)的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image34.png"
-style="width:5.76806in;height:0.90069in" />
+![](产品质量\_li\_img/media/image34.png)
 
-#### 1.2.2.15. HartIP_UDP
+**1.2.2.15. HartIP\_UDP**
 
 支持99种字段的解析，主要字段如下所示：
 
 > version
 >
-> message_type
+> message\_type
 >
-> message_id
+> message\_id
 >
 > status
 >
-> sequence_number
+> sequence\_number
 >
-> message_length
+> message\_length
 >
-> host_type
+> host\_type
 >
-> inactivity_close_timer
+> inactivity\_close\_timer
 >
-> frame_type
+> frame\_type
 >
-> long_address
+> long\_address
 >
 > command
 >
@@ -999,89 +965,89 @@ style="width:5.76806in;height:0.90069in" />
 >
 > checksum
 >
-> response_code
+> response\_code
 >
-> device_status
+> device\_status
 >
-> expansion_code
+> expansion\_code
 >
-> expanded_device_type
+> expanded\_device\_type
 >
-> minimum_number_of_request_preambles
+> minimum\_number\_of\_request\_preambles
 >
-> hart_universal_revision
+> hart\_universal\_revision
 >
-> device_revision
+> device\_revision
 >
-> device_software_revision
+> device\_software\_revision
 >
-> hardware_rev_and_physical_signaling
+> hardware\_rev\_and\_physical\_signaling
 >
 > flags
 >
-> device_id
+> device\_id
 >
-> minimum_number_of_response_preambles
+> minimum\_number\_of\_response\_preambles
 >
-> maximum_number_of_device_variables
+> maximum\_number\_of\_device\_variables
 >
-> configuration_change_counter
+> configuration\_change\_counter
 >
-> extended_device_status
+> extended\_device\_status
 >
-> manufacturer_id
+> manufacturer\_id
 >
-> private_label
+> private\_label
 >
-> device_profile
+> device\_profile
 >
-> short_address
+> short\_address
 >
-> pv_units
+> pv\_units
 >
 > pv
 >
-> pv_loop_current
+> pv\_loop\_current
 >
-> pv_percent_range
+> pv\_percent\_range
 >
-> sv_units
+> sv\_units
 >
 > sv
 >
-> tv_units
+> tv\_units
 >
 > tv
 >
-> qv_units
+> qv\_units
 >
 > qv
 >
-> poll_address
+> poll\_address
 >
-> loop_current_mode
+> loop\_current\_mode
 >
-> primary_variable_classification
+> primary\_variable\_classification
 >
-> secondary_variable_classification
+> secondary\_variable\_classification
 >
-> tertiary_variable_classification
+> tertiary\_variable\_classification
 >
-> quaternary_variable_classification
+> quaternary\_variable\_classification
 >
 > slots
 >
-> slot0_data_timestamp
+> slot0\_data\_timestamp
 >
-> device_variable
+> device\_variable
 >
-> device_variable_classification
+> device\_variable\_classification
 >
 > units
 >
-> device_variable_value
+> device\_variable\_value
 >
-> device_variable_status
+> device\_variable\_status
 >
 > message
 >
@@ -1095,79 +1061,79 @@ style="width:5.76806in;height:0.90069in" />
 >
 > year
 >
-> transducer_serail_number
+> transducer\_serail\_number
 >
-> transducer_limit_min_span_units
+> transducer\_limit\_min\_span\_units
 >
-> upper_transducer_limit
+> upper\_transducer\_limit
 >
-> lower_transducer_limit
+> lower\_transducer\_limit
 >
-> minimum_span
+> minimum\_span
 >
-> pv_alarm_selection_code
+> pv\_alarm\_selection\_code
 >
-> pv_transfer_function_code
+> pv\_transfer\_function\_code
 >
-> pv_upper_and_lower_range_values_units
+> pv\_upper\_and\_lower\_range\_values\_units
 >
-> pv_upper_range_value
+> pv\_upper\_range\_value
 >
-> pv_lower_range_value
+> pv\_lower\_range\_value
 >
-> pv_damping_value
+> pv\_damping\_value
 >
-> write_protect_code
+> write\_protect\_code
 >
 > reserved
 >
-> pv_analog_channel_flags
+> pv\_analog\_channel\_flags
 >
-> final_assembly_number
+> final\_assembly\_number
 >
-> command_number
+> command\_number
 >
-> index_of_first_discrete_variable
+> index\_of\_first\_discrete\_variable
 >
-> number_of_discrete_variables
+> number\_of\_discrete\_variables
 >
-> timestamp_for_most_recent_discrete_change
+> timestamp\_for\_most\_recent\_discrete\_change
 >
-> discrete_variable_state
+> discrete\_variable\_state
 >
-> discrete_variable_status
+> discrete\_variable\_status
 >
-> device_specific_status
+> device\_specific\_status
 >
-> device_operating_mode
+> device\_operating\_mode
 >
-> standardized_status_0
+> standardized\_status\_0
 >
-> standardized_status_1
+> standardized\_status\_1
 >
-> analog_channel_saturated
+> analog\_channel\_saturated
 >
-> standardized_status_2
+> standardized\_status\_2
 >
-> standardized_status_3
+> standardized\_status\_3
 >
-> analog_channel_fixed
+> analog\_channel\_fixed
 >
-> io_card
+> io\_card
 >
 > channel
 >
-> embedded_command_delimiter
+> embedded\_command\_delimiter
 >
-> embedded_command
+> embedded\_command
 >
-> command_byte_count
+> command\_byte\_count
 >
-> number_of_commands
+> number\_of\_commands
 >
 > commands
 >
-> command_numuber
+> command\_numuber
 >
 > preambles
 
@@ -1181,19 +1147,17 @@ style="width:5.76806in;height:0.90069in" />
 
 > 报文中Message Type为Publish (2)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image35.png"
-style="width:5.76806in;height:4.87014in" />
+![](产品质量\_li\_img/media/image35.png)
 
 > ISTP对报文中Message Type为Publish (2)的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image36.png"
-style="width:5.76806in;height:0.91528in" />
+![](产品质量\_li\_img/media/image36.png)
 
-#### 1.2.2.16. HuaTong_2000R_TCP
+**1.2.2.16. HuaTong\_2000R\_TCP**
 
 支持3种字段的解析，主要字段如下所示：
 
-func_code
+func\_code
 
 addr
 
@@ -1209,23 +1173,21 @@ addr
 
 > 报文中功能码为5的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image37.png"
-style="width:5.76806in;height:1.41528in" />
+![](产品质量\_li\_img/media/image37.png)
 
 > ISTP对报文中功能码为5的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image38.png"
-style="width:5.76806in;height:0.53889in" />
+![](产品质量\_li\_img/media/image38.png)
 
-#### 1.2.2.17. IEC104
+**1.2.2.17. IEC104**
 
 支持17种字段的解析，主要字段如下所示：
 
 > apdus
 >
-> apdu_len
+> apdu\_len
 >
-> frame_type
+> frame\_type
 >
 > tx
 >
@@ -1233,17 +1195,17 @@ style="width:5.76806in;height:0.53889in" />
 >
 > sq
 >
-> num_ix
+> num\_ix
 >
 > test
 >
 > netgative
 >
-> cause_tx
+> cause\_tx
 >
 > oa
 >
-> type_id
+> type\_id
 >
 > addr
 >
@@ -1251,9 +1213,9 @@ style="width:5.76806in;height:0.53889in" />
 >
 > utype
 >
-> instrument_type
+> instrument\_type
 >
-> point_table
+> point\_table
 
 发布标准：
 
@@ -1265,19 +1227,17 @@ style="width:5.76806in;height:0.53889in" />
 
 > 报文中Type Id为141的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image39.png"
-style="width:5.76806in;height:3.43681in" />
+![](产品质量\_li\_img/media/image39.png)
 
 > ISTP对报文中Type Id为141的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image40.png"
-style="width:5.76806in;height:1.07708in" />
+![](产品质量\_li\_img/media/image40.png)
 
-#### 1.2.2.18. JX300
+**1.2.2.18. JX300**
 
 支持2种字段的解析，主要字段如下所示：
 
-> function_code
+> function\_code
 >
 > sequence
 
@@ -1291,25 +1251,23 @@ style="width:5.76806in;height:1.07708in" />
 
 > 报文中功能码为0的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image41.png"
-style="width:5.76806in;height:1.92708in" />
+![](产品质量\_li\_img/media/image41.png)
 
 > ISTP对报文中功能码为0的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image42.png"
-style="width:5.76806in;height:0.55208in" />
+![](产品质量\_li\_img/media/image42.png)
 
-#### 1.2.2.19. MELSEC_TCP
+**1.2.2.19. MELSEC\_TCP**
 
 支持8种字段的解析，主要字段如下所示：
 
-> data_len
+> data\_len
 >
-> wait_time
+> wait\_time
 >
 > command
 >
-> sub_command
+> sub\_command
 >
 > batch.unit
 >
@@ -1317,7 +1275,7 @@ style="width:5.76806in;height:0.55208in" />
 >
 > batch.range
 >
-> res_code
+> res\_code
 
 发布标准：
 
@@ -1329,25 +1287,23 @@ style="width:5.76806in;height:0.55208in" />
 
 > 报文中功能码为1025的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image43.png"
-style="width:5.76806in;height:1.84306in" />
+![](产品质量\_li\_img/media/image43.png)
 
 > ISTP对报文中功能码为1025的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image44.png"
-style="width:5.76806in;height:0.67361in" />
+![](产品质量\_li\_img/media/image44.png)
 
-#### 1.2.2.20. Modbus_TCP
+**1.2.2.20. Modbus\_TCP**
 
 支持4种字段的解析，主要字段如下所示：
 
-> function_code
+> function\_code
 >
 > address
 >
-> address_length
+> address\_length
 >
-> sub_function_code
+> sub\_function\_code
 
 发布标准：
 
@@ -1359,32 +1315,27 @@ style="width:5.76806in;height:0.67361in" />
 
 > 报文中功能码分别为Read Coils和Diagnostics的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image45.png"
-style="width:5.76806in;height:2.11528in" />
+![](产品质量\_li\_img/media/image45.png)
 
-<img src="产品质量_li_img/media/image46.png"
-style="width:5.76806in;height:1.86181in" />
+![](产品质量\_li\_img/media/image46.png)
 
-> ISTP对报文中功能码分别为Read
-> Coils和Diagnostics的帧的检测情况如下图所示：
+> ISTP对报文中功能码分别为Read Coils和Diagnostics的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image47.png"
-style="width:5.76806in;height:0.50903in" />
+![](产品质量\_li\_img/media/image47.png)
 
-<img src="产品质量_li_img/media/image48.png"
-style="width:5.76806in;height:0.54236in" />
+![](产品质量\_li\_img/media/image48.png)
 
-#### 1.2.2.21. Modbus_UDP
+**1.2.2.21. Modbus\_UDP**
 
 支持4种字段的解析，主要字段如下所示：
 
-> function_code
+> function\_code
 >
 > address
 >
-> address_length
+> address\_length
 >
-> sub_function_code
+> sub\_function\_code
 
 发布标准：
 
@@ -1396,30 +1347,25 @@ style="width:5.76806in;height:0.54236in" />
 
 > 报文中功能码分别为Read Coils和Diagnostics的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image49.png"
-style="width:5.76806in;height:1.87361in" />
+![](产品质量\_li\_img/media/image49.png)
 
-<img src="产品质量_li_img/media/image50.png"
-style="width:5.76806in;height:1.89097in" />
+![](产品质量\_li\_img/media/image50.png)
 
-> ISTP对报文中功能码分别为Read
-> Coils和Diagnostics的帧的检测情况如下图所示：
+> ISTP对报文中功能码分别为Read Coils和Diagnostics的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image51.png"
-style="width:5.76806in;height:0.52986in" />
+![](产品质量\_li\_img/media/image51.png)
 
-<img src="产品质量_li_img/media/image52.png"
-style="width:5.76806in;height:0.51597in" />
+![](产品质量\_li\_img/media/image52.png)
 
-#### 1.2.2.22. Modbus_UMAS
+**1.2.2.22. Modbus\_UMAS**
 
 支持3种字段的解析，主要字段如下所示：
 
-> function_code
+> function\_code
 >
-> sub_function_code
+> sub\_function\_code
 >
-> umas_sub_function_code
+> umas\_sub\_function\_code
 
 发布标准：
 
@@ -1431,15 +1377,13 @@ style="width:5.76806in;height:0.51597in" />
 
 > 报文中功能码为90，子功能码为3的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image53.png"
-style="width:5.76806in;height:1.97153in" />
+![](产品质量\_li\_img/media/image53.png)
 
 > ISTP对报文中功能码为90，子功能码为3的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image54.png"
-style="width:5.76806in;height:0.55in" />
+![](产品质量\_li\_img/media/image54.png)
 
-#### 1.2.2.23. Modbus_RTU（不支持）
+**1.2.2.23. Modbus\_RTU（不支持）**
 
 支持3种字段的解析，主要字段如下所示：
 
@@ -1455,55 +1399,55 @@ style="width:5.76806in;height:0.55in" />
 >
 > ISTP检测情况如下图所示：
 
-#### 1.2.2.24. MQTT
+**1.2.2.24. MQTT**
 
 支持29种字段的解析，主要字段如下所示：
 
-> message_type
+> message\_type
 >
-> message_flag
+> message\_flag
 >
-> mqtt_payload_len
+> mqtt\_payload\_len
 >
-> protocol_len
+> protocol\_len
 >
 > protocol
 >
 > version
 >
-> c_flag
+> c\_flag
 >
 > keepalive
 >
-> client_id_len
+> client\_id\_len
 >
-> client_id
+> client\_id
 >
-> will_topic_len
+> will\_topic\_len
 >
-> will_topic
+> will\_topic
 >
-> will_message_len
+> will\_message\_len
 >
-> will_message
+> will\_message
 >
-> username_len
+> username\_len
 >
 > username
 >
-> passwd_len
+> passwd\_len
 >
 > passwd
 >
 > reserved
 >
-> ret_code
+> ret\_code
 >
-> topic_len
+> topic\_len
 >
 > topic
 >
-> msg_id
+> msg\_id
 >
 > message
 >
@@ -1511,7 +1455,7 @@ style="width:5.76806in;height:0.55in" />
 >
 > mesage
 >
-> topic_qos
+> topic\_qos
 >
 > topics
 >
@@ -1527,25 +1471,23 @@ style="width:5.76806in;height:0.55in" />
 
 > 报文中Message Type为Subscribe Request的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image55.png"
-style="width:5.76806in;height:2.78264in" />
+![](产品质量\_li\_img/media/image55.png)
 
 > ISTP对报文中Message Type为Subscribe Request的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image56.png"
-style="width:5.76806in;height:0.61042in" />
+![](产品质量\_li\_img/media/image56.png)
 
-#### 1.2.2.25. NA_RTU_TCP
+**1.2.2.25. NA\_RTU\_TCP**
 
 支持5种字段的解析，主要字段如下所示：
 
-> func_code
+> func\_code
 >
 > length
 >
 > addr
 >
-> data_count
+> data\_count
 >
 > data
 
@@ -1559,69 +1501,67 @@ style="width:5.76806in;height:0.61042in" />
 
 > 报文中功能码为0x61的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image57.png"
-style="width:5.76806in;height:1.47153in" />
+![](产品质量\_li\_img/media/image57.png)
 
 > ISTP对报文中功能码为0x61的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image58.png"
-style="width:5.76806in;height:0.55972in" />
+![](产品质量\_li\_img/media/image58.png)
 
-#### 1.2.2.26. OMRON_TCP
+**1.2.2.26. OMRON\_TCP**
 
 支持117种字段的解析，主要字段如下所示：
 
 > dir
 >
-> command_code
+> command\_code
 >
-> memory_area_code
+> memory\_area\_code
 >
-> begin_address
+> begin\_address
 >
-> num_items
+> num\_items
 >
-> response_code
+> response\_code
 >
 > data
 >
-> beginning_address
+> beginning\_address
 >
-> mul_memory_area
+> mul\_memory\_area
 >
-> mul_memory_area_count
+> mul\_memory\_area\_count
 >
-> memory_area_code_source
+> memory\_area\_code\_source
 >
-> beginning_address_source
+> beginning\_address\_source
 >
-> memory_area_code_dest
+> memory\_area\_code\_dest
 >
-> begin_address_dest
+> begin\_address\_dest
 >
-> parameter_area_code
+> parameter\_area\_code
 >
-> beginning_word
+> beginning\_word
 >
-> num_of_word
+> num\_of\_word
 >
-> req_clear_data
+> req\_clear\_data
 >
-> program_num
+> program\_num
 >
-> project_code
+> project\_code
 >
-> last_word
+> last\_word
 >
 > password
 >
-> num_bytes
+> num\_bytes
 >
-> clear_code
+> clear\_code
 >
 > mode
 >
-> data_type
+> data\_type
 >
 > CPU Unit model
 >
@@ -1633,7 +1573,7 @@ style="width:5.76806in;height:0.55972in" />
 >
 > unit address
 >
-> number_of_items
+> number\_of\_items
 >
 > units address
 >
@@ -1653,11 +1593,11 @@ style="width:5.76806in;height:0.55972in" />
 >
 > parameter
 >
-> average_cycle_time
+> average\_cycle\_time
 >
-> max_cycle_time
+> max\_cycle\_time
 >
-> min_cycle_time
+> min\_cycle\_time
 >
 > Year
 >
@@ -1675,71 +1615,71 @@ style="width:5.76806in;height:0.55972in" />
 >
 > MessageNo
 >
-> Error_reset_FALS_No
+> Error\_reset\_FALS\_No
 >
-> Beginning_Record_No
+> Beginning\_Record\_No
 >
-> No_of_Records
+> No\_of\_Records
 >
-> MAX_No_of_Stored_Records
+> MAX\_No\_of\_Stored\_Records
 >
-> No_of_Stored_Records
+> No\_of\_Stored\_Records
 >
-> Error_Logs
+> Error\_Logs
 >
-> Error_Code1
+> Error\_Code1
 >
-> Error_Code2
+> Error\_Code2
 >
-> disk_num
+> disk\_num
 >
-> beginng_file_position
+> beginng\_file\_position
 >
-> num_of_files
+> num\_of\_files
 >
-> disk_data
+> disk\_data
 >
-> file_data
+> file\_data
 >
 > filename
 >
-> file_position
+> file\_position
 >
-> data_length
+> data\_length
 >
-> file_capacity
+> file\_capacity
 >
-> para_code
+> para\_code
 >
-> Disk_No
+> Disk\_No
 >
-> Parameter_Code
+> Parameter\_Code
 >
-> Volume_Label
+> Volume\_Label
 >
-> Src_Disk_No
+> Src\_Disk\_No
 >
-> Src_File_Name
+> Src\_File\_Name
 >
-> Dst_Disk_No
+> Dst\_Disk\_No
 >
-> Dst_File_Name
+> Dst\_File\_Name
 >
-> Old_File_Name
+> Old\_File\_Name
 >
-> New_File_Name
+> New\_File\_Name
 >
-> File_Name
+> File\_Name
 >
-> num_of_words
+> num\_of\_words
 >
-> Data_Length
+> Data\_Length
 >
-> num_of_bits
+> num\_of\_bits
 >
-> set_reset_specification
+> set\_reset\_specification
 >
-> bit_flag
+> bit\_flag
 >
 > Message
 >
@@ -1749,61 +1689,61 @@ style="width:5.76806in;height:0.55972in" />
 >
 > fixed
 >
-> intelligent_id_no
+> intelligent\_id\_no
 >
-> first_word
+> first\_word
 >
-> read_length
+> read\_length
 >
-> no_of_link_nodes
+> no\_of\_link\_nodes
 >
-> data_link_status
+> data\_link\_status
 >
-> cio_area_first_word
+> cio\_area\_first\_word
 >
-> kind_of_dm
+> kind\_of\_dm
 >
-> no_of_total_words
+> no\_of\_total\_words
 >
-> network_member_data
+> network\_member\_data
 >
-> communications_cycle_time
+> communications\_cycle\_time
 >
-> current_polling_unit_node_number
+> current\_polling\_unit\_node\_number
 >
-> cyclic_operation
+> cyclic\_operation
 >
-> cyc_lic_transmission_status
+> cyc\_lic\_transmission\_status
 >
-> cyclic_nono-fatal_errors
+> cyclic\_nono-fatal\_errors
 >
-> cyclic_error_counters
+> cyclic\_error\_counters
 >
-> status_flags
+> status\_flags
 >
-> number_of_receptions
+> number\_of\_receptions
 >
-> beginning_block_number
+> beginning\_block\_number
 >
-> number_od_blocks
+> number\_od\_blocks
 >
-> number_of_blocks_remaining
+> number\_of\_blocks\_remaining
 >
-> total_number_of_blocks
+> total\_number\_of\_blocks
 >
 > type
 >
-> control_data
+> control\_data
 >
-> block_number
+> block\_number
 >
-> number_of_units
+> number\_of\_units
 >
-> number_od_units
+> number\_od\_units
 >
-> name_Data
+> name\_Data
 >
-> name_data
+> name\_data
 
 发布标准：
 
@@ -1815,69 +1755,67 @@ style="width:5.76806in;height:0.55972in" />
 
 > 报文中Command为Frame Send的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image59.png"
-style="width:5.76806in;height:5.12153in" />
+![](产品质量\_li\_img/media/image59.png)
 
 > ISTP对报文中Command为Frame Send的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image60.png"
-style="width:5.76806in;height:0.54028in" />
+![](产品质量\_li\_img/media/image60.png)
 
-#### 1.2.2.27. OMRON_UDP
+**1.2.2.27. OMRON\_UDP**
 
 支持118种字段的解析，主要字段如下所示：
 
 > dir
 >
-> command_code
+> command\_code
 >
-> memory_area_code
+> memory\_area\_code
 >
-> begin_address
+> begin\_address
 >
-> num_items
+> num\_items
 >
-> response_code
+> response\_code
 >
 > data
 >
-> beginning_address
+> beginning\_address
 >
-> mul_memory_area
+> mul\_memory\_area
 >
-> mul_memory_area_count
+> mul\_memory\_area\_count
 >
-> memory_area_code_source
+> memory\_area\_code\_source
 >
-> beginning_address_source
+> beginning\_address\_source
 >
-> memory_area_code_dest
+> memory\_area\_code\_dest
 >
-> begin_address_dest
+> begin\_address\_dest
 >
-> parameter_area_code
+> parameter\_area\_code
 >
-> beginning_word
+> beginning\_word
 >
-> num_of_word
+> num\_of\_word
 >
-> req_clear_data
+> req\_clear\_data
 >
-> program_num
+> program\_num
 >
-> project_code
+> project\_code
 >
-> last_word
+> last\_word
 >
 > password
 >
-> num_bytes
+> num\_bytes
 >
-> clear_code
+> clear\_code
 >
 > mode
 >
-> data_type
+> data\_type
 >
 > CPU Unit model
 >
@@ -1891,7 +1829,7 @@ style="width:5.76806in;height:0.54028in" />
 >
 > unit address
 >
-> number_of_items
+> number\_of\_items
 >
 > units address
 >
@@ -1911,11 +1849,11 @@ style="width:5.76806in;height:0.54028in" />
 >
 > parameter
 >
-> average_cycle_time
+> average\_cycle\_time
 >
-> max_cycle_time
+> max\_cycle\_time
 >
-> min_cycle_time
+> min\_cycle\_time
 >
 > Year
 >
@@ -1933,71 +1871,71 @@ style="width:5.76806in;height:0.54028in" />
 >
 > MessageNo
 >
-> Error_reset_FALS_No
+> Error\_reset\_FALS\_No
 >
-> Beginning_Record_No
+> Beginning\_Record\_No
 >
-> No_of_Records
+> No\_of\_Records
 >
-> MAX_No_of_Stored_Records
+> MAX\_No\_of\_Stored\_Records
 >
-> No_of_Stored_Records
+> No\_of\_Stored\_Records
 >
-> Error_Logs
+> Error\_Logs
 >
-> Error_Code1
+> Error\_Code1
 >
-> Error_Code2
+> Error\_Code2
 >
-> disk_num
+> disk\_num
 >
-> beginng_file_position
+> beginng\_file\_position
 >
-> num_of_files
+> num\_of\_files
 >
-> disk_data
+> disk\_data
 >
-> file_data
+> file\_data
 >
 > filename
 >
-> file_position
+> file\_position
 >
-> data_length
+> data\_length
 >
-> file_capacity
+> file\_capacity
 >
-> para_code
+> para\_code
 >
-> Disk_No
+> Disk\_No
 >
-> Parameter_Code
+> Parameter\_Code
 >
-> Volume_Label
+> Volume\_Label
 >
-> Src_Disk_No
+> Src\_Disk\_No
 >
-> Src_File_Name
+> Src\_File\_Name
 >
-> Dst_Disk_No
+> Dst\_Disk\_No
 >
-> Dst_File_Name
+> Dst\_File\_Name
 >
-> Old_File_Name
+> Old\_File\_Name
 >
-> New_File_Name
+> New\_File\_Name
 >
-> File_Name
+> File\_Name
 >
-> num_of_words
+> num\_of\_words
 >
-> Data_Length
+> Data\_Length
 >
-> num_of_bits
+> num\_of\_bits
 >
-> set_reset_specification
+> set\_reset\_specification
 >
-> bit_flag
+> bit\_flag
 >
 > Message
 >
@@ -2007,61 +1945,61 @@ style="width:5.76806in;height:0.54028in" />
 >
 > fixed
 >
-> intelligent_id_no
+> intelligent\_id\_no
 >
-> first_word
+> first\_word
 >
-> read_length
+> read\_length
 >
-> no_of_link_nodes
+> no\_of\_link\_nodes
 >
-> data_link_status
+> data\_link\_status
 >
-> cio_area_first_word
+> cio\_area\_first\_word
 >
-> kind_of_dm
+> kind\_of\_dm
 >
-> no_of_total_words
+> no\_of\_total\_words
 >
-> network_member_data
+> network\_member\_data
 >
-> communications_cycle_time
+> communications\_cycle\_time
 >
-> current_polling_unit_node_number
+> current\_polling\_unit\_node\_number
 >
-> cyclic_operation
+> cyclic\_operation
 >
-> cyc_lic_transmission_status
+> cyc\_lic\_transmission\_status
 >
-> cyclic_nono-fatal_errors
+> cyclic\_nono-fatal\_errors
 >
-> cyclic_error_counters
+> cyclic\_error\_counters
 >
-> status_flags
+> status\_flags
 >
-> number_of_receptions
+> number\_of\_receptions
 >
-> beginning_block_number
+> beginning\_block\_number
 >
-> number_od_blocks
+> number\_od\_blocks
 >
-> number_of_blocks_remaining
+> number\_of\_blocks\_remaining
 >
-> total_number_of_blocks
+> total\_number\_of\_blocks
 >
 > type
 >
-> control_data
+> control\_data
 >
-> block_number
+> block\_number
 >
-> number_of_units
+> number\_of\_units
 >
-> number_od_units
+> number\_od\_units
 >
-> name_Data
+> name\_Data
 >
-> name_data
+> name\_data
 
 发布标准：
 
@@ -2073,15 +2011,13 @@ style="width:5.76806in;height:0.54028in" />
 
 > 报文中Command为Frame Send的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image61.png"
-style="width:5.76806in;height:1.36597in" />
+![](产品质量\_li\_img/media/image61.png)
 
 > ISTP对报文中Command为Frame Send的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image62.png"
-style="width:5.76806in;height:0.56042in" />
+![](产品质量\_li\_img/media/image62.png)
 
-#### 1.2.2.28. OPC_DA
+**1.2.2.28. OPC\_DA**
 
 支持12种字段的解析，主要字段如下所示：
 
@@ -2105,9 +2041,9 @@ style="width:5.76806in;height:0.56042in" />
 >
 > CallID
 >
-> opc_interface
+> opc\_interface
 >
-> opc_function
+> opc\_function
 
 发布标准：
 
@@ -2117,17 +2053,15 @@ style="width:5.76806in;height:0.56042in" />
 
 测试用例举例说明：
 
-> 报文中opc_interface为IOPCShutdown和opc_function为ShutdownRequest的帧的情况如下图所示：
+> 报文中opc\_interface为IOPCShutdown和opc\_function为ShutdownRequest的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image63.png"
-style="width:5.76806in;height:3.49167in" />
+![](产品质量\_li\_img/media/image63.png)
 
-> ISTP对报文中opc_interface为IOPCShutdown和opc_function为ShutdownRequest的帧的检测情况如下图所示：
+> ISTP对报文中opc\_interface为IOPCShutdown和opc\_function为ShutdownRequest的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image64.png"
-style="width:5.76806in;height:0.83472in" />
+![](产品质量\_li\_img/media/image64.png)
 
-#### 1.2.2.29. OPC_UA
+**1.2.2.29. OPC\_UA**
 
 支持68种字段的解析，主要字段如下所示：
 
@@ -2215,7 +2149,7 @@ style="width:5.76806in;height:0.83472in" />
 >
 > ServerNonce
 >
-> Identifier_Numeric
+> Identifier\_Numeric
 >
 > IdentifierNumeric
 >
@@ -2277,21 +2211,19 @@ style="width:5.76806in;height:0.83472in" />
 
 > 报文中Message Type为HEL的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image65.png"
-style="width:5.76806in;height:2.23333in" />
+![](产品质量\_li\_img/media/image65.png)
 
 > ISTP对报文中Message Type为HEL的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image66.png"
-style="width:5.76806in;height:0.7875in" />
+![](产品质量\_li\_img/media/image66.png)
 
-#### 1.2.2.30. Ovation_TCP
+**1.2.2.30. Ovation\_TCP**
 
 支持3种字段的解析，主要字段如下所示：
 
 > type
 >
-> func_code
+> func\_code
 >
 > len
 
@@ -2305,29 +2237,27 @@ style="width:5.76806in;height:0.7875in" />
 
 > 报文中功能码为2的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image67.png"
-style="width:5.76806in;height:1.89167in" />
+![](产品质量\_li\_img/media/image67.png)
 
 > ISTP对报文中功能码为2的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image68.png"
-style="width:5.76806in;height:0.63194in" />
+![](产品质量\_li\_img/media/image68.png)
 
-#### 1.2.2.31. Profinet_DCP
+**1.2.2.31. Profinet\_DCP**
 
 支持33种字段的解析，主要字段如下所示：
 
-> frame_id
+> frame\_id
 >
-> service_id
+> service\_id
 >
-> service_type
+> service\_type
 >
 > xid
 >
 > reserved
 >
-> data_length
+> data\_length
 >
 > blocks
 >
@@ -2335,9 +2265,9 @@ style="width:5.76806in;height:0.63194in" />
 >
 > suboption
 >
-> block_length
+> block\_length
 >
-> block_info
+> block\_info
 >
 > ip
 >
@@ -2345,41 +2275,41 @@ style="width:5.76806in;height:0.63194in" />
 >
 > gateway
 >
-> block_error
+> block\_error
 >
-> block_qualifier
+> block\_qualifier
 >
-> response_delay
+> response\_delay
 >
 > nameofstation
 >
-> dev_options
+> dev\_options
 >
 > typeofstation
 >
-> vendor_id
+> vendor\_id
 >
-> device_id
+> device\_id
 >
-> device_role
+> device\_role
 >
 > mac
 >
-> device_instance_high
+> device\_instance\_high
 >
-> device_instance_low
+> device\_instance\_low
 >
-> oem_vendor_id
+> oem\_vendor\_id
 >
-> oem_device_id
+> oem\_device\_id
 >
-> option_code
+> option\_code
 >
 > dhcpparameterlength
 >
 > dhcpcontrolparameterdata
 >
-> signal_value
+> signal\_value
 >
 > value
 
@@ -2393,15 +2323,13 @@ style="width:5.76806in;height:0.63194in" />
 
 > 报文中ServiceID为Get的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image69.png"
-style="width:5.76806in;height:2.07917in" />
+![](产品质量\_li\_img/media/image69.png)
 
 > ISTP对报文中ServiceID为Get的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image70.png"
-style="width:5.76806in;height:0.70556in" />
+![](产品质量\_li\_img/media/image70.png)
 
-#### 1.2.2.32. Profinet_MRP
+**1.2.2.32. Profinet\_MRP**
 
 支持21种字段的解析，主要字段如下所示：
 
@@ -2413,39 +2341,39 @@ style="width:5.76806in;height:0.70556in" />
 >
 > length
 >
-> sequence_id
+> sequence\_id
 >
-> domain_uuid
+> domain\_uuid
 >
 > prio
 >
 > sa
 >
-> port_role
+> port\_role
 >
-> ring_state
+> ring\_state
 >
 > transition
 >
-> time_stamp
+> time\_stamp
 >
 > interval
 >
 > blocked
 >
-> manufacturer_oui
+> manufacturer\_oui
 >
-> ed1_type
+> ed1\_type
 >
-> ed1_manufacturer_data
+> ed1\_manufacturer\_data
 >
-> sub_type
+> sub\_type
 >
-> sub_length
+> sub\_length
 >
-> other_prio
+> other\_prio
 >
-> other_sa
+> other\_sa
 
 发布标准：
 
@@ -2455,23 +2383,21 @@ style="width:5.76806in;height:0.70556in" />
 
 测试用例举例说明：
 
-> 报文中MRP_TLVHeader.Type为MRP_Common的帧的情况如下图所示：
+> 报文中MRP\_TLVHeader.Type为MRP\_Common的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image71.png"
-style="width:5.76806in;height:2.47014in" />
+![](产品质量\_li\_img/media/image71.png)
 
-> ISTP对报文中MRP_TLVHeader.Type为MRP_Common的帧的检测情况如下图所示：
+> ISTP对报文中MRP\_TLVHeader.Type为MRP\_Common的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image72.png"
-style="width:5.76806in;height:0.58819in" />
+![](产品质量\_li\_img/media/image72.png)
 
-#### 1.2.2.33. Profinet_MRRT
+**1.2.2.33. Profinet\_MRRT**
 
 支持8种字段的解析，主要字段如下所示：
 
 > blocks
 >
-> frame_id
+> frame\_id
 >
 > version
 >
@@ -2479,9 +2405,9 @@ style="width:5.76806in;height:0.58819in" />
 >
 > length
 >
-> sequence_id
+> sequence\_id
 >
-> domain_uuid
+> domain\_uuid
 >
 > sa
 
@@ -2495,33 +2421,31 @@ style="width:5.76806in;height:0.58819in" />
 
 > 报文中Type为Common的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image73.png"
-style="width:5.76806in;height:4.49236in" />
+![](产品质量\_li\_img/media/image73.png)
 
 > ISTP对报文中Type为Common的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image74.png"
-style="width:5.76806in;height:0.84653in" />
+![](产品质量\_li\_img/media/image74.png)
 
-#### 1.2.2.34. Profinet_PTCP
+**1.2.2.34. Profinet\_PTCP**
 
 支持33种字段的解析，主要字段如下所示：
 
 > blocks
 >
-> frame_id
+> frame\_id
 >
-> reserved_1
+> reserved\_1
 >
-> reserved_2
+> reserved\_2
 >
 > delay10ns
 >
 > delay1ns
 >
-> sequence_id
+> sequence\_id
 >
-> delay1ns_byte
+> delay1ns\_byte
 >
 > type
 >
@@ -2529,49 +2453,49 @@ style="width:5.76806in;height:0.84653in" />
 >
 > t2timestamp
 >
-> port_mac_address
+> port\_mac\_address
 >
 > oui
 >
 > subtype
 >
-> irdata_uuid
+> irdata\_uuid
 >
-> t2port_rx_delay
+> t2port\_rx\_delay
 >
-> t3port_tx_delay
+> t3port\_tx\_delay
 >
 > flags
 >
-> current_utc_offset
+> current\_utc\_offset
 >
-> delay1ns_fup
+> delay1ns\_fup
 >
-> master_source_address
+> master\_source\_address
 >
-> subdomain_uuid
+> subdomain\_uuid
 >
-> epoch_number
+> epoch\_number
 >
 > seconds
 >
-> nano_seconds
+> nano\_seconds
 >
-> master_priority1_priority
+> master\_priority1\_priority
 >
-> master_priority1_level
+> master\_priority1\_level
 >
-> master_priority1_reserved
+> master\_priority1\_reserved
 >
-> master_priority1_active
+> master\_priority1\_active
 >
-> master_priority2
+> master\_priority2
 >
-> clock_class
+> clock\_class
 >
-> clock_accuracy
+> clock\_accuracy
 >
-> clock_variance
+> clock\_variance
 
 发布标准：
 
@@ -2583,39 +2507,37 @@ style="width:5.76806in;height:0.84653in" />
 
 > 报文中为Profinet PTCP协议帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image75.png"
-style="width:5.76806in;height:3.89583in" />
+![](产品质量\_li\_img/media/image75.png)
 
 > ISTP对报文中为Profinet PTCP协议帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image76.png"
-style="width:5.76806in;height:0.92847in" />
+![](产品质量\_li\_img/media/image76.png)
 
-#### 1.2.2.35. Profinet_RTC1
+**1.2.2.35. Profinet\_RTC1**
 
 支持11种字段的解析，主要字段如下所示：
 
-> frame_id
+> frame\_id
 >
-> cycle_counter
+> cycle\_counter
 >
 > ignore
 >
-> reserved_2
+> reserved\_2
 >
-> station_problem_indicator
+> station\_problem\_indicator
 >
-> provider_state
+> provider\_state
 >
-> reserved_1
+> reserved\_1
 >
-> data_valid
+> data\_valid
 >
 > redundancy
 >
 > state
 >
-> transfer_status
+> transfer\_status
 
 发布标准：
 
@@ -2627,47 +2549,45 @@ style="width:5.76806in;height:0.92847in" />
 
 > 报文中为Profinet RTC1协议帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image77.png"
-style="width:5.76806in;height:4.22083in" />
+![](产品质量\_li\_img/media/image77.png)
 
 > ISTP对报文中为Profinet RTC1协议帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image78.png"
-style="width:5.76806in;height:1.62014in" />
+![](产品质量\_li\_img/media/image78.png)
 
-#### 1.2.2.36. Profinet_RTC3（解析不正确）
+**1.2.2.36. Profinet\_RTC3（解析不正确）**
 
 支持15种字段的解析，主要字段如下所示：
 
-> frame_id
+> frame\_id
 >
-> cycle_counter
+> cycle\_counter
 >
 > ignore
 >
-> reserved_2
+> reserved\_2
 >
-> station_problem_indicator
+> station\_problem\_indicator
 >
-> provider_state
+> provider\_state
 >
-> reserved_1
+> reserved\_1
 >
-> data_valid
+> data\_valid
 >
 > redundancy
 >
 > state
 >
-> transfer_status
+> transfer\_status
 >
 > sfcrc16
 >
-> sub_frames
+> sub\_frames
 >
 > position
 >
-> data_length
+> data\_length
 
 发布标准：
 
@@ -2679,48 +2599,47 @@ style="width:5.76806in;height:1.62014in" />
 
 > 报文中为Profinet RTC3协议帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image79.png"
-style="width:5.76806in;height:4.27014in" />
+![](产品质量\_li\_img/media/image79.png)
 
 > ISTP对报文中为Profinet RTC3协议帧的检测情况如下图所示：
 
-#### 1.2.2.37. RSSP-1
+**1.2.2.37. RSSP-1**
 
 支持17种字段的解析，主要字段如下所示：
 
-> interaction_type
+> interaction\_type
 >
-> protocol_type
+> protocol\_type
 >
-> src_address
+> src\_address
 >
-> dst_address
+> dst\_address
 >
-> seq_number
+> seq\_number
 >
-> data_len
+> data\_len
 >
-> svc_1
+> svc\_1
 >
-> svc_2
+> svc\_2
 >
-> data_value
+> data\_value
 >
-> crc_16
+> crc\_16
 >
-> seqenq_1
+> seqenq\_1
 >
-> seqenq_2
+> seqenq\_2
 >
-> rsp_id
+> rsp\_id
 >
-> req_id
+> req\_id
 >
-> seq_init_1
+> seq\_init\_1
 >
-> seq_init_2
+> seq\_init\_2
 >
-> data_verion
+> data\_verion
 
 发布标准：
 
@@ -2732,15 +2651,13 @@ style="width:5.76806in;height:4.27014in" />
 
 > 报文中为RSSP-1协议帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image80.png"
-style="width:5.76806in;height:2.09375in" />
+![](产品质量\_li\_img/media/image80.png)
 
 > ISTP对报文中为RSSP-1协议帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image81.png"
-style="width:5.76806in;height:0.70486in" />
+![](产品质量\_li\_img/media/image81.png)
 
-#### 1.2.2.38. S7
+**1.2.2.38. S7**
 
 支持113种字段的解析，主要字段如下所示：
 
@@ -2796,11 +2713,11 @@ style="width:5.76806in;height:0.70486in" />
 >
 > FileName
 >
-> malformed_error
+> malformed\_error
 >
 > ParameterHead
 >
-> userdata_ParameterLength
+> userdata\_ParameterLength
 >
 > Method
 >
@@ -2980,16 +2897,13 @@ style="width:5.76806in;height:0.70486in" />
 
 > 报文中Function group为Programmer commands (1)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image82.png"
-style="width:5.76806in;height:3.56458in" />
+![](产品质量\_li\_img/media/image82.png)
 
-> ISTP对报文中Function group为Programmer commands
-> (1)的帧的检测情况如下图所示：
+> ISTP对报文中Function group为Programmer commands (1)的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image83.png"
-style="width:5.76806in;height:0.94444in" />
+![](产品质量\_li\_img/media/image83.png)
 
-#### 1.2.2.39. S7_Plus
+**1.2.2.39. S7\_Plus**
 
 支持24种字段的解析，主要字段如下所示：
 
@@ -3003,27 +2917,27 @@ style="width:5.76806in;height:0.94444in" />
 >
 > reserved1
 >
-> function_code
+> function\_code
 >
 > reserved2
 >
 > seqnum
 >
-> session_id
+> session\_id
 >
-> transport_flag
+> transport\_flag
 >
-> trailer_protid
+> trailer\_protid
 >
-> trailer_protoversion
+> trailer\_protoversion
 >
-> trailer_datalen
+> trailer\_datalen
 >
 > digestlen
 >
 > digest
 >
-> keepalive_seqnum
+> keepalive\_seqnum
 >
 > reserved
 >
@@ -3051,29 +2965,27 @@ style="width:5.76806in;height:0.94444in" />
 
 > 报文中Function为CreateObject (0x04ca)的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image84.png"
-style="width:5.76806in;height:2.82847in" />
+![](产品质量\_li\_img/media/image84.png)
 
 > ISTP对报文中Function为CreateObject (0x04ca)的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image85.png"
-style="width:5.76806in;height:1.03681in" />
+![](产品质量\_li\_img/media/image85.png)
 
-#### 1.2.2.40. GE_SRTP
+**1.2.2.40. GE\_SRTP**
 
 支持7种字段的解析，主要字段如下所示：
 
-> service_request_code
+> service\_request\_code
 >
-> segment_selector
+> segment\_selector
 >
-> data_offset
+> data\_offset
 >
-> violate_specs
+> violate\_specs
 >
-> field_name
+> field\_name
 >
-> error_code
+> error\_code
 >
 > offset
 
@@ -3087,21 +2999,19 @@ style="width:5.76806in;height:1.03681in" />
 
 > 报文中服务请求码为0的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image86.png"
-style="width:5.76806in;height:1.64097in" />
+![](产品质量\_li\_img/media/image86.png)
 
 > ISTP对报文中服务请求码为0的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image87.png"
-style="width:5.76806in;height:0.66736in" />
+![](产品质量\_li\_img/media/image87.png)
 
-#### 1.2.2.41. SV
+**1.2.2.41. SV**
 
 支持15种字段的解析，主要字段如下所示：
 
-> d_mac
+> d\_mac
 >
-> s_mac
+> s\_mac
 >
 > APPID
 >
@@ -3139,15 +3049,13 @@ style="width:5.76806in;height:0.66736in" />
 
 > 报文中为SV协议的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image88.png"
-style="width:5.76806in;height:3.90347in" />
+![](产品质量\_li\_img/media/image88.png)
 
 > ISTP对报文中为SV协议的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image89.png"
-style="width:5.76806in;height:0.76875in" />
+![](产品质量\_li\_img/media/image89.png)
 
-#### 1.2.2.42. Shanghaixinhua_DCS
+**1.2.2.42. Shanghaixinhua\_DCS**
 
 支持5种字段的解析，主要字段如下所示：
 
@@ -3171,15 +3079,13 @@ style="width:5.76806in;height:0.76875in" />
 
 > 报文中命令为0x0900的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image90.png"
-style="width:5.76806in;height:1.50069in" />
+![](产品质量\_li\_img/media/image90.png)
 
 > ISTP对报文中命令为0x0900的帧的情况检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image91.png"
-style="width:5.76806in;height:0.61458in" />
+![](产品质量\_li\_img/media/image91.png)
 
-#### 1.2.2.43. IEC103_UDP（NR）（解析不正确）
+**1.2.2.43. IEC103\_UDP（NR）（解析不正确）**
 
 支持14种字段的解析，主要字段如下所示：
 
@@ -3221,132 +3127,131 @@ style="width:5.76806in;height:0.61458in" />
 
 > 报文中为IEC103 UDP协议帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image92.png"
-style="width:5.76806in;height:1.88958in" />
+![](产品质量\_li\_img/media/image92.png)
 
 > ISTP对报文中为IEC103 UDP协议帧的检测情况如下图所示：
 
-#### 1.2.2.44. DICOM
+**1.2.2.44. DICOM**
 
 支持59种字段的解析，主要字段如下所示：
 
-> pdu_type
+> pdu\_type
 >
-> pdu_len
+> pdu\_len
 >
-> proto_version
+> proto\_version
 >
-> called_ae_title
+> called\_ae\_title
 >
-> calling_ae_title
+> calling\_ae\_title
 >
-> app_item_type
+> app\_item\_type
 >
-> app_item_len
+> app\_item\_len
 >
-> app_item_str
+> app\_item\_str
 >
-> present_ctxs
+> present\_ctxs
 >
-> userinfo_item_type
+> userinfo\_item\_type
 >
-> userinfo_item_len
+> userinfo\_item\_len
 >
-> userinfo_max_item_type
+> userinfo\_max\_item\_type
 >
-> userinfo_max_item_len
+> userinfo\_max\_item\_len
 >
-> userinfo_max_pdu_len
+> userinfo\_max\_pdu\_len
 >
-> userinfo_uid_item_type
+> userinfo\_uid\_item\_type
 >
-> userinfo_uid_item_len
+> userinfo\_uid\_item\_len
 >
-> userinfo_uid
+> userinfo\_uid
 >
-> userinfo_async_item_type
+> userinfo\_async\_item\_type
 >
-> userinfo_async_item_len
+> userinfo\_async\_item\_len
 >
-> userinfo_async_max_num_ops_inv
+> userinfo\_async\_max\_num\_ops\_inv
 >
-> userinfo_async_max_num_ops_per
+> userinfo\_async\_max\_num\_ops\_per
 >
-> userinfo_version_item_type
+> userinfo\_version\_item\_type
 >
-> userinfo_version_item_len
+> userinfo\_version\_item\_len
 >
-> userinfo_version
+> userinfo\_version
 >
-> present_item_type
+> present\_item\_type
 >
-> present_item_len
+> present\_item\_len
 >
-> present_ctx_id
+> present\_ctx\_id
 >
-> present_result
+> present\_result
 >
-> abstract_item_type
+> abstract\_item\_type
 >
-> abstract_item_len
+> abstract\_item\_len
 >
-> abstract_item_str
+> abstract\_item\_str
 >
-> transfer_syns
+> transfer\_syns
 >
-> userinfo_role_sel_item_type
+> userinfo\_role\_sel\_item\_type
 >
-> userinfo_role_sel_item_len
+> userinfo\_role\_sel\_item\_len
 >
-> userinfo_role_sel_sop_class_uid_len
+> userinfo\_role\_sel\_sop\_class\_uid\_len
 >
-> userinfo_role_sel_sopclassuid_str
+> userinfo\_role\_sel\_sopclassuid\_str
 >
-> userinfo_role_sel_scu_role
+> userinfo\_role\_sel\_scu\_role
 >
-> userinfo_role_sel_scp_role
+> userinfo\_role\_sel\_scp\_role
 >
-> userinfo_extneg_item_type
+> userinfo\_extneg\_item\_type
 >
-> userinfo_extneg_item_len
+> userinfo\_extneg\_item\_len
 >
-> userinfo_extneg_sop_class_uid_len
+> userinfo\_extneg\_sop\_class\_uid\_len
 >
-> userinfo_extneg_sopclassuid_str
+> userinfo\_extneg\_sopclassuid\_str
 >
-> userinfo_user_idt_item_type
+> userinfo\_user\_idt\_item\_type
 >
-> userinfo_user_idt_item_len
+> userinfo\_user\_idt\_item\_len
 >
-> userinfo_user_idt_type
+> userinfo\_user\_idt\_type
 >
-> userinfo_user_idt_resp_req
+> userinfo\_user\_idt\_resp\_req
 >
-> userinfo_user_idt_primary_field_len
+> userinfo\_user\_idt\_primary\_field\_len
 >
-> userinfo_user_idt_primary_field_str
+> userinfo\_user\_idt\_primary\_field\_str
 >
-> userinfo_user_idt_secondary_field_len
+> userinfo\_user\_idt\_secondary\_field\_len
 >
-> userinfo_user_idt_secondary_field_str
+> userinfo\_user\_idt\_secondary\_field\_str
 >
-> reject_result
+> reject\_result
 >
-> reject_source
+> reject\_source
 >
-> reject_reason
+> reject\_reason
 >
 > pdvs
 >
-> pdv_len
+> pdv\_len
 >
-> ctx_id
+> ctx\_id
 >
 > flags
 >
-> abort_source
+> abort\_source
 >
-> abort_reason
+> abort\_reason
 
 发布标准：
 
@@ -3358,15 +3263,13 @@ style="width:5.76806in;height:1.88958in" />
 
 > 报文中为DICOM协议帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image93.png"
-style="width:5.76806in;height:4.80833in" />
+![](产品质量\_li\_img/media/image93.png)
 
 > ISTP对报文中为DICOM协议帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image94.png"
-style="width:5.76806in;height:3.33125in" />
+![](产品质量\_li\_img/media/image94.png)
 
-#### 1.2.2.45. EtherCat
+**1.2.2.45. EtherCat**
 
 支持14种字段的解析，主要字段如下所示：
 
@@ -3376,9 +3279,9 @@ style="width:5.76806in;height:3.33125in" />
 >
 > Type
 >
-> Datagrams_num
+> Datagrams\_num
 >
-> Attack_flag
+> Attack\_flag
 >
 > Datagrams
 >
@@ -3390,13 +3293,13 @@ style="width:5.76806in;height:3.33125in" />
 >
 > length
 >
-> round_trip
+> round\_trip
 >
-> last_indicator
+> last\_indicator
 >
 > interrupt
 >
-> working_cnt
+> working\_cnt
 
 发布标准：
 
@@ -3408,51 +3311,49 @@ style="width:5.76806in;height:3.33125in" />
 
 > 报文中Type为EtherCAT command (0x1)情况如下图所示：
 
-<img src="产品质量_li_img/media/image95.png"
-style="width:5.76806in;height:3.05278in" />
+![](产品质量\_li\_img/media/image95.png)
 
 > ISTP对报文中Type为EtherCAT command (0x1)检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image96.png"
-style="width:5.76806in;height:0.62222in" />
+![](产品质量\_li\_img/media/image96.png)
 
-#### 1.2.2.46. GSK
+**1.2.2.46. GSK**
 
 支持17种字段的解析，主要字段如下所示：
 
-> unknown_1
+> unknown\_1
 >
-> local_mac
+> local\_mac
 >
-> serpid_1
+> serpid\_1
 >
-> des_mac
+> des\_mac
 >
-> serpid_2
+> serpid\_2
 >
-> pack_no
+> pack\_no
 >
-> unknown_8
+> unknown\_8
 >
-> send_to_id
+> send\_to\_id
 >
-> data_len
+> data\_len
 >
-> unknown_10
+> unknown\_10
 >
-> next_action
+> next\_action
 >
-> file_handle
+> file\_handle
 >
-> tran_data_len
+> tran\_data\_len
 >
-> data_size
+> data\_size
 >
-> dir_handle
+> dir\_handle
 >
-> recv_from_id
+> recv\_from\_id
 >
-> unknown_12
+> unknown\_12
 
 发布标准：
 
@@ -3464,31 +3365,29 @@ style="width:5.76806in;height:0.62222in" />
 
 > 报文为GSK的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image97.png"
-style="width:5.76806in;height:1.38264in" />
+![](产品质量\_li\_img/media/image97.png)
 
 > ISTP对报文为GSK的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image98.png"
-style="width:5.76806in;height:0.69097in" />
+![](产品质量\_li\_img/media/image98.png)
 
-#### 1.2.2.47. HL7
+**1.2.2.47. HL7**
 
 支持80种字段的解析，主要字段如下所示：
 
-> field_separator
+> field\_separator
 >
-> component_separator
+> component\_separator
 >
-> repetition_separator
+> repetition\_separator
 >
-> escape_character
+> escape\_character
 >
-> subcomponent_separator
+> subcomponent\_separator
 >
-> message_type
+> message\_type
 >
-> trigger_event
+> trigger\_event
 >
 > segments
 >
@@ -3646,33 +3545,31 @@ style="width:5.76806in;height:0.69097in" />
 
 > 报文中为HL7协议的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image99.png"
-style="width:5.76806in;height:3.21875in" />
+![](产品质量\_li\_img/media/image99.png)
 
 > ISTP对报文中为HL7协议的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image100.png"
-style="width:5.76806in;height:1.73194in" />
+![](产品质量\_li\_img/media/image100.png)
 
-#### 1.2.2.48. HNC
+**1.2.2.48. HNC**
 
 支持8种字段的解析，主要字段如下所示：
 
 > type
 >
-> source_ip
+> source\_ip
 >
-> source_port
+> source\_port
 >
-> msg_type
+> msg\_type
 >
-> msg_flag
+> msg\_flag
 >
-> msg_length
+> msg\_length
 >
-> client_no
+> client\_no
 >
-> msg_mask
+> msg\_mask
 
 发布标准：
 
@@ -3684,41 +3581,39 @@ style="width:5.76806in;height:1.73194in" />
 
 > 报文中message type为1的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image101.png"
-style="width:5.76806in;height:1.43056in" />
+![](产品质量\_li\_img/media/image101.png)
 
 > ISTP对报文中message type为1的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image102.png"
-style="width:5.76806in;height:0.64792in" />
+![](产品质量\_li\_img/media/image102.png)
 
-#### 1.2.2.49. HoneyWel
+**1.2.2.49. HoneyWel**
 
 支持12种字段的解析，主要字段如下所示：
 
-> head_seq_no
+> head\_seq\_no
 >
-> payload_len
+> payload\_len
 >
-> seq_no1
+> seq\_no1
 >
-> seq_no2
+> seq\_no2
 >
-> body_len
+> body\_len
 >
-> item_num
+> item\_num
 >
 > items
 >
-> item_seq_no
+> item\_seq\_no
 >
-> item_len
+> item\_len
 >
-> item_type
+> item\_type
 >
 > control
 >
-> func_code
+> func\_code
 
 发布标准：
 
@@ -3730,45 +3625,43 @@ style="width:5.76806in;height:0.64792in" />
 
 > 报文中功能码为0的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image103.png"
-style="width:5.76806in;height:1.53681in" />
+![](产品质量\_li\_img/media/image103.png)
 
 > ISTP对报文中功能码为0的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image104.png"
-style="width:5.76806in;height:0.66111in" />
+![](产品质量\_li\_img/media/image104.png)
 
-## 1.3. 协议白名单
+### 1.3. 协议白名单
 
-### 1.3.1. 功能说明
+#### 1.3.1. 功能说明
 
 协议白名单是基于协议解析的基础上，将识别出的重要的协议字段作为白名单字段进行识别检测的功能。
 
 支持49种协议的白名单检测。
 
-### 1.3.2. 发布的标准
+#### 1.3.2. 发布的标准
 
-#### 1.3.2.1. MMS
+**1.3.2.1. MMS**
 
 支持10种字段的解析，主要字段如下所示：
 
-> pdu_type
+> pdu\_type
 >
 > service
 >
-> object_name
+> object\_name
 >
 > arg1
 >
 > arg2
 >
-> arg2_split_0
+> arg2\_split\_0
 >
-> arg2_split_1
+> arg2\_split\_1
 >
-> arg2_split_2
+> arg2\_split\_2
 >
-> arg2_split_3
+> arg2\_split\_3
 >
 > address
 
@@ -3782,29 +3675,25 @@ style="width:5.76806in;height:0.66111in" />
 
 > 报文中功能码为write帧的情况如下图所示如下图：
 
-<img src="产品质量_li_img/media/image105.png"
-style="width:5.76806in;height:2.76458in" />
+![](产品质量\_li\_img/media/image105.png)
 
-<img src="产品质量_li_img/media/image106.png"
-style="width:5.76806in;height:3.99028in" />
+![](产品质量\_li\_img/media/image106.png)
 
 > ISTP检测报文中功能码为write帧的情况如下图所示如下图：
 
-<img src="产品质量_li_img/media/image107.png"
-style="width:5.76806in;height:1.45417in" />
+![](产品质量\_li\_img/media/image107.png)
 
-<img src="产品质量_li_img/media/image108.png"
-style="width:5.76806in;height:0.91806in" />
+![](产品质量\_li\_img/media/image108.png)
 
-#### 1.3.2.2. BACNET
+**1.3.2.2. BACNET**
 
 支持3种字段的解析，主要字段如下所示：
 
-> white_bvlc_function
+> white\_bvlc\_function
 >
-> white_apdu_type
+> white\_apdu\_type
 >
-> white_apdu_service
+> white\_apdu\_service
 
 发布标准：
 
@@ -3816,15 +3705,13 @@ style="width:5.76806in;height:0.91806in" />
 
 > 报文中功能码为Forwarded-NPDU帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image109.png"
-style="width:5.76806in;height:2.36597in" />
+![](产品质量\_li\_img/media/image109.png)
 
 > ISTP对报文中功能码为Forwarded-NPDU帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image110.png"
-style="width:5.76806in;height:0.99375in" />
+![](产品质量\_li\_img/media/image110.png)
 
-#### 1.3.2.3. CoAp
+**1.3.2.3. CoAp**
 
 支持4种字段的解析，主要字段如下所示：
 
@@ -3832,9 +3719,9 @@ style="width:5.76806in;height:0.99375in" />
 >
 > code
 >
-> uri_path.len
+> uri\_path.len
 >
-> uri_path.value
+> uri\_path.value
 
 发布标准：
 
@@ -3846,15 +3733,13 @@ style="width:5.76806in;height:0.99375in" />
 
 > 报文中功能码为GET的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image111.png"
-style="width:5.76806in;height:2.11181in" />
+![](产品质量\_li\_img/media/image111.png)
 
 > ISTP对报文中功能码为GET的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image112.png"
-style="width:5.76806in;height:2.27153in" />
+![](产品质量\_li\_img/media/image112.png)
 
-#### 1.3.2.4. DNP3 TCP
+**1.3.2.4. DNP3 TCP**
 
 支持5种字段的解析，主要字段如下所示：
 
@@ -3862,11 +3747,11 @@ style="width:5.76806in;height:2.27153in" />
 >
 > source
 >
-> function_code
+> function\_code
 >
-> object_obj
+> object\_obj
 >
-> object_var
+> object\_var
 
 发布标准：
 
@@ -3878,15 +3763,13 @@ style="width:5.76806in;height:2.27153in" />
 
 > 报文中功能码为Read的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image113.png"
-style="width:5.76806in;height:2.90556in" />
+![](产品质量\_li\_img/media/image113.png)
 
 > ISTP对报文中功能码为Read的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image114.png"
-style="width:5.76806in;height:1.84167in" />
+![](产品质量\_li\_img/media/image114.png)
 
-#### 1.3.2.5. DNP3 UDP
+**1.3.2.5. DNP3 UDP**
 
 支持5种字段的解析，主要字段如下所示：
 
@@ -3894,11 +3777,11 @@ style="width:5.76806in;height:1.84167in" />
 >
 > source
 >
-> function_code
+> function\_code
 >
-> object_obj
+> object\_obj
 >
-> object_var
+> object\_var
 
 发布标准：
 
@@ -3910,15 +3793,13 @@ style="width:5.76806in;height:1.84167in" />
 
 > 报文中功能码为write的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image115.png"
-style="width:5.76806in;height:3.21528in" />
+![](产品质量\_li\_img/media/image115.png)
 
 > ISTP对报文中功能码为write的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image116.png"
-style="width:5.76806in;height:1.18264in" />
+![](产品质量\_li\_img/media/image116.png)
 
-#### 1.3.2.6. ENIP
+**1.3.2.6. ENIP**
 
 支持1种字段的解析，主要字段如下所示：
 
@@ -3934,15 +3815,13 @@ style="width:5.76806in;height:1.18264in" />
 
 > 报文中功能码为List Services的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image117.png"
-style="width:5.76806in;height:2.57917in" />
+![](产品质量\_li\_img/media/image117.png)
 
 > ISTP对报文中功能码为List Services的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image118.png"
-style="width:5.76806in;height:1.78681in" />
+![](产品质量\_li\_img/media/image118.png)
 
-#### 1.3.2.7. CIP_COMMON
+**1.3.2.7. CIP\_COMMON**
 
 支持2种字段的解析，主要字段如下所示：
 
@@ -3960,15 +3839,13 @@ style="width:5.76806in;height:1.78681in" />
 
 > 报文中服务为Get Attributes All的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image119.png"
-style="width:5.76806in;height:2.73542in" />
+![](产品质量\_li\_img/media/image119.png)
 
 > ISTP对报文中服务为Get Attributes All的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image120.png"
-style="width:5.76806in;height:1.50972in" />
+![](产品质量\_li\_img/media/image120.png)
 
-#### 1.3.2.8. CIP_Logix5000
+**1.3.2.8. CIP\_Logix5000**
 
 支持4种字段的解析，主要字段如下所示：
 
@@ -3976,7 +3853,7 @@ style="width:5.76806in;height:1.50972in" />
 >
 > iclass
 >
-> pIOI_len
+> pIOI\_len
 >
 > pIOI
 
@@ -3990,15 +3867,13 @@ style="width:5.76806in;height:1.50972in" />
 
 > 报文中服务为Multiple Service Packet的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image121.png"
-style="width:5.76806in;height:3.74306in" />
+![](产品质量\_li\_img/media/image121.png)
 
 > ISTP对报文中服务为Multiple Service Packet的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image122.png"
-style="width:5.76806in;height:1.07014in" />
+![](产品质量\_li\_img/media/image122.png)
 
-#### 1.3.2.9. CIP_PCCC
+**1.3.2.9. CIP\_PCCC**
 
 支持4种字段的解析，主要字段如下所示：
 
@@ -4006,9 +3881,9 @@ style="width:5.76806in;height:1.07014in" />
 >
 > iclass
 >
-> pccc_fnc
+> pccc\_fnc
 >
-> pccc_cmd
+> pccc\_cmd
 
 发布标准：
 
@@ -4020,15 +3895,13 @@ style="width:5.76806in;height:1.07014in" />
 
 > 报文中服务为Execute PCCC的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image123.png"
-style="width:5.76806in;height:3.04722in" />
+![](产品质量\_li\_img/media/image123.png)
 
 > ISTP对报文中服务为Execute PCCC的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image124.png"
-style="width:5.76806in;height:1.28056in" />
+![](产品质量\_li\_img/media/image124.png)
 
-#### 1.3.2.10. Etrol_SL304_TCP
+**1.3.2.10. Etrol\_SL304\_TCP**
 
 支持3种字段的解析，主要字段如下所示：
 
@@ -4048,19 +3921,17 @@ style="width:5.76806in;height:1.28056in" />
 
 > 报文中dtype为0x01的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image125.png"
-style="width:5.76806in;height:1.68194in" />
+![](产品质量\_li\_img/media/image125.png)
 
 > ISTP对报文中dtype为0x01的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image126.png"
-style="width:5.76806in;height:1.37292in" />
+![](产品质量\_li\_img/media/image126.png)
 
-#### 1.3.2.11. Focas
+**1.3.2.11. Focas**
 
 支持1种字段的解析，主要字段如下所示：
 
-> function_code
+> function\_code
 
 发布标准：
 
@@ -4072,23 +3943,21 @@ style="width:5.76806in;height:1.37292in" />
 
 > 报文中功能码为1的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image127.png"
-style="width:5.76806in;height:1.53472in" />
+![](产品质量\_li\_img/media/image127.png)
 
 > ISTP对报文中功能码为1的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image128.png"
-style="width:5.76806in;height:1.29306in" />
+![](产品质量\_li\_img/media/image128.png)
 
-#### 1.3.2.12. GDW 3761
+**1.3.2.12. GDW 3761**
 
 支持3种字段的解析，主要字段如下所示：
 
-> afn_code
+> afn\_code
 >
-> term_address
+> term\_address
 >
-> master_address
+> master\_address
 
 发布标准：
 
@@ -4100,15 +3969,13 @@ style="width:5.76806in;height:1.29306in" />
 
 > 报文中功能码为0的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image129.png"
-style="width:5.76806in;height:1.33681in" />
+![](产品质量\_li\_img/media/image129.png)
 
 > ISTP对报文中功能码为0的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image130.png"
-style="width:5.76806in;height:1.04861in" />
+![](产品质量\_li\_img/media/image130.png)
 
-#### 1.3.2.13. GOOSE
+**1.3.2.13. GOOSE**
 
 支持4种字段的解析，主要字段如下所示：
 
@@ -4130,27 +3997,25 @@ style="width:5.76806in;height:1.04861in" />
 
 > appid为001的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image131.png"
-style="width:5.76806in;height:4.75694in" />
+![](产品质量\_li\_img/media/image131.png)
 
 > ISTP对appid为001的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image132.png"
-style="width:5.76806in;height:0.8875in" />
+![](产品质量\_li\_img/media/image132.png)
 
-#### 1.3.2.14. HartIP_TCP
+**1.3.2.14. HartIP\_TCP**
 
 支持5种字段的解析，主要字段如下所示：
 
-> message_id
+> message\_id
 >
-> frame_type
+> frame\_type
 >
-> long_address
+> long\_address
 >
 > command
 >
-> short_address
+> short\_address
 
 发布标准：
 
@@ -4162,33 +4027,29 @@ style="width:5.76806in;height:0.8875in" />
 
 > 报文中Frame Type为2的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image133.png"
-style="width:5.76806in;height:2.875in" />
+![](产品质量\_li\_img/media/image133.png)
 
-<img src="产品质量_li_img/media/image134.png"
-style="width:5.76806in;height:3.01736in" />
+![](产品质量\_li\_img/media/image134.png)
 
 > ISTP对报文中Frame Type为2的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image135.png"
-style="width:5.76806in;height:0.98056in" />
+![](产品质量\_li\_img/media/image135.png)
 
-<img src="产品质量_li_img/media/image136.png"
-style="width:5.76806in;height:1.01875in" />
+![](产品质量\_li\_img/media/image136.png)
 
-#### 1.3.2.15. HartIP_UDP
+**1.3.2.15. HartIP\_UDP**
 
 支持5种字段的解析，主要字段如下所示：
 
-> message_id
+> message\_id
 >
-> frame_type
+> frame\_type
 >
-> long_address
+> long\_address
 >
 > command
 >
-> short_address
+> short\_address
 
 发布标准：
 
@@ -4200,25 +4061,21 @@ style="width:5.76806in;height:1.01875in" />
 
 > 报文中Frame Type为2的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image137.png"
-style="width:5.76806in;height:1.83819in" />
+![](产品质量\_li\_img/media/image137.png)
 
-<img src="产品质量_li_img/media/image138.png"
-style="width:5.76806in;height:2.79583in" />
+![](产品质量\_li\_img/media/image138.png)
 
 > ISTP对报文中Frame Type为2的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image139.png"
-style="width:5.76806in;height:0.95417in" />
+![](产品质量\_li\_img/media/image139.png)
 
-<img src="产品质量_li_img/media/image140.png"
-style="width:5.76806in;height:1.00139in" />
+![](产品质量\_li\_img/media/image140.png)
 
-#### 1.3.2.16. HuaTong_2000R_TCP
+**1.3.2.16. HuaTong\_2000R\_TCP**
 
 支持2种字段的解析，主要字段如下所示：
 
-> func_code
+> func\_code
 >
 > addr
 
@@ -4232,19 +4089,17 @@ style="width:5.76806in;height:1.00139in" />
 
 > 功能码为5的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image141.png"
-style="width:5.76806in;height:1.55764in" />
+![](产品质量\_li\_img/media/image141.png)
 
 > ISTP检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image142.png"
-style="width:5.76806in;height:1.15903in" />
+![](产品质量\_li\_img/media/image142.png)
 
-#### 1.3.2.17. IEC104
+**1.3.2.17. IEC104**
 
 支持3种字段的解析，主要字段如下所示：
 
-> type_id
+> type\_id
 >
 > addr
 >
@@ -4260,19 +4115,17 @@ style="width:5.76806in;height:1.15903in" />
 
 > 报文中TypeId为45的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image143.png"
-style="width:5.76806in;height:2.52569in" />
+![](产品质量\_li\_img/media/image143.png)
 
 > ISTP对报文中TypeId为45的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image144.png"
-style="width:5.76806in;height:1.03194in" />
+![](产品质量\_li\_img/media/image144.png)
 
-#### 1.3.2.18. JX300
+**1.3.2.18. JX300**
 
 支持1种字段的解析，主要字段如下所示：
 
-> function_code
+> function\_code
 
 发布标准：
 
@@ -4284,21 +4137,19 @@ style="width:5.76806in;height:1.03194in" />
 
 > 报文中功能码为0的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image145.png"
-style="width:5.76806in;height:3.17847in" />
+![](产品质量\_li\_img/media/image145.png)
 
 > ISTP对报文中功能码为0的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image146.png"
-style="width:5.76806in;height:3.58611in" />
+![](产品质量\_li\_img/media/image146.png)
 
-#### 1.3.2.19. MELSEC_TCP
+**1.3.2.19. MELSEC\_TCP**
 
 支持2种字段的解析，主要字段如下所示：
 
 > command
 >
-> sub_command
+> sub\_command
 
 发布标准：
 
@@ -4310,25 +4161,23 @@ style="width:5.76806in;height:3.58611in" />
 
 > 报文中功能码为1025的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image147.png"
-style="width:5.76806in;height:1.84722in" />
+![](产品质量\_li\_img/media/image147.png)
 
 > ISTP对报文中功能码为1025的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image148.png"
-style="width:5.76806in;height:1.15972in" />
+![](产品质量\_li\_img/media/image148.png)
 
-#### 1.3.2.20. Modbus_TCP
+**1.3.2.20. Modbus\_TCP**
 
 支持4种字段的解析，主要字段如下所示：
 
-> function_code
+> function\_code
 >
-> start_addr
+> start\_addr
 >
-> end_addr
+> end\_addr
 >
-> sub_function_code
+> sub\_function\_code
 
 发布标准：
 
@@ -4340,25 +4189,23 @@ style="width:5.76806in;height:1.15972in" />
 
 > 报文中功能码为1 的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image149.png"
-style="width:5.76806in;height:2.0875in" />
+![](产品质量\_li\_img/media/image149.png)
 
 > ISTP对报文中功能码为1 的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image150.png"
-style="width:5.76806in;height:1.06042in" />
+![](产品质量\_li\_img/media/image150.png)
 
-#### 1.3.2.21. Modbus_UDP
+**1.3.2.21. Modbus\_UDP**
 
 支持4种字段的解析，主要字段如下所示：
 
-> function_code
+> function\_code
 >
-> start_addr
+> start\_addr
 >
-> end_addr
+> end\_addr
 >
-> sub_function_code
+> sub\_function\_code
 
 发布标准：
 
@@ -4370,23 +4217,21 @@ style="width:5.76806in;height:1.06042in" />
 
 > 报文中功能码为1 的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image151.png"
-style="width:5.76806in;height:2.03542in" />
+![](产品质量\_li\_img/media/image151.png)
 
 > ISTP对报文中功能码为1 的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image152.png"
-style="width:5.76806in;height:1.09792in" />
+![](产品质量\_li\_img/media/image152.png)
 
-#### 1.3.2.22. Modbus_UMAS
+**1.3.2.22. Modbus\_UMAS**
 
 支持3种字段的解析，主要字段如下所示：
 
-> function_code
+> function\_code
 >
-> sub_function_code
+> sub\_function\_code
 >
-> umas_sub_function_code
+> umas\_sub\_function\_code
 
 发布标准：
 
@@ -4398,23 +4243,21 @@ style="width:5.76806in;height:1.09792in" />
 
 > 报文中功能码为90 的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image153.png"
-style="width:5.76806in;height:2.0625in" />
+![](产品质量\_li\_img/media/image153.png)
 
 > ISTP检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image154.png"
-style="width:5.76806in;height:1.01111in" />
+![](产品质量\_li\_img/media/image154.png)
 
-#### 1.3.2.23. Modbus_RTU（不支持）
+**1.3.2.23. Modbus\_RTU（不支持）**
 
 支持3种字段的解析，主要字段如下所示：
 
-> function_code
+> function\_code
 >
-> start_addr
+> start\_addr
 >
-> end_addr
+> end\_addr
 
 发布标准：
 
@@ -4426,29 +4269,27 @@ style="width:5.76806in;height:1.01111in" />
 
 > 报文中功能码为1 的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image155.png"
-style="width:5.76806in;height:1.65972in" />
+![](产品质量\_li\_img/media/image155.png)
 
 > ISTP对报文中功能码为1 的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image156.png"
-style="width:5.76806in;height:1.26736in" />
+![](产品质量\_li\_img/media/image156.png)
 
-#### 1.3.2.24. MQTT
+**1.3.2.24. MQTT**
 
 支持7种字段的解析，主要字段如下所示：
 
-> message_type
+> message\_type
 >
-> username_len
+> username\_len
 >
 > username
 >
-> passwd_len
+> passwd\_len
 >
 > passwd
 >
-> topic_len
+> topic\_len
 >
 > topic
 
@@ -4460,29 +4301,23 @@ style="width:5.76806in;height:1.26736in" />
 
 测试用例举例说明：
 
-> 报文中Message Type分别为Connect Command和Public
-> Message的帧的情况如下图所示：
+> 报文中Message Type分别为Connect Command和Public Message的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image157.png"
-style="width:5.76806in;height:2.99028in" />
+![](产品质量\_li\_img/media/image157.png)
 
-<img src="产品质量_li_img/media/image158.png"
-style="width:5.76806in;height:2.77292in" />
+![](产品质量\_li\_img/media/image158.png)
 
-> ISTP对报文中Message Type分别为Connect Command和Public
-> Message的帧的检测情况如下图所示：
+> ISTP对报文中Message Type分别为Connect Command和Public Message的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image159.png"
-style="width:5.76806in;height:1.07153in" />
+![](产品质量\_li\_img/media/image159.png)
 
-<img src="产品质量_li_img/media/image160.png"
-style="width:5.76806in;height:1.57569in" />
+![](产品质量\_li\_img/media/image160.png)
 
-#### 1.3.2.25. NA_RTU_TCP
+**1.3.2.25. NA\_RTU\_TCP**
 
 支持2种字段的解析，主要字段如下所示：
 
-> func_code
+> func\_code
 >
 > addr
 
@@ -4496,19 +4331,17 @@ style="width:5.76806in;height:1.57569in" />
 
 > 报文中功能码为0x61的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image161.png"
-style="width:5.76806in;height:1.75417in" />
+![](产品质量\_li\_img/media/image161.png)
 
 > ISTP对报文中功能码为0x61的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image162.png"
-style="width:5.76806in;height:1.42014in" />
+![](产品质量\_li\_img/media/image162.png)
 
-#### 1.3.2.26. OMRON_TCP
+**1.3.2.26. OMRON\_TCP**
 
 支持7种字段的解析，主要字段如下所示：
 
-> command_code
+> command\_code
 >
 > arg1
 >
@@ -4530,28 +4363,23 @@ style="width:5.76806in;height:1.42014in" />
 
 测试用例举例说明：
 
-> 报文中功能码分别为0x0105 Memory Area Transfer和0x2202 Single File
-> Read的帧的情况如下图所示：
+> 报文中功能码分别为0x0105 Memory Area Transfer和0x2202 Single File Read的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image163.png"
-style="width:5.76806in;height:5.35417in" />
+![](产品质量\_li\_img/media/image163.png)
 
-<img src="产品质量_li_img/media/image164.png"
-style="width:5.76806in;height:5.27639in" />
+![](产品质量\_li\_img/media/image164.png)
 
 > ISTP检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image165.png"
-style="width:5.76806in;height:0.94444in" />
+![](产品质量\_li\_img/media/image165.png)
 
-<img src="产品质量_li_img/media/image166.png"
-style="width:5.76806in;height:0.94722in" />
+![](产品质量\_li\_img/media/image166.png)
 
-#### 1.3.2.27. OMRON_UDP
+**1.3.2.27. OMRON\_UDP**
 
 支持7种字段的解析，主要字段如下所示：
 
-> command_code
+> command\_code
 >
 > arg1
 >
@@ -4573,30 +4401,25 @@ style="width:5.76806in;height:0.94722in" />
 
 测试用例举例说明：
 
-> 报文中功能码分别为0x0105 Memory Area Transfer和0x2202 Single File
-> Read的帧的情况如下图所示：
+> 报文中功能码分别为0x0105 Memory Area Transfer和0x2202 Single File Read的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image167.png"
-style="width:5.76806in;height:1.78194in" />
+![](产品质量\_li\_img/media/image167.png)
 
-<img src="产品质量_li_img/media/image168.png"
-style="width:5.76806in;height:1.93542in" />
+![](产品质量\_li\_img/media/image168.png)
 
 > ISTP检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image169.png"
-style="width:5.76806in;height:0.91806in" />
+![](产品质量\_li\_img/media/image169.png)
 
-<img src="产品质量_li_img/media/image170.png"
-style="width:5.76806in;height:0.94097in" />
+![](产品质量\_li\_img/media/image170.png)
 
-#### 1.3.2.28. OPC_DA
+**1.3.2.28. OPC\_DA**
 
 支持2种字段的解析，主要字段如下所示：
 
-> opc_interface
+> opc\_interface
 >
-> opc_function
+> opc\_function
 
 发布标准：
 
@@ -4606,25 +4429,23 @@ style="width:5.76806in;height:0.94097in" />
 
 测试用例举例说明：
 
-> 报文中opc_interface为IOPCShutdown且opc_function为ShutdownRequest情况如下图所示：
+> 报文中opc\_interface为IOPCShutdown且opc\_function为ShutdownRequest情况如下图所示：
 
-<img src="产品质量_li_img/media/image171.png"
-style="width:5.76806in;height:3.05625in" />
+![](产品质量\_li\_img/media/image171.png)
 
-> ISTP对报文中opc_interface为IOPCShutdown且opc_function为ShutdownRequest的检测情况如下图所示：
+> ISTP对报文中opc\_interface为IOPCShutdown且opc\_function为ShutdownRequest的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image172.png"
-style="width:5.76806in;height:1.22639in" />
+![](产品质量\_li\_img/media/image172.png)
 
-#### 1.3.2.29. OPC_UA
+**1.3.2.29. OPC\_UA**
 
 支持3种字段的解析，主要字段如下所示：
 
-> message_type
+> message\_type
 >
-> chunk_type
+> chunk\_type
 >
-> identifier_numeric
+> identifier\_numeric
 
 发布标准：
 
@@ -4636,21 +4457,19 @@ style="width:5.76806in;height:1.22639in" />
 
 > 报文中Message Type为MSG的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image173.png"
-style="width:5.76806in;height:3.73333in" />
+![](产品质量\_li\_img/media/image173.png)
 
 > ISTP对报文中Message Type为MSG的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image174.png"
-style="width:5.76806in;height:0.95278in" />
+![](产品质量\_li\_img/media/image174.png)
 
-#### 1.3.2.30. Ovation_TCP
+**1.3.2.30. Ovation\_TCP**
 
 支持2种字段的解析，主要字段如下所示：
 
 > type
 >
-> func_code
+> func\_code
 
 发布标准：
 
@@ -4662,21 +4481,19 @@ style="width:5.76806in;height:0.95278in" />
 
 > 报文中功能码为2的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image175.png"
-style="width:5.76806in;height:1.96528in" />
+![](产品质量\_li\_img/media/image175.png)
 
 > ISTP检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image176.png"
-style="width:5.76806in;height:1.45764in" />
+![](产品质量\_li\_img/media/image176.png)
 
-#### 1.3.2.31. Profinet_DCP
+**1.3.2.31. Profinet\_DCP**
 
 支持4种字段的解析，主要字段如下所示：
 
-> service_id
+> service\_id
 >
-> service_type
+> service\_type
 >
 > option
 >
@@ -4692,15 +4509,13 @@ style="width:5.76806in;height:1.45764in" />
 
 > 报文中功能码为Set的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image177.png"
-style="width:5.76806in;height:2.85347in" />
+![](产品质量\_li\_img/media/image177.png)
 
 > ISTP对报文中功能码为Set的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image178.png"
-style="width:5.76806in;height:1.05625in" />
+![](产品质量\_li\_img/media/image178.png)
 
-#### 1.3.2.32. Profinet_MRP
+**1.3.2.32. Profinet\_MRP**
 
 支持4种字段的解析，主要字段如下所示：
 
@@ -4720,23 +4535,19 @@ style="width:5.76806in;height:1.05625in" />
 
 测试用例举例说明：
 
-> 报文中Type类型分别为MRP_Common和MRP_Option的帧的情况如下图所示：
+> 报文中Type类型分别为MRP\_Common和MRP\_Option的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image179.png"
-style="width:5.76806in;height:2.40208in" />
+![](产品质量\_li\_img/media/image179.png)
 
-<img src="产品质量_li_img/media/image180.png"
-style="width:5.76806in;height:2.00903in" />
+![](产品质量\_li\_img/media/image180.png)
 
-> ISTP对报文中Type类型分别为MRP_Common和MRP_Option的帧的检测情况如下图所示：
+> ISTP对报文中Type类型分别为MRP\_Common和MRP\_Option的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image181.png"
-style="width:5.76806in;height:0.90486in" />
+![](产品质量\_li\_img/media/image181.png)
 
-<img src="产品质量_li_img/media/image182.png"
-style="width:5.76806in;height:1.18611in" />
+![](产品质量\_li\_img/media/image182.png)
 
-#### 1.3.2.33. Profinet_MRRT
+**1.3.2.33. Profinet\_MRRT**
 
 支持3种字段的解析，主要字段如下所示：
 
@@ -4756,15 +4567,13 @@ style="width:5.76806in;height:1.18611in" />
 
 > 报文中Type为0x01 Common的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image183.png"
-style="width:5.76806in;height:3.46667in" />
+![](产品质量\_li\_img/media/image183.png)
 
 > ISTP对报文中Type为0x01 Common的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image184.png"
-style="width:5.76806in;height:0.87778in" />
+![](产品质量\_li\_img/media/image184.png)
 
-#### 1.3.2.34. Profinet_PTCP
+**1.3.2.34. Profinet\_PTCP**
 
 支持5种字段的解析，主要字段如下所示：
 
@@ -4788,25 +4597,21 @@ style="width:5.76806in;height:0.87778in" />
 
 > 报文中Type分别为1和2的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image185.png"
-style="width:5.76806in;height:3.175in" />
+![](产品质量\_li\_img/media/image185.png)
 
-<img src="产品质量_li_img/media/image186.png"
-style="width:5.76806in;height:2.54931in" />
+![](产品质量\_li\_img/media/image186.png)
 
 > ISTP对报文中Type分别为1和2的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image187.png"
-style="width:5.76806in;height:0.90208in" />
+![](产品质量\_li\_img/media/image187.png)
 
-<img src="产品质量_li_img/media/image188.png"
-style="width:5.76806in;height:1.04167in" />
+![](产品质量\_li\_img/media/image188.png)
 
-#### 1.3.2.35. Profinet_RTC1
+**1.3.2.35. Profinet\_RTC1**
 
 支持1种字段的解析，主要字段如下所示：
 
-> frame_id
+> frame\_id
 
 发布标准：
 
@@ -4818,19 +4623,17 @@ style="width:5.76806in;height:1.04167in" />
 
 > 报文中FrameID为0x8000的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image189.png"
-style="width:5.76806in;height:4.35208in" />
+![](产品质量\_li\_img/media/image189.png)
 
 > ISTP对报文中FrameID为0x8000的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image190.png"
-style="width:5.76806in;height:1.27778in" />
+![](产品质量\_li\_img/media/image190.png)
 
-#### 1.3.2.36. Profinet_RTC3
+**1.3.2.36. Profinet\_RTC3**
 
 支持1种字段的解析，主要字段如下所示：
 
-> frame_id
+> frame\_id
 
 发布标准：
 
@@ -4842,23 +4645,21 @@ style="width:5.76806in;height:1.27778in" />
 
 > 报文中FrameID为0x0100的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image191.png"
-style="width:5.76806in;height:4.32847in" />
+![](产品质量\_li\_img/media/image191.png)
 
 > ISTP对报文中FrameID为0x0100的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image192.png"
-style="width:5.76806in;height:1.27361in" />
+![](产品质量\_li\_img/media/image192.png)
 
-#### 1.3.2.37. RSSP-1
+**1.3.2.37. RSSP-1**
 
 支持3种字段的解析，主要字段如下所示：
 
-> interaction_type
+> interaction\_type
 >
-> src_address
+> src\_address
 >
-> dst_address
+> dst\_address
 
 发布标准：
 
@@ -4870,15 +4671,13 @@ style="width:5.76806in;height:1.27361in" />
 
 > 报文中Interaction Type为0x01的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image193.png"
-style="width:5.76806in;height:1.72014in" />
+![](产品质量\_li\_img/media/image193.png)
 
 > ISTP检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image194.png"
-style="width:5.76806in;height:1.84861in" />
+![](产品质量\_li\_img/media/image194.png)
 
-#### 1.3.2.38. S7
+**1.3.2.38. S7**
 
 支持8种字段的解析，主要字段如下所示：
 
@@ -4906,31 +4705,25 @@ style="width:5.76806in;height:1.84861in" />
 
 测试用例举例说明：
 
-> 报文中分别为功能码为Read Var以及功能码组为Cyclic
-> Services的帧的情况如下图所示：
+> 报文中分别为功能码为Read Var以及功能码组为Cyclic Services的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image195.png"
-style="width:5.76806in;height:3.54097in" />
+![](产品质量\_li\_img/media/image195.png)
 
-<img src="产品质量_li_img/media/image196.png"
-style="width:5.76806in;height:3.33958in" />
+![](产品质量\_li\_img/media/image196.png)
 
-> ISTP对报文中分别为功能码为Read Var以及功能码组为Cyclic
-> Services的帧的检测情况如下图所示：
+> ISTP对报文中分别为功能码为Read Var以及功能码组为Cyclic Services的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image197.png"
-style="width:5.76806in;height:0.90833in" />
+![](产品质量\_li\_img/media/image197.png)
 
-<img src="产品质量_li_img/media/image198.png"
-style="width:5.76806in;height:2.35347in" />
+![](产品质量\_li\_img/media/image198.png)
 
-#### 1.3.2.39. S7_Plus
+**1.3.2.39. S7\_Plus**
 
 支持2种字段的解析，主要字段如下所示：
 
 > opcode
 >
-> function_code
+> function\_code
 
 发布标准：
 
@@ -4942,23 +4735,21 @@ style="width:5.76806in;height:2.35347in" />
 
 > 报文中功能码为Explore的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image199.png"
-style="width:5.76806in;height:2.76042in" />
+![](产品质量\_li\_img/media/image199.png)
 
 > ISTP对报文中功能码为Explore的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image200.png"
-style="width:5.76806in;height:2.23681in" />
+![](产品质量\_li\_img/media/image200.png)
 
-#### 1.3.2.40. GE_SRTP
+**1.3.2.40. GE\_SRTP**
 
 支持3种字段的解析，主要字段如下所示：
 
-> service_request_code
+> service\_request\_code
 >
-> segment_selector
+> segment\_selector
 >
-> data_offset
+> data\_offset
 
 发布标准：
 
@@ -4970,15 +4761,13 @@ style="width:5.76806in;height:2.23681in" />
 
 > 报文中Service Request Code为0的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image201.png"
-style="width:5.76806in;height:1.69375in" />
+![](产品质量\_li\_img/media/image201.png)
 
 > ISTP对报文中Service Request Code为0的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image202.png"
-style="width:5.76806in;height:1.02778in" />
+![](产品质量\_li\_img/media/image202.png)
 
-#### 1.3.2.41. SV
+**1.3.2.41. SV**
 
 支持2种字段的解析，主要字段如下所示：
 
@@ -4996,15 +4785,13 @@ style="width:5.76806in;height:1.02778in" />
 
 > 报文中APPID为0x4000的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image203.png"
-style="width:5.76806in;height:3.76667in" />
+![](产品质量\_li\_img/media/image203.png)
 
 > ISTP对报文中APPID为0x4000的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image204.png"
-style="width:5.76806in;height:1.06111in" />
+![](产品质量\_li\_img/media/image204.png)
 
-#### 1.3.2.42. Shanghaixinhua_DCS
+**1.3.2.42. Shanghaixinhua\_DCS**
 
 支持5种字段的解析，主要字段如下所示：
 
@@ -5028,15 +4815,13 @@ style="width:5.76806in;height:1.06111in" />
 
 > 报文中命令为0x0900的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image90.png"
-style="width:5.76806in;height:1.50069in" />
+![](产品质量\_li\_img/media/image90.png)
 
 > ISTP对报文中命令为0x0900的帧的情况检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image205.png"
-style="width:5.76806in;height:1.1125in" />
+![](产品质量\_li\_img/media/image205.png)
 
-#### 1.3.2.43. IEC103_UDP（NR）
+**1.3.2.43. IEC103\_UDP（NR）**
 
 支持4种字段的解析，主要字段如下所示：
 
@@ -5058,19 +4843,17 @@ style="width:5.76806in;height:1.1125in" />
 
 > 报文中SourceFactoryId、DestinationFactoryId都为0的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image206.png"
-style="width:5.76806in;height:1.91389in" />
+![](产品质量\_li\_img/media/image206.png)
 
 > ISTP对报文中SourceFactoryId、DestinationFactoryId都为0的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image207.png"
-style="width:5.76806in;height:0.94722in" />
+![](产品质量\_li\_img/media/image207.png)
 
-#### 1.3.2.44. DICOM
+**1.3.2.44. DICOM**
 
 支持1种字段的解析，主要字段如下所示：
 
-> pdu_type
+> pdu\_type
 
 发布标准：
 
@@ -5082,15 +4865,13 @@ style="width:5.76806in;height:0.94722in" />
 
 > 报文中PDU Type为ASSOC Request的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image208.png"
-style="width:5.76806in;height:4.67014in" />
+![](产品质量\_li\_img/media/image208.png)
 
 > ISTP对报文中PDU Type为ASSOC Request的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image209.png"
-style="width:5.76806in;height:1.84375in" />
+![](产品质量\_li\_img/media/image209.png)
 
-#### 1.3.2.45. EtherCat
+**1.3.2.45. EtherCat**
 
 支持4种字段的解析，主要字段如下所示：
 
@@ -5112,23 +4893,21 @@ style="width:5.76806in;height:1.84375in" />
 
 > 报文中Type为0的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image210.png"
-style="width:5.76806in;height:1.69028in" />
+![](产品质量\_li\_img/media/image210.png)
 
 > ISTP对报文中Type为0的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image211.png"
-style="width:5.76806in;height:1.0875in" />
+![](产品质量\_li\_img/media/image211.png)
 
-#### 1.3.2.46. GSK
+**1.3.2.46. GSK**
 
 支持3种字段的解析，主要字段如下所示：
 
-> send_to_id
+> send\_to\_id
 >
-> local_mac
+> local\_mac
 >
-> des_mac
+> des\_mac
 
 发布标准：
 
@@ -5140,21 +4919,19 @@ style="width:5.76806in;height:1.0875in" />
 
 > 报文中Send To Id为0x01的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image212.png"
-style="width:5.76806in;height:1.4625in" />
+![](产品质量\_li\_img/media/image212.png)
 
 > ISTP对报文中Send To Id为0x01的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image213.png"
-style="width:5.76806in;height:1.90833in" />
+![](产品质量\_li\_img/media/image213.png)
 
-#### 1.3.2.47. HL7
+**1.3.2.47. HL7**
 
 支持2种字段的解析，主要字段如下所示：
 
-> message_type
+> message\_type
 >
-> trigger_event
+> trigger\_event
 
 发布标准：
 
@@ -5166,21 +4943,19 @@ style="width:5.76806in;height:1.90833in" />
 
 > 报文中Message Type为RDE的帧的情况如下图所示：
 
-<img src="产品质量_li_img/media/image214.png"
-style="width:5.76806in;height:2.68681in" />
+![](产品质量\_li\_img/media/image214.png)
 
 > ISTP对报文中Message Type为RDE的帧的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image215.png"
-style="width:5.76806in;height:1.14167in" />
+![](产品质量\_li\_img/media/image215.png)
 
-#### 1.3.2.48. HNC
+**1.3.2.48. HNC**
 
 支持2种字段的解析，主要字段如下所示：
 
 > type
 >
-> msg_type
+> msg\_type
 
 发布标准：
 
@@ -5194,19 +4969,19 @@ style="width:5.76806in;height:1.14167in" />
 >
 > ISTP检测情况如下图所示：
 
-#### 1.3.2.49. HoneWell
+**1.3.2.49. HoneWell**
 
 支持5种字段的解析，主要字段如下所示：
 
-> item_num
+> item\_num
 >
 > items
 >
-> item_type
+> item\_type
 >
 > control
 >
-> func_code
+> func\_code
 
 发布标准：
 
@@ -5218,80 +4993,78 @@ style="width:5.76806in;height:1.14167in" />
 
 > 报文中功能码为0的情况如下图所示：
 
-<img src="产品质量_li_img/media/image216.png"
-style="width:5.76806in;height:1.54375in" />
+![](产品质量\_li\_img/media/image216.png)
 
 > ISTP对报文中功能码为0的检测情况如下图所示：
 
-<img src="产品质量_li_img/media/image217.png"
-style="width:5.76806in;height:1.33333in" />
+![](产品质量\_li\_img/media/image217.png)
 
-## 1.4. 关键事件检测
+### 1.4. 关键事件检测
 
-### 1.4.1. 功能说明
+#### 1.4.1. 功能说明
 
 通过对流量中的关键操作指令（如启动、停止、上传、下载等）进行解析及检测；从而实现对协议关键操作的检测。目前，ISTP支持31种协议的关键事件检测。
 
-### 1.4.2. 发布的标准
+#### 1.4.2. 发布的标准
 
-#### 1.4.2.1. MMS
+**1.4.2.1. MMS**
 
 该协议支持如下52种关键事件
 
 | **关键事件ID** | **关键事件名称** |
-|----------------|------------------|
-| 1              | 重命名           |
-| 2              | 写               |
-| 3              | 定义有名变量     |
-| 4              | 定义离散访问     |
-| 5              | 删除变量访问     |
-| 6              | 定义有名变量列表 |
-| 7              | 删除有名变量列表 |
-| 8              | 定义有名类型     |
-| 9              | 删除有名类型     |
-| 10             | 输入             |
-| 11             | 输出             |
-| 12             | 取得控制         |
-| 13             | 放弃控制         |
-| 14             | 定义信号量       |
-| 15             | 删除信号量       |
-| 16             | 初始下载序列     |
-| 17             | 下载段           |
-| 18             | 结束下载序列     |
-| 19             | 初始上载序列     |
-| 20             | 上载段           |
-| 21             | 结束上载序列     |
-| 22             | 请求域下载       |
-| 23             | 请求域上载       |
-| 24             | 装载域内容       |
-| 25             | 存储域内容       |
-| 26             | 删除域           |
-| 27             | 创建程序调用     |
-| 28             | 删除程序调用     |
-| 29             | 开始             |
-| 30             | 停止             |
-| 31             | 继续             |
-| 32             | 复位             |
-| 33             | 截杀             |
-| 34             | 获得文件         |
-| 35             | 定义事件条件     |
-| 36             | 删除事件条件     |
-| 37             | 调整事件条件监视 |
-| 38             | 触发事件         |
-| 39             | 定义事件动作     |
-| 40             | 删除事件动作     |
-| 41             | 定义事件入口     |
-| 42             | 删除事件入口     |
-| 43             | 调整事件入口     |
-| 44             | 写日志           |
-| 45             | 初始日志         |
-| 46             | 创建日志         |
-| 47             | 删除日志         |
-| 48             | 文件重命名       |
-| 49             | 文件删除         |
-| 50             | 文件打开         |
-| 51             | 文件读           |
-| 52             | 文件关闭         |
+| ---------- | ---------- |
+| 1          | 重命名        |
+| 2          | 写          |
+| 3          | 定义有名变量     |
+| 4          | 定义离散访问     |
+| 5          | 删除变量访问     |
+| 6          | 定义有名变量列表   |
+| 7          | 删除有名变量列表   |
+| 8          | 定义有名类型     |
+| 9          | 删除有名类型     |
+| 10         | 输入         |
+| 11         | 输出         |
+| 12         | 取得控制       |
+| 13         | 放弃控制       |
+| 14         | 定义信号量      |
+| 15         | 删除信号量      |
+| 16         | 初始下载序列     |
+| 17         | 下载段        |
+| 18         | 结束下载序列     |
+| 19         | 初始上载序列     |
+| 20         | 上载段        |
+| 21         | 结束上载序列     |
+| 22         | 请求域下载      |
+| 23         | 请求域上载      |
+| 24         | 装载域内容      |
+| 25         | 存储域内容      |
+| 26         | 删除域        |
+| 27         | 创建程序调用     |
+| 28         | 删除程序调用     |
+| 29         | 开始         |
+| 30         | 停止         |
+| 31         | 继续         |
+| 32         | 复位         |
+| 33         | 截杀         |
+| 34         | 获得文件       |
+| 35         | 定义事件条件     |
+| 36         | 删除事件条件     |
+| 37         | 调整事件条件监视   |
+| 38         | 触发事件       |
+| 39         | 定义事件动作     |
+| 40         | 删除事件动作     |
+| 41         | 定义事件入口     |
+| 42         | 删除事件入口     |
+| 43         | 调整事件入口     |
+| 44         | 写日志        |
+| 45         | 初始日志       |
+| 46         | 创建日志       |
+| 47         | 删除日志       |
+| 48         | 文件重命名      |
+| 49         | 文件删除       |
+| 50         | 文件打开       |
+| 51         | 文件读        |
+| 52         | 文件关闭       |
 
 发布标准
 
@@ -5305,23 +5078,21 @@ style="width:5.76806in;height:1.33333in" />
 
 > 以MMS协议“文件打开”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image218.png"
-> style="width:5.76806in;height:2.28403in" />
+> <img src="产品质量_li_img/media/image218.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 >
-> <img src="产品质量_li_img/media/image219.png"
-> style="width:5.75208in;height:1.38403in" />
+> <img src="产品质量_li_img/media/image219.png" alt="" data-size="original">
 
-#### 1.4.2.2. BACNET
+**1.4.2.2. BACNET**
 
 该协议支持如下3种关键事件
 
-| 关键事件ID | 关键事件名称                             |
-|------------|------------------------------------------|
-| 2          | 注册外部设备                             |
-| 3          | 从表中删除外部设备                       |
-| 4          | 外部设备可以使BBMD在所有IP子网上广播消息 |
+| 关键事件ID | 关键事件名称                  |
+| ------ | ----------------------- |
+| 2      | 注册外部设备                  |
+| 3      | 从表中删除外部设备               |
+| 4      | 外部设备可以使BBMD在所有IP子网上广播消息 |
 
 发布标准
 
@@ -5335,35 +5106,33 @@ style="width:5.76806in;height:1.33333in" />
 
 > 以该协议“注册外部设备”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image220.png"
-> style="width:5.76806in;height:2.47986in" />
+> <img src="产品质量_li_img/media/image220.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 >
-> <img src="产品质量_li_img/media/image221.png"
-> style="width:5.76806in;height:2.16806in" />
+> <img src="产品质量_li_img/media/image221.png" alt="" data-size="original">
 
-#### 1.4.2.3. CoAp
+**1.4.2.3. CoAp**
 
 该协议支持如下15种关键事件
 
-| 关键事件ID | 关键事件名称           |
-|------------|------------------------|
-| 1          | Bad Request            |
-| 2          | Unauthorized           |
-| 3          | Bad Option             |
-| 4          | Forbidden              |
-| 5          | Not Found              |
-| 6          | Method Not Allowed     |
-| 7          | Not Acceptable         |
-| 8          | Precondition Failed    |
-| 9          | Unsuppor Conten-Type   |
-| 10         | Internal Server Error  |
-| 11         | Not Implemented        |
-| 12         | Bad Gateway            |
-| 13         | Service Unavailable    |
-| 14         | Gateway Timeout        |
-| 15         | Proxying Not Supported |
+| 关键事件ID | 关键事件名称                 |
+| ------ | ---------------------- |
+| 1      | Bad Request            |
+| 2      | Unauthorized           |
+| 3      | Bad Option             |
+| 4      | Forbidden              |
+| 5      | Not Found              |
+| 6      | Method Not Allowed     |
+| 7      | Not Acceptable         |
+| 8      | Precondition Failed    |
+| 9      | Unsuppor Conten-Type   |
+| 10     | Internal Server Error  |
+| 11     | Not Implemented        |
+| 12     | Bad Gateway            |
+| 13     | Service Unavailable    |
+| 14     | Gateway Timeout        |
+| 15     | Proxying Not Supported |
 
 发布标准
 
@@ -5377,36 +5146,34 @@ style="width:5.76806in;height:1.33333in" />
 
 > 以该协议“Method Not Allowed”关键事件为例，报文内容如下图所示。
 
-<img src="产品质量_li_img/media/image222.png"
-style="width:5.76806in;height:2.57014in" />
+![](产品质量\_li\_img/media/image222.png)
 
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image223.png"
-style="width:5.75972in;height:2.21597in" />
+![](产品质量\_li\_img/media/image223.png)
 
-#### 1.4.2.4. DNP3 
+**1.4.2.4. DNP3**
 
 该协议支持如下16种关键事件
 
-| 关键事件ID | 关键事件名称     |
-|------------|------------------|
-| 2          | 冷再启动         |
-| 3          | 暖再启动         |
-| 4          | 保存配置         |
-| 5          | 删除文件         |
-| 6          | 恢复出厂设置     |
-| 7          | 初始化应用程序   |
-| 8          | 启动应用程序     |
-| 9          | 停止应用程序     |
-| 10         | 打开文件         |
-| 11         | 关闭文件         |
-| 12         | 获取文件信息     |
-| 13         | 文件认证         |
-| 14         | 文件传输中止     |
-| 15         | 身份认证请求     |
-| 16         | 身份认证失败通知 |
-| 17         | 身份认证响应     |
+| 关键事件ID | 关键事件名称   |
+| ------ | -------- |
+| 2      | 冷再启动     |
+| 3      | 暖再启动     |
+| 4      | 保存配置     |
+| 5      | 删除文件     |
+| 6      | 恢复出厂设置   |
+| 7      | 初始化应用程序  |
+| 8      | 启动应用程序   |
+| 9      | 停止应用程序   |
+| 10     | 打开文件     |
+| 11     | 关闭文件     |
+| 12     | 获取文件信息   |
+| 13     | 文件认证     |
+| 14     | 文件传输中止   |
+| 15     | 身份认证请求   |
+| 16     | 身份认证失败通知 |
+| 17     | 身份认证响应   |
 
 发布标准
 
@@ -5420,32 +5187,30 @@ style="width:5.75972in;height:2.21597in" />
 
 > 以该协议“冷再启动”关键事件为例，报文内容如下图所示。
 
-<img src="产品质量_li_img/media/image224.png"
-style="width:5.76806in;height:2.18958in" />
+![](产品质量\_li\_img/media/image224.png)
 
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image225.png"
-style="width:5.75972in;height:1.35972in" />
+![](产品质量\_li\_img/media/image225.png)
 
-#### 1.4.2.5. CIP_COMMON
+**1.4.2.5. CIP\_COMMON**
 
 该协议支持如下12种关键事件
 
 | 关键事件ID | 关键事件名称 |
-|------------|--------------|
-| 3          | 复位         |
-| 4          | 启动         |
-| 5          | 停止         |
-| 6          | 创建         |
-| 7          | 删除         |
-| 8          | 应用属性     |
-| 10         | 恢复         |
-| 11         | 保存         |
-| 13         | 插入成员     |
-| 14         | 移除成员     |
-| 15         | 下装         |
-| 16         | 上载         |
+| ------ | ------ |
+| 3      | 复位     |
+| 4      | 启动     |
+| 5      | 停止     |
+| 6      | 创建     |
+| 7      | 删除     |
+| 8      | 应用属性   |
+| 10     | 恢复     |
+| 11     | 保存     |
+| 13     | 插入成员   |
+| 14     | 移除成员   |
+| 15     | 下装     |
+| 16     | 上载     |
 
 发布标准
 
@@ -5459,42 +5224,40 @@ style="width:5.75972in;height:1.35972in" />
 
 > 以该协议“复位”关键事件为例，报文内容如下图所示。
 
-<img src="产品质量_li_img/media/image226.png"
-style="width:5.76806in;height:2.95278in" />
+![](产品质量\_li\_img/media/image226.png)
 
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image227.png"
-style="width:5.76806in;height:2.07222in" />
+![](产品质量\_li\_img/media/image227.png)
 
-#### 1.4.2.6. CIP_PCCC
+**1.4.2.6. CIP\_PCCC**
 
 该协议支持如下22种关键事件
 
-| 关键事件ID | 关键事件名称                |
-|------------|-----------------------------|
-| 20         | download all request        |
-| 21         | download completed          |
-| 22         | download request            |
-| 23         | file write                  |
-| 29         | restart request             |
-| 30         | set CPU mode                |
-| 31         | shutdown                    |
-| 35         | upload all request (upload) |
-| 36         | upload completed            |
-| 37         | upload                      |
-| 40         | open file                   |
-| 41         | change mode                 |
-| 42         | close file                  |
-| 43         | disable forces              |
-| 44         | disable outputs             |
-| 45         | enable outputs              |
-| 46         | enable PLC scanning         |
-| 47         | enter download mode         |
-| 48         | enter upload mode           |
-| 49         | exit download/upload mode   |
-| 50         | file read                   |
-| 51         | initialize memory           |
+| 关键事件ID | 关键事件名称                      |
+| ------ | --------------------------- |
+| 20     | download all request        |
+| 21     | download completed          |
+| 22     | download request            |
+| 23     | file write                  |
+| 29     | restart request             |
+| 30     | set CPU mode                |
+| 31     | shutdown                    |
+| 35     | upload all request (upload) |
+| 36     | upload completed            |
+| 37     | upload                      |
+| 40     | open file                   |
+| 41     | change mode                 |
+| 42     | close file                  |
+| 43     | disable forces              |
+| 44     | disable outputs             |
+| 45     | enable outputs              |
+| 46     | enable PLC scanning         |
+| 47     | enter download mode         |
+| 48     | enter upload mode           |
+| 49     | exit download/upload mode   |
+| 50     | file read                   |
+| 51     | initialize memory           |
 
 发布标准
 
@@ -5508,84 +5271,24 @@ style="width:5.76806in;height:2.07222in" />
 
 > 以该协议“download all request”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image228.png"
-> style="width:5.76806in;height:2.84931in" />
+> <img src="产品质量_li_img/media/image228.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image229.png"
-style="width:5.76806in;height:1.38611in" />
+![](产品质量\_li\_img/media/image229.png)
 
-#### 1.4.2.7. Etrol_SL304_TCP
+**1.4.2.7. Etrol\_SL304\_TCP**
 
 该协议支持如下6种关键事件
 
-<table>
-<colgroup>
-<col style="width: 28%" />
-<col style="width: 71%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><blockquote>
-<p>关键事件ID</p>
-</blockquote></th>
-<th><blockquote>
-<p>关键事件名称</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><blockquote>
-<p>1</p>
-</blockquote></td>
-<td><blockquote>
-<p>井口配置</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>2</p>
-</blockquote></td>
-<td><blockquote>
-<p>RTU配置</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>3</p>
-</blockquote></td>
-<td><blockquote>
-<p>开机</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4</p>
-</blockquote></td>
-<td><blockquote>
-<p>关机</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>5</p>
-</blockquote></td>
-<td><blockquote>
-<p>读写ai量程</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>6</p>
-</blockquote></td>
-<td><blockquote>
-<p>仪表告警</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+| 关键事件ID | 关键事件名称 |
+| ------ | ------ |
+| 1      | 井口配置   |
+| 2      | RTU配置  |
+| 3      | 开机     |
+| 4      | 关机     |
+| 5      | 读写ai量程 |
+| 6      | 仪表告警   |
 
 发布标准
 
@@ -5599,23 +5302,21 @@ style="width:5.76806in;height:1.38611in" />
 
 > 以该协议“井口配置”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image230.png"
-> style="width:5.76806in;height:2.51736in" />
+> <img src="产品质量_li_img/media/image230.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image231.png"
-style="width:5.76806in;height:1.44792in" />
+![](产品质量\_li\_img/media/image231.png)
 
-#### 1.4.2.8. Focas
+**1.4.2.8. Focas**
 
 该协议支持如下3种关键事件
 
-| 关键事件ID | 关键事件名称     |
-|------------|------------------|
-| 1          | SETUP_CONNECTION |
-| 2          | START            |
-| 3          | STOP             |
+| 关键事件ID | 关键事件名称            |
+| ------ | ----------------- |
+| 1      | SETUP\_CONNECTION |
+| 2      | START             |
+| 3      | STOP              |
 
 发布标准
 
@@ -5629,52 +5330,20 @@ style="width:5.76806in;height:1.44792in" />
 
 > 以该协议“START”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image232.png"
-> style="width:5.76806in;height:2.49861in" />
+> <img src="产品质量_li_img/media/image232.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image233.png"
-style="width:5.76806in;height:1.60764in" />
+![](产品质量\_li\_img/media/image233.png)
 
-#### 1.4.2.9. GDW 3761
+**1.4.2.9. GDW 3761**
 
 该协议支持如下2种关键事件
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 66%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><blockquote>
-<p>关键事件ID</p>
-</blockquote></th>
-<th><blockquote>
-<p>关键事件名称</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><blockquote>
-<p>1</p>
-</blockquote></td>
-<td><blockquote>
-<p>复位</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>2</p>
-</blockquote></td>
-<td><blockquote>
-<p>身份认证及密钥协商</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+| 关键事件ID | 关键事件名称    |
+| ------ | --------- |
+| 1      | 复位        |
+| 2      | 身份认证及密钥协商 |
 
 发布标准
 
@@ -5688,21 +5357,19 @@ style="width:5.76806in;height:1.60764in" />
 
 > 以该协议“ 复位”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image234.png"
-> style="width:5.76806in;height:2.23403in" />
+> <img src="产品质量_li_img/media/image234.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image235.png"
-style="width:5.76806in;height:1.4in" />
+![](产品质量\_li\_img/media/image235.png)
 
-#### 1.4.2.10. GOOSE
+**1.4.2.10. GOOSE**
 
 该协议支持如下1种关键事件
 
 | 关键事件ID | 关键事件名称 |
-|------------|--------------|
-| 1          | 检修状态     |
+| ------ | ------ |
+| 1      | 检修状态   |
 
 发布标准
 
@@ -5716,25 +5383,23 @@ style="width:5.76806in;height:1.4in" />
 
 > 以该协议“检修状态”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image236.png"
-> style="width:5.76806in;height:3.35486in" />
+> <img src="产品质量_li_img/media/image236.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image237.png"
-style="width:5.76806in;height:1.29028in" />
+![](产品质量\_li\_img/media/image237.png)
 
-#### 1.4.2.11. HartIP
+**1.4.2.11. HartIP**
 
 该协议支持如下5种关键事件
 
-| 关键事件ID | 关键事件名称               |
-|------------|----------------------------|
-| 1          | 设置轮询地址               |
-| 2          | 写短标签、设备描述符和日期 |
-| 3          | 写最终装配号               |
-| 4          | 写长标签                   |
-| 5          | 复位配置改变标志           |
+| 关键事件ID | 关键事件名称        |
+| ------ | ------------- |
+| 1      | 设置轮询地址        |
+| 2      | 写短标签、设备描述符和日期 |
+| 3      | 写最终装配号        |
+| 4      | 写长标签          |
+| 5      | 复位配置改变标志      |
 
 发布标准
 
@@ -5748,29 +5413,27 @@ style="width:5.76806in;height:1.29028in" />
 
 > 以该协议“复位配置改变标志”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image238.png"
-> style="width:5.76806in;height:3.04653in" />
+> <img src="产品质量_li_img/media/image238.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image239.png"
-style="width:5.76806in;height:2.04653in" />
+![](产品质量\_li\_img/media/image239.png)
 
-#### 1.4.2.12. HuaTong_2000R_TCP
+**1.4.2.12. HuaTong\_2000R\_TCP**
 
 该协议支持如下9种关键事件
 
-| 关键事件ID | 关键事件名称     |
-|------------|------------------|
-| 1          | 油井启动         |
-| 2          | 油井停止         |
-| 3          | 加热炉燃烧器点火 |
-| 4          | 加热炉燃烧器关断 |
-| 5          | 电动抱闸抱死     |
-| 6          | 电动抱闸松开     |
-| 7          | 平衡调节启动     |
-| 8          | 平衡调节停止     |
-| 9          | RTU复位          |
+| 关键事件ID | 关键事件名称   |
+| ------ | -------- |
+| 1      | 油井启动     |
+| 2      | 油井停止     |
+| 3      | 加热炉燃烧器点火 |
+| 4      | 加热炉燃烧器关断 |
+| 5      | 电动抱闸抱死   |
+| 6      | 电动抱闸松开   |
+| 7      | 平衡调节启动   |
+| 8      | 平衡调节停止   |
+| 9      | RTU复位    |
 
 发布标准
 
@@ -5784,33 +5447,31 @@ style="width:5.76806in;height:2.04653in" />
 
 > 以该协议“油井启动”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image240.png"
-> style="width:5.76806in;height:2.06667in" />
+> <img src="产品质量_li_img/media/image240.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image241.png"
-style="width:5.76806in;height:1.34931in" />
+![](产品质量\_li\_img/media/image241.png)
 
-#### 1.4.2.13. IEC104
+**1.4.2.13. IEC104**
 
 该协议支持如下13种关键事件
 
-| 关键事件ID | 关键事件名称                       |
-|------------|------------------------------------|
-| 1          | 单命令                             |
-| 2          | 带时间标签的单命令                 |
-| 3          | 双命令                             |
-| 4          | 带时间标签的双命令                 |
-| 5          | 调节step命令                       |
-| 6          | 带时间标签的调节step命令           |
-| 8          | 设置浮点命令，带时间标签的规范值   |
-| 9          | 设置浮点命令，换算值               |
-| 10         | 设置浮点命令，带时间标签的换算值   |
-| 11         | 设置浮点命令，短浮点数             |
-| 12         | 设置浮点命令，带时间标签的短浮点数 |
-| 13         | 32位bitstring                      |
-| 15         | 重置进程命令                       |
+| 关键事件ID | 关键事件名称            |
+| ------ | ----------------- |
+| 1      | 单命令               |
+| 2      | 带时间标签的单命令         |
+| 3      | 双命令               |
+| 4      | 带时间标签的双命令         |
+| 5      | 调节step命令          |
+| 6      | 带时间标签的调节step命令    |
+| 8      | 设置浮点命令，带时间标签的规范值  |
+| 9      | 设置浮点命令，换算值        |
+| 10     | 设置浮点命令，带时间标签的换算值  |
+| 11     | 设置浮点命令，短浮点数       |
+| 12     | 设置浮点命令，带时间标签的短浮点数 |
+| 13     | 32位bitstring      |
+| 15     | 重置进程命令            |
 
 发布标准
 
@@ -5824,23 +5485,21 @@ style="width:5.76806in;height:1.34931in" />
 
 > 以该协议“单命令”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image242.png"
-> style="width:5.76806in;height:3.67153in" />
+> <img src="产品质量_li_img/media/image242.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image243.png"
-style="width:5.76806in;height:2.34583in" />
+![](产品质量\_li\_img/media/image243.png)
 
-#### 1.4.2.14. JX300
+**1.4.2.14. JX300**
 
 该协议支持如下3种关键事件
 
 | 关键事件ID | 关键事件名称 |
-|------------|--------------|
-| 1          | 发送设备信息 |
-| 2          | 设置设备值   |
-| 3          | 设置设备状态 |
+| ------ | ------ |
+| 1      | 发送设备信息 |
+| 2      | 设置设备值  |
+| 3      | 设置设备状态 |
 
 发布标准
 
@@ -5854,39 +5513,37 @@ style="width:5.76806in;height:2.34583in" />
 
 > 以该协议“发送设备信息”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image244.png"
-> style="width:5.76806in;height:3.21042in" />
+> <img src="产品质量_li_img/media/image244.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image245.png"
-style="width:5.76806in;height:2.32153in" />
+![](产品质量\_li\_img/media/image245.png)
 
-#### 1.4.2.15. MELSEC
+**1.4.2.15. MELSEC**
 
 该协议支持如下19种关键事件
 
-| 关键事件ID | 关键事件名称         |
-|------------|----------------------|
-| 1          | 远程运行             |
-| 2          | 远程停止             |
-| 3          | 远程暂停             |
-| 4          | 远程锁存清除         |
-| 5          | 远程重置             |
-| 6          | 远程锁               |
-| 7          | 远程解锁             |
-| 8          | 错误信息清除         |
-| 9          | 新建文件             |
-| 10         | 删除文件             |
-| 11         | 复制文件             |
-| 12         | 文件属性修改         |
-| 13         | 文件创建时间修改     |
-| 14         | 打开文件             |
-| 15         | 读文件               |
-| 16         | 写文件               |
-| 17         | 关闭文件             |
-| 18         | 写缓冲存储器         |
-| 19         | 写智能模块缓冲存储器 |
+| 关键事件ID | 关键事件名称     |
+| ------ | ---------- |
+| 1      | 远程运行       |
+| 2      | 远程停止       |
+| 3      | 远程暂停       |
+| 4      | 远程锁存清除     |
+| 5      | 远程重置       |
+| 6      | 远程锁        |
+| 7      | 远程解锁       |
+| 8      | 错误信息清除     |
+| 9      | 新建文件       |
+| 10     | 删除文件       |
+| 11     | 复制文件       |
+| 12     | 文件属性修改     |
+| 13     | 文件创建时间修改   |
+| 14     | 打开文件       |
+| 15     | 读文件        |
+| 16     | 写文件        |
+| 17     | 关闭文件       |
+| 18     | 写缓冲存储器     |
+| 19     | 写智能模块缓冲存储器 |
 
 发布标准
 
@@ -5900,156 +5557,33 @@ style="width:5.76806in;height:2.32153in" />
 
 > 以该协议“远程运行”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image246.png"
-> style="width:5.76806in;height:2.58264in" />
+> <img src="产品质量_li_img/media/image246.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image247.png"
-style="width:5.76806in;height:1.34236in" />
+![](产品质量\_li\_img/media/image247.png)
 
-#### 1.4.2.16. Modbus
+**1.4.2.16. Modbus**
 
 该协议支持如16种关键事件
 
-<table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 72%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><blockquote>
-<p>关键事件ID</p>
-</blockquote></th>
-<th><blockquote>
-<p>关键事件名称</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><blockquote>
-<p>1</p>
-</blockquote></td>
-<td><blockquote>
-<p>写单线圈</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>2</p>
-</blockquote></td>
-<td><blockquote>
-<p>写多线圈</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>3</p>
-</blockquote></td>
-<td><blockquote>
-<p>写单寄存器</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4</p>
-</blockquote></td>
-<td><blockquote>
-<p>写多寄存器</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>5</p>
-</blockquote></td>
-<td><blockquote>
-<p>PLC启动</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>6</p>
-</blockquote></td>
-<td><blockquote>
-<p>PLC停止</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>7</p>
-</blockquote></td>
-<td><blockquote>
-<p>开始下装</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>8</p>
-</blockquote></td>
-<td><blockquote>
-<p>结束下装</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>9</p>
-</blockquote></td>
-<td><blockquote>
-<p>开始上传</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>10</p>
-</blockquote></td>
-<td><blockquote>
-<p>结束上传</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>11</p>
-</blockquote></td>
-<td><blockquote>
-<p>强制置1</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>12</p>
-</blockquote></td>
-<td><blockquote>
-<p>强制置0</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>13</p>
-</blockquote></td>
-<td><blockquote>
-<p>强制取消</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>15</p>
-</blockquote></td>
-<td><blockquote>
-<p>掩码写寄存器</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>16</p>
-</blockquote></td>
-<td><blockquote>
-<p>读写寄存器</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+| 关键事件ID | 关键事件名称 |
+| ------ | ------ |
+| 1      | 写单线圈   |
+| 2      | 写多线圈   |
+| 3      | 写单寄存器  |
+| 4      | 写多寄存器  |
+| 5      | PLC启动  |
+| 6      | PLC停止  |
+| 7      | 开始下装   |
+| 8      | 结束下装   |
+| 9      | 开始上传   |
+| 10     | 结束上传   |
+| 11     | 强制置1   |
+| 12     | 强制置0   |
+| 13     | 强制取消   |
+| 15     | 掩码写寄存器 |
+| 16     | 读写寄存器  |
 
 发布标准
 
@@ -6063,30 +5597,28 @@ style="width:5.76806in;height:1.34236in" />
 
 > 以该协议“PLC启动”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image248.png"
-> style="width:5.76806in;height:2.52569in" />
+> <img src="产品质量_li_img/media/image248.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 >
-> <img src="产品质量_li_img/media/image249.png"
-> style="width:5.76806in;height:1.18472in" />
+> <img src="产品质量_li_img/media/image249.png" alt="" data-size="original">
 
-#### 1.4.2.17. NA_RTU_TCP
+**1.4.2.17. NA\_RTU\_TCP**
 
 该协议支持如下10种关键事件
 
-| 关键事件ID | 关键事件名称      |
-|------------|-------------------|
-| 1          | 复位              |
-| 2          | 关闭进程          |
-| 3          | 关闭看门狗        |
-| 4          | RTU参数配置-下载  |
-| 5          | 仪表参数配置-设置 |
-| 6          | 开井              |
-| 7          | 关井              |
-| 8          | 加热炉点火        |
-| 9          | 加热炉熄火        |
-| 10         | 设置油井频率      |
+| 关键事件ID | 关键事件名称     |
+| ------ | ---------- |
+| 1      | 复位         |
+| 2      | 关闭进程       |
+| 3      | 关闭看门狗      |
+| 4      | RTU参数配置-下载 |
+| 5      | 仪表参数配置-设置  |
+| 6      | 开井         |
+| 7      | 关井         |
+| 8      | 加热炉点火      |
+| 9      | 加热炉熄火      |
+| 10     | 设置油井频率     |
 
 发布标准
 
@@ -6100,43 +5632,41 @@ style="width:5.76806in;height:1.34236in" />
 
 > 以该协议“复位”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image250.png"
-> style="width:5.76806in;height:2.22847in" />
+> <img src="产品质量_li_img/media/image250.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image251.png"
-style="width:5.76806in;height:1.43056in" />
+![](产品质量\_li\_img/media/image251.png)
 
-#### 1.4.2.18. OMRON_TCP
+**1.4.2.18. OMRON\_TCP**
 
 该协议支持如下23种关键事件
 
-| 关键事件ID | 关键事件名称                 |
-|------------|------------------------------|
-| 1          | PLC_RESET                    |
-| 2          | PLC_RUN                      |
-| 3          | PLC_STOP                     |
-| 4          | FORCED_SET_RESET             |
-| 5          | CLOCK_WRITE                  |
-| 7          | ACCESS_RIGTH_ACQUIRE         |
-| 9          | PLC_SINGLE_FILE_WRITE        |
-| 10         | FORCED_SET_RESET_CANCEL      |
-| 11         | PLC_ERROR_CLEAR              |
-| 12         | PLC_ERROR_LOG_CLEAR          |
-| 13         | ACCESS_RIGHT_FORCED_ACQUIRE  |
-| 14         | FILE_DELETE                  |
-| 16         | MEMORY_FILL                  |
-| 18         | PROGRAM_CLEAR                |
-| 19         | PARAMETER_PROTECT_CLEAR      |
-| 20         | PARAMETER_AREA_CLEAR         |
-| 21         | PROGRAM_AREA_PROTECT         |
-| 22         | MESSAGE_CLEAR                |
-| 23         | FILE_COPY                    |
-| 24         | FILE_NAME_CHANGE             |
-| 25         | MEMORY_AREA_FILE_TRANSFER    |
-| 26         | PARAMETER_AREA_FILE_TRANSFER |
-| 27         | PROGRAM_AREA_FILE_TRANSFER   |
+| 关键事件ID | 关键事件名称                          |
+| ------ | ------------------------------- |
+| 1      | PLC\_RESET                      |
+| 2      | PLC\_RUN                        |
+| 3      | PLC\_STOP                       |
+| 4      | FORCED\_SET\_RESET              |
+| 5      | CLOCK\_WRITE                    |
+| 7      | ACCESS\_RIGTH\_ACQUIRE          |
+| 9      | PLC\_SINGLE\_FILE\_WRITE        |
+| 10     | FORCED\_SET\_RESET\_CANCEL      |
+| 11     | PLC\_ERROR\_CLEAR               |
+| 12     | PLC\_ERROR\_LOG\_CLEAR          |
+| 13     | ACCESS\_RIGHT\_FORCED\_ACQUIRE  |
+| 14     | FILE\_DELETE                    |
+| 16     | MEMORY\_FILL                    |
+| 18     | PROGRAM\_CLEAR                  |
+| 19     | PARAMETER\_PROTECT\_CLEAR       |
+| 20     | PARAMETER\_AREA\_CLEAR          |
+| 21     | PROGRAM\_AREA\_PROTECT          |
+| 22     | MESSAGE\_CLEAR                  |
+| 23     | FILE\_COPY                      |
+| 24     | FILE\_NAME\_CHANGE              |
+| 25     | MEMORY\_AREA\_FILE\_TRANSFER    |
+| 26     | PARAMETER\_AREA\_FILE\_TRANSFER |
+| 27     | PROGRAM\_AREA\_FILE\_TRANSFER   |
 
 发布标准
 
@@ -6150,43 +5680,41 @@ style="width:5.76806in;height:1.43056in" />
 
 > 以该协议“ ”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image252.png"
-> style="width:5.76806in;height:4.11458in" />
+> <img src="产品质量_li_img/media/image252.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image253.png"
-style="width:5.76806in;height:1.43819in" />
+![](产品质量\_li\_img/media/image253.png)
 
-#### 1.4.2.19. OMRON_UDP
+**1.4.2.19. OMRON\_UDP**
 
 该协议支持如下23种关键事件
 
-| 关键事件ID | 关键事件名称                 |
-|------------|------------------------------|
-| 1          | PLC_RESET                    |
-| 2          | PLC_RUN                      |
-| 3          | PLC_STOP                     |
-| 4          | FORCED_SET_RESET             |
-| 5          | CLOCK_WRITE                  |
-| 7          | ACCESS_RIGTH_ACQUIRE         |
-| 9          | PLC_SINGLE_FILE_WRITE        |
-| 10         | FORCED_SET_RESET_CANCEL      |
-| 11         | PLC_ERROR_CLEAR              |
-| 12         | PLC_ERROR_LOG_CLEAR          |
-| 13         | ACCESS_RIGHT_FORCED_ACQUIRE  |
-| 14         | FILE_DELETE                  |
-| 16         | MEMORY_FILL                  |
-| 18         | PROGRAM_CLEAR                |
-| 19         | PARAMETER_PROTECT_CLEAR      |
-| 20         | PARAMETER_AREA_CLEAR         |
-| 21         | PROGRAM_AREA_PROTECT         |
-| 22         | MESSAGE_CLEAR                |
-| 23         | FILE_COPY                    |
-| 24         | FILE_NAME_CHANGE             |
-| 25         | MEMORY_AREA_FILE_TRANSFER    |
-| 26         | PARAMETER_AREA_FILE_TRANSFER |
-| 27         | PROGRAM_AREA_FILE_TRANSFER   |
+| 关键事件ID | 关键事件名称                          |
+| ------ | ------------------------------- |
+| 1      | PLC\_RESET                      |
+| 2      | PLC\_RUN                        |
+| 3      | PLC\_STOP                       |
+| 4      | FORCED\_SET\_RESET              |
+| 5      | CLOCK\_WRITE                    |
+| 7      | ACCESS\_RIGTH\_ACQUIRE          |
+| 9      | PLC\_SINGLE\_FILE\_WRITE        |
+| 10     | FORCED\_SET\_RESET\_CANCEL      |
+| 11     | PLC\_ERROR\_CLEAR               |
+| 12     | PLC\_ERROR\_LOG\_CLEAR          |
+| 13     | ACCESS\_RIGHT\_FORCED\_ACQUIRE  |
+| 14     | FILE\_DELETE                    |
+| 16     | MEMORY\_FILL                    |
+| 18     | PROGRAM\_CLEAR                  |
+| 19     | PARAMETER\_PROTECT\_CLEAR       |
+| 20     | PARAMETER\_AREA\_CLEAR          |
+| 21     | PROGRAM\_AREA\_PROTECT          |
+| 22     | MESSAGE\_CLEAR                  |
+| 23     | FILE\_COPY                      |
+| 24     | FILE\_NAME\_CHANGE              |
+| 25     | MEMORY\_AREA\_FILE\_TRANSFER    |
+| 26     | PARAMETER\_AREA\_FILE\_TRANSFER |
+| 27     | PROGRAM\_AREA\_FILE\_TRANSFER   |
 
 发布标准
 
@@ -6200,51 +5728,49 @@ style="width:5.76806in;height:1.43819in" />
 
 > 以该协议“ ”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image254.png"
-> style="width:5.76806in;height:3.05417in" />
+> <img src="产品质量_li_img/media/image254.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image255.png"
-style="width:5.76806in;height:1.41667in" />
+![](产品质量\_li\_img/media/image255.png)
 
-#### 1.4.2.20. OPC_UA
+**1.4.2.20. OPC\_UA**
 
 该协议支持如下30种关键事件
 
-| 关键事件ID | 关键事件名称               |
-|------------|----------------------------|
-| 1          | 服务错误请求               |
-| 2          | 注册服务器请求             |
-| 3          | 关闭安全通道请求           |
-| 4          | 创建会话请求               |
-| 5          | 激活会话请求               |
-| 6          | 关闭会话请求               |
-| 7          | 取消请求                   |
-| 8          | 添加节点请求               |
-| 9          | 添加参考请求               |
-| 10         | 删除节点请求               |
-| 11         | 删除参考请求               |
-| 12         | 将浏览路径转换为节点id请求 |
-| 13         | 注册节点请求               |
-| 14         | 注销节点请求               |
-| 15         | 写请求                     |
-| 16         | 历史更新请求               |
-| 17         | 调用请求                   |
-| 18         | 创建监视项请求             |
-| 19         | 修改监视项请求             |
-| 20         | 设置监视模式请求           |
-| 21         | 设置触发请求               |
-| 22         | 删除监视项请求             |
-| 23         | 创建订阅请求               |
-| 24         | 修改订阅请求               |
-| 25         | 设置发布模式请求           |
-| 26         | 发布请求                   |
-| 27         | 重新发布请求               |
-| 28         | 订阅传输请求               |
-| 29         | 订阅删除请求               |
-| 30         | 测试堆栈请求               |
-| 　         | 　                         |
+| 关键事件ID | 关键事件名称         |
+| ------ | -------------- |
+| 1      | 服务错误请求         |
+| 2      | 注册服务器请求        |
+| 3      | 关闭安全通道请求       |
+| 4      | 创建会话请求         |
+| 5      | 激活会话请求         |
+| 6      | 关闭会话请求         |
+| 7      | 取消请求           |
+| 8      | 添加节点请求         |
+| 9      | 添加参考请求         |
+| 10     | 删除节点请求         |
+| 11     | 删除参考请求         |
+| 12     | 将浏览路径转换为节点id请求 |
+| 13     | 注册节点请求         |
+| 14     | 注销节点请求         |
+| 15     | 写请求            |
+| 16     | 历史更新请求         |
+| 17     | 调用请求           |
+| 18     | 创建监视项请求        |
+| 19     | 修改监视项请求        |
+| 20     | 设置监视模式请求       |
+| 21     | 设置触发请求         |
+| 22     | 删除监视项请求        |
+| 23     | 创建订阅请求         |
+| 24     | 修改订阅请求         |
+| 25     | 设置发布模式请求       |
+| 26     | 发布请求           |
+| 27     | 重新发布请求         |
+| 28     | 订阅传输请求         |
+| 29     | 订阅删除请求         |
+| 30     | 测试堆栈请求         |
+| 　      | 　              |
 
 发布标准
 
@@ -6258,23 +5784,21 @@ style="width:5.76806in;height:1.41667in" />
 
 > 以该协议“激活会话请求”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image256.png"
-> style="width:5.76806in;height:2.67083in" />
+> <img src="产品质量_li_img/media/image256.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image257.png"
-style="width:5.76806in;height:1.62778in" />
+![](产品质量\_li\_img/media/image257.png)
 
-#### 1.4.2.21. ovation_tcp
+**1.4.2.21. ovation\_tcp**
 
 该协议支持如下3种关键事件
 
-| 关键事件ID | 关键事件名称 |
-|------------|--------------|
-| 1          | TCP_RESTART  |
-| 2          | TCP_DOWNLOAD |
-| 3          | TCP_LOAD     |
+| 关键事件ID | 关键事件名称        |
+| ------ | ------------- |
+| 1      | TCP\_RESTART  |
+| 2      | TCP\_DOWNLOAD |
+| 3      | TCP\_LOAD     |
 
 发布标准
 
@@ -6286,26 +5810,23 @@ style="width:5.76806in;height:1.62778in" />
 
 测试用例举例说明
 
-> 以该协议“TCP_RESTART”关键事件为例，报文内容如下图所示。
+> 以该协议“TCP\_RESTART”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image258.png"
-> style="width:5.76806in;height:2.47847in" />
+> <img src="产品质量_li_img/media/image258.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image259.png"
-style="width:5.76806in;height:1.175in" />
+![](产品质量\_li\_img/media/image259.png)
 
-<img src="产品质量_li_img/media/image260.png"
-style="width:5.76806in;height:0.32083in" />
+![](产品质量\_li\_img/media/image260.png)
 
-#### 1.4.2.22. Profinet_DCP
+**1.4.2.22. Profinet\_DCP**
 
 该协议支持如下1种关键事件
 
 | 关键事件ID | 关键事件名称 |
-|------------|--------------|
-| 1          | 设置请求     |
+| ------ | ------ |
+| 1      | 设置请求   |
 
 发布标准
 
@@ -6319,23 +5840,21 @@ style="width:5.76806in;height:0.32083in" />
 
 > 以该协议“设置请求”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image261.png"
-> style="width:5.76806in;height:2.73333in" />
+> <img src="产品质量_li_img/media/image261.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image262.png"
-style="width:5.76806in;height:1.1625in" />
+![](产品质量\_li\_img/media/image262.png)
 
-#### 1.4.2.23. Profinet_MRP
+**1.4.2.23. Profinet\_MRP**
 
 该协议支持如下3种关键事件
 
 | 关键事件ID | 关键事件名称 |
-|------------|--------------|
-| 4          | 拓扑更改操作 |
-| 5          | 链路关闭     |
-| 6          | 链路启动     |
+| ------ | ------ |
+| 4      | 拓扑更改操作 |
+| 5      | 链路关闭   |
+| 6      | 链路启动   |
 
 发布标准
 
@@ -6349,23 +5868,21 @@ style="width:5.76806in;height:1.1625in" />
 
 > 以该协议“链路关闭”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image263.png"
-> style="width:5.76806in;height:1.75903in" />
+> <img src="产品质量_li_img/media/image263.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image264.png"
-style="width:5.76806in;height:1.42917in" />
+![](产品质量\_li\_img/media/image264.png)
 
-#### 1.4.2.24. Profinet_MRRT 
+**1.4.2.24. Profinet\_MRRT**
 
 该协议支持如下3种关键事件
 
 | 关键事件ID | 关键事件名称 |
-|------------|--------------|
-| 1          | END          |
-| 2          | COMMON       |
-| 3          | TEST         |
+| ------ | ------ |
+| 1      | END    |
+| 2      | COMMON |
+| 3      | TEST   |
 
 发布标准
 
@@ -6379,29 +5896,27 @@ style="width:5.76806in;height:1.42917in" />
 
 > 以该协议“END”关键事件为例，报文内容如下图所示。
 
-<img src="产品质量_li_img/media/image265.png"
-style="width:5.76806in;height:1.91528in" />
+![](产品质量\_li\_img/media/image265.png)
 
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image266.png"
-style="width:5.76806in;height:1.24722in" />
+![](产品质量\_li\_img/media/image266.png)
 
-#### 1.4.2.25. Profinet_PTCP 
+**1.4.2.25. Profinet\_PTCP**
 
 该协议支持如下9种关键事件
 
-| 关键事件ID | 关键事件名称    |
-|------------|-----------------|
-| 1          | END             |
-| 2          | SUBDOMAIN       |
-| 3          | TIME            |
-| 4          | TIME_EXTENSION  |
-| 5          | MASTER          |
-| 6          | PORT_PARAMETER  |
-| 7          | DELAY_PARAMETER |
-| 8          | PORT_TIME       |
-| 9          | OPTION          |
+| 关键事件ID | 关键事件名称           |
+| ------ | ---------------- |
+| 1      | END              |
+| 2      | SUBDOMAIN        |
+| 3      | TIME             |
+| 4      | TIME\_EXTENSION  |
+| 5      | MASTER           |
+| 6      | PORT\_PARAMETER  |
+| 7      | DELAY\_PARAMETER |
+| 8      | PORT\_TIME       |
+| 9      | OPTION           |
 
 发布标准
 
@@ -6415,21 +5930,19 @@ style="width:5.76806in;height:1.24722in" />
 
 > 以该协议“END”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image267.png"
-> style="width:5.76806in;height:2.93333in" />
+> <img src="产品质量_li_img/media/image267.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 >
-> <img src="产品质量_li_img/media/image268.png"
-> style="width:5.76806in;height:1.15556in" />
+> <img src="产品质量_li_img/media/image268.png" alt="" data-size="original">
 
-#### 1.4.2.26. RSSP-1
+**1.4.2.26. RSSP-1**
 
 该协议支持如下1种关键事件
 
 | 关键事件ID | 关键事件名称 |
-|------------|--------------|
-| 1          | 时序校正请求 |
+| ------ | ------ |
+| 1      | 时序校正请求 |
 
 发布标准
 
@@ -6443,44 +5956,42 @@ style="width:5.76806in;height:1.24722in" />
 
 > 以该协议“时序校正请求”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image269.png"
-> style="width:5.76806in;height:2.36875in" />
+> <img src="产品质量_li_img/media/image269.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image270.png"
-style="width:5.76806in;height:1.45in" />
+![](产品质量\_li\_img/media/image270.png)
 
-#### 1.4.2.27. S7
+**1.4.2.27. S7**
 
 该协议支持如下24种关键事件
 
-| 关键事件ID | 关键事件名称                 |
-|------------|------------------------------|
-| 1          | 强制DI/AI                    |
-| 2          | 删除DI值                     |
-| 5          | 诊断                         |
-| 6          | 清空PLC内存                  |
-| 7          | 设置时钟                     |
-| 8          | 设置PLC密码                  |
-| 9          | 请求下载                     |
-| 10         | 开始下载                     |
-| 11         | 下载完成                     |
-| 13         | 开始上载                     |
-| 14         | 上载                         |
-| 15         | 上载结束                     |
-| 16         | PLC启动                      |
-| 17         | PLC停止                      |
-| 18         | 激活设备上下载的块           |
-| 19         | 从设备的文件系统中删除一个块 |
-| 20         | 压缩PLC内存                  |
-| 21         | 将RAM复制到ROM               |
-| 23         | 暖启动                       |
-| 24         | 请求更新固件                 |
-| 25         | 更新固件                     |
-| 26         | 结束更新固件                 |
-| 27         | 停止                         |
-| 28         | 暖重启                       |
+| 关键事件ID | 关键事件名称         |
+| ------ | -------------- |
+| 1      | 强制DI/AI        |
+| 2      | 删除DI值          |
+| 5      | 诊断             |
+| 6      | 清空PLC内存        |
+| 7      | 设置时钟           |
+| 8      | 设置PLC密码        |
+| 9      | 请求下载           |
+| 10     | 开始下载           |
+| 11     | 下载完成           |
+| 13     | 开始上载           |
+| 14     | 上载             |
+| 15     | 上载结束           |
+| 16     | PLC启动          |
+| 17     | PLC停止          |
+| 18     | 激活设备上下载的块      |
+| 19     | 从设备的文件系统中删除一个块 |
+| 20     | 压缩PLC内存        |
+| 21     | 将RAM复制到ROM     |
+| 23     | 暖启动            |
+| 24     | 请求更新固件         |
+| 25     | 更新固件           |
+| 26     | 结束更新固件         |
+| 27     | 停止             |
+| 28     | 暖重启            |
 
 发布标准
 
@@ -6494,26 +6005,24 @@ style="width:5.76806in;height:1.45in" />
 
 > 以该协议“PLC启动”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image271.png"
-> style="width:5.76806in;height:2.67708in" />
+> <img src="产品质量_li_img/media/image271.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image272.png"
-style="width:5.76806in;height:2.48056in" />
+![](产品质量\_li\_img/media/image272.png)
 
-#### 1.4.2.28. S7_Plus
+**1.4.2.28. S7\_Plus**
 
 该协议支持如下6种关键事件
 
 | 关键事件ID | 关键事件名称 |
-|------------|--------------|
-| 1          | 开始下装     |
-| 2          | 下装结束     |
-| 3          | 开始上传     |
-| 5          | PLC启动      |
-| 6          | PLC停止      |
-| 7          | 系统时间     |
+| ------ | ------ |
+| 1      | 开始下装   |
+| 2      | 下装结束   |
+| 3      | 开始上传   |
+| 5      | PLC启动  |
+| 6      | PLC停止  |
+| 7      | 系统时间   |
 
 发布标准
 
@@ -6527,23 +6036,21 @@ style="width:5.76806in;height:2.48056in" />
 
 > 以该协议“PLC启动”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image273.png"
-> style="width:5.76806in;height:2.33056in" />
+> <img src="产品质量_li_img/media/image273.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image274.png"
-style="width:5.76806in;height:1.09931in" />
+![](产品质量\_li\_img/media/image274.png)
 
-#### 1.4.2.29. GE_SRTP
+**1.4.2.29. GE\_SRTP**
 
 该协议支持如下3种关键事件
 
 | 关键事件ID | 关键事件名称 |
-|------------|--------------|
-| 1          | 停止PLC      |
-| 2          | 启动PLC      |
-| 3          | 下载         |
+| ------ | ------ |
+| 1      | 停止PLC  |
+| 2      | 启动PLC  |
+| 3      | 下载     |
 
 发布标准
 
@@ -6557,68 +6064,22 @@ style="width:5.76806in;height:1.09931in" />
 
 > 以该协议“停止PLC”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image275.png"
-> style="width:4.20267in;height:1.34034in" />
+> <img src="产品质量_li_img/media/image275.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image276.png"
-style="width:5.76806in;height:0.92083in" />
+![](产品质量\_li\_img/media/image276.png)
 
-#### 1.4.2.30. Shanghaixinhua_DCS
+**1.4.2.30. Shanghaixinhua\_DCS**
 
 该协议支持如下4种关键事件
 
-<table>
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 70%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><blockquote>
-<p>关键事件ID</p>
-</blockquote></th>
-<th><blockquote>
-<p>关键事件名称</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><blockquote>
-<p>1</p>
-</blockquote></td>
-<td><blockquote>
-<p>上装</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>2</p>
-</blockquote></td>
-<td><blockquote>
-<p>改密码</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>3</p>
-</blockquote></td>
-<td><blockquote>
-<p>清空组态</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4</p>
-</blockquote></td>
-<td><blockquote>
-<p>复位控制器</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+| 关键事件ID | 关键事件名称 |
+| ------ | ------ |
+| 1      | 上装     |
+| 2      | 改密码    |
+| 3      | 清空组态   |
+| 4      | 复位控制器  |
 
 发布标准
 
@@ -6632,30 +6093,28 @@ style="width:5.76806in;height:0.92083in" />
 
 > 以该协议“上装”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image277.png"
-> style="width:5.76806in;height:1.55972in" />
+> <img src="产品质量_li_img/media/image277.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image278.png"
-style="width:5.76806in;height:1.02361in" />
+![](产品质量\_li\_img/media/image278.png)
 
-#### 1.4.2.31. HoneyWell
+**1.4.2.31. HoneyWell**
 
 该协议支持如下4种关键事件
 
-| 关键事件ID | 关键事件名称     |
-|------------|------------------|
-| 1          | IDLE             |
-| 2          | COLDSTART        |
-| 3          | WARMSTART        |
-| 4          | MODE_CAS         |
-| 5          | MODE_MAN         |
-| 6          | MODE_NOMAL       |
-| 7          | EXEC_STATUS_IDLE |
-| 8          | EXEC_STATUS_RUN  |
-| 9          | OUTPUT_ON        |
-| 10         | OUTPUT_OFF       |
+| 关键事件ID | 关键事件名称             |
+| ------ | ------------------ |
+| 1      | IDLE               |
+| 2      | COLDSTART          |
+| 3      | WARMSTART          |
+| 4      | MODE\_CAS          |
+| 5      | MODE\_MAN          |
+| 6      | MODE\_NOMAL        |
+| 7      | EXEC\_STATUS\_IDLE |
+| 8      | EXEC\_STATUS\_RUN  |
+| 9      | OUTPUT\_ON         |
+| 10     | OUTPUT\_OFF        |
 
 发布标准
 
@@ -6669,42 +6128,39 @@ style="width:5.76806in;height:1.02361in" />
 
 > 以该协议“WARMSTART”关键事件为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image279.png"
-> style="width:5.76806in;height:1.54861in" />
+> <img src="产品质量_li_img/media/image279.png" alt="" data-size="original">
 >
 > ISTP检测结果，如下图所示。
 
-<img src="产品质量_li_img/media/image280.png"
-style="width:5.76806in;height:1.13611in" />
+![](产品质量\_li\_img/media/image280.png)
 
-<img src="产品质量_li_img/media/image281.png"
-style="width:5.76806in;height:0.55556in" />
+![](产品质量\_li\_img/media/image281.png)
 
-## 1.5. 畸形和规约检测
+### 1.5. 畸形和规约检测
 
-### 1.5.1. 功能说明
+#### 1.5.1. 功能说明
 
 针对工控协议中相关字段进行语义语法检查，如果字段存在格式错误，数据帧无法正常解析，则上报畸形告警日志；如果字段存在语义错误，数据帧可以正常解析，上报规约告警日志。目前支持39种工业协议的畸形和规约检测
 
-### 1.5.2. 发布的标准
+#### 1.5.2. 发布的标准
 
-#### 1.5.2.1. MMS
+**1.5.2.1. MMS**
 
 支持97个字段的畸形和规约检测，具体字段如下所示：
 
-TPKT_version
+TPKT\_version
 
-TPKT_len
+TPKT\_len
 
-COTP_len
+COTP\_len
 
-ISO8327_SPDU
+ISO8327\_SPDU
 
-ISO8327_len
+ISO8327\_len
 
-ISO8823_len
+ISO8823\_len
 
-ISO8650_len
+ISO8650\_len
 
 MMS
 
@@ -6730,75 +6186,75 @@ variableAccessSpecificatn
 
 listOfVariable
 
-listOfVariable_Variable
+listOfVariable\_Variable
 
 variableListName
 
-VariableSpecification_address
+VariableSpecification\_address
 
-VariableSpecification_name
+VariableSpecification\_name
 
 variableDescription
 
 scatteredAccessDescription
 
-scatteredAccessDescription_variableSpecification
+scatteredAccessDescription\_variableSpecification
 
-Address_numericAddress
+Address\_numericAddress
 
-Address_symbolicAddress
+Address\_symbolicAddress
 
-Address_unconstrainedAddress
+Address\_unconstrainedAddress
 
-TypeSpecification_typeName
+TypeSpecification\_typeName
 
-TypeSpecification_array
+TypeSpecification\_array
 
-TypeSpecification_array_packed
+TypeSpecification\_array\_packed
 
-TypeSpecification_array_numberOfElements
+TypeSpecification\_array\_numberOfElements
 
-TypeSpecification_array_elementType
+TypeSpecification\_array\_elementType
 
-TypeSpecification_structure
+TypeSpecification\_structure
 
-TypeSpecification_structure_packed
+TypeSpecification\_structure\_packed
 
-TypeSpecification_structure_components
+TypeSpecification\_structure\_components
 
-TypeSpecification_structure_components_componentType
+TypeSpecification\_structure\_components\_componentType
 
 Response-variableAccessSpecificatn
 
 Response-listOfAccessResult
 
-Response-AccessResult_failure
+Response-AccessResult\_failure
 
-Response-Data_array
+Response-Data\_array
 
-Response-Data_structure
+Response-Data\_structure
 
-Response-Data_boolean
+Response-Data\_boolean
 
-Response-Data_BitString
+Response-Data\_BitString
 
-Response-Data_integer
+Response-Data\_integer
 
-Response-Data_unsigned
+Response-Data\_unsigned
 
-Response-Data_FloatingPoint
+Response-Data\_FloatingPoint
 
-Response-Data_octet_string
+Response-Data\_octet\_string
 
-Response-Data_visiblestring
+Response-Data\_visiblestring
 
-Response-Data_binarytime
+Response-Data\_binarytime
 
-Response-Data_bcd
+Response-Data\_bcd
 
-Response-Data_booleanArray
+Response-Data\_booleanArray
 
-variableAccessSpecificatn_listOfVariable
+variableAccessSpecificatn\_listOfVariable
 
 listOfData
 
@@ -6816,27 +6272,27 @@ Response-typeSpecification
 
 DefineNamedVariableList
 
-ObjectName_vmd-specific
+ObjectName\_vmd-specific
 
-ObjectName_domain-specific
+ObjectName\_domain-specific
 
-ObjectName_domain-specific_domainId
+ObjectName\_domain-specific\_domainId
 
-ObjectName_domain-specific_itemId
+ObjectName\_domain-specific\_itemId
 
-ObjectName_aa-specific
+ObjectName\_aa-specific
 
 Response-listOfVariable
 
-Response-listOfVariable_Variable
+Response-listOfVariable\_Variable
 
 scopeOfDelete
 
 listOfVariableListName
 
-Response_numberMatched
+Response\_numberMatched
 
-Response_numberDeleted
+Response\_numberDeleted
 
 semaphoreName
 
@@ -6858,11 +6314,11 @@ ResponsePDU-noResult
 
 ResponsePDU-namedToken
 
-Response-Data_objId
+Response-Data\_objId
 
-Response-Data_mMSString
+Response-Data\_mMSString
 
-Response-Data_utc-time
+Response-Data\_utc-time
 
 PresentationCPType
 
@@ -6872,17 +6328,17 @@ PresentationModeValue
 
 PresentationModeParameter
 
-acse_len
+acse\_len
 
-acse_cxt_tag
+acse\_cxt\_tag
 
-presentation_user_data
+presentation\_user\_data
 
-presentation_pdv_list
+presentation\_pdv\_list
 
 presentation-context-identifier
 
-presentation_data_values
+presentation\_data\_values
 
 padding
 
@@ -6898,7 +6354,7 @@ padding
 
 invokeID字段：在PDU支持范围内，按照对应规范解析失败，数据帧无法解析，上报畸形告警日志
 
-ObjectName_domain-specific_domainId字段：在DefineNamedVariableList支持范围内，按照对应规范解析失败，数据帧可以正常解析，上报规约告警日志
+ObjectName\_domain-specific\_domainId字段：在DefineNamedVariableList支持范围内，按照对应规范解析失败，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
@@ -6906,27 +6362,23 @@ ObjectName_domain-specific_domainId字段：在DefineNamedVariableList支持范�
 
 > mms协议invokeID tag非法，mms报文内容显示如下图所示
 >
-> <img src="产品质量_li_img/media/image282.png"
-> style="width:5.76806in;height:2.01181in" />
+> <img src="产品质量_li_img/media/image282.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image283.png"
-> style="width:5.76806in;height:0.90972in" />
+> <img src="产品质量_li_img/media/image283.png" alt="" data-size="original">
 
 规约检查日志
 
 > mms协议domainId非法，mms报文内容显示如下
 >
-> <img src="产品质量_li_img/media/image284.png"
-> style="width:5.76806in;height:2.06597in" />
+> <img src="产品质量_li_img/media/image284.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image285.png"
-> style="width:5.76806in;height:1.12431in" />
+> <img src="产品质量_li_img/media/image285.png" alt="" data-size="original">
 
-#### 1.5.2.2. BACnet
+**1.5.2.2. BACnet**
 
 支持43个字段的畸形和规约检测，具体字段如下所示：
 
@@ -7036,27 +6488,23 @@ Version字段：Version不为0X01时，数据帧可以正常解析，上报规�
 
 > BACnet协议BVLC Type非法，BACnet报文显示如下
 >
-> <img src="产品质量_li_img/media/image286.png"
-> style="width:5.76806in;height:1.76042in" />
+> <img src="产品质量_li_img/media/image286.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image287.png"
-> style="width:5.76806in;height:1.03958in" />
+> <img src="产品质量_li_img/media/image287.png" alt="" data-size="original">
 
 规约检查日志
 
 > BACnet协议Version非法，BACnet报文显示如下
 >
-> <img src="产品质量_li_img/media/image288.png"
-> style="width:5.76806in;height:2.09931in" />
+> <img src="产品质量_li_img/media/image288.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image289.png"
-> style="width:5.76806in;height:1.06458in" />
+> <img src="产品质量_li_img/media/image289.png" alt="" data-size="original">
 
-#### 1.5.2.3. DNP3
+**1.5.2.3. DNP3**
 
 支持14个字段的畸形和规约检测，具体字段如下所示：
 
@@ -7072,7 +6520,7 @@ Data Chunk checksum
 
 Application Layer Function Code
 
-Object&&Variant
+Object&\&Variant
 
 reserved bit
 
@@ -7080,13 +6528,13 @@ Index Size
 
 Qualifier Code
 
-payload_data
+payload\_data
 
-application_layer
+application\_layer
 
-incorret_string_length_data
+incorret\_string\_length\_data
 
-incorret_size_data
+incorret\_size\_data
 
 畸形和规约检测的条件和标准
 
@@ -7098,13 +6546,9 @@ incorret_size_data
 
 例如：
 
-Start
-Bytes字段：首个Start非05，第二个Start非64时，数据帧无法解析，上报畸形告警日志
+Start Bytes字段：首个Start非05，第二个Start非64时，数据帧无法解析，上报畸形告警日志
 
-Data Link Layer Control Function
-Code字段：当PRM为1时，dl_func有效取值为0x00, 0x01, 0x02, 0x03, 0x04,
-0x09；当PRM为0时，dl_func有效取值为0x00, 0x01,
-0x0B。当该字段不在上述范围内时，数据帧可以正常解析，上报规约告警日志
+Data Link Layer Control Function Code字段：当PRM为1时，dl\_func有效取值为0x00, 0x01, 0x02, 0x03, 0x04, 0x09；当PRM为0时，dl\_func有效取值为0x00, 0x01, 0x0B。当该字段不在上述范围内时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
@@ -7112,27 +6556,23 @@ Code字段：当PRM为1时，dl_func有效取值为0x00, 0x01, 0x02, 0x03, 0x04,
 
 > DNP3协议Start Bytes非法，DNP3报文显示如下
 >
-> <img src="产品质量_li_img/media/image290.png"
-> style="width:5.76806in;height:2.05764in" />
+> <img src="产品质量_li_img/media/image290.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image291.png"
-> style="width:5.75347in;height:1.29861in" />
+> <img src="产品质量_li_img/media/image291.png" alt="" data-size="original">
 
 规约检查日志
 
 > DNP3协议Data Link Layer Control Function Code非法，DNP3报文显示如下
 >
-> <img src="产品质量_li_img/media/image292.png"
-> style="width:5.76806in;height:2.01667in" />
+> <img src="产品质量_li_img/media/image292.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image293.png"
-> style="width:5.76806in;height:0.93819in" />
+> <img src="产品质量_li_img/media/image293.png" alt="" data-size="original">
 
-#### 1.5.2.4. ENIP_CIP
+**1.5.2.4. ENIP\_CIP**
 
 支持24个字段的畸形和规约检测，具体字段如下所示：
 
@@ -7158,7 +6598,7 @@ Service
 
 Class
 
-Request_Path_Size
+Request\_Path\_Size
 
 CMD
 
@@ -7166,7 +6606,7 @@ FNC
 
 Requestor ID Length
 
-Request_Path
+Request\_Path
 
 Data Size
 
@@ -7182,7 +6622,7 @@ Attribute Count
 
 Reserved
 
-name_of_service
+name\_of\_service
 
 畸形和规约检测的条件和标准
 
@@ -7194,8 +6634,7 @@ name_of_service
 
 例如：
 
-Size of Additional Status字段：Size of Additional
-Status长度与实际长度不一致时，数据帧无法解析，上报畸形告警日志
+Size of Additional Status字段：Size of Additional Status长度与实际长度不一致时，数据帧无法解析，上报畸形告警日志
 
 Class字段：Class未在范围值时，数据帧可以正常解析，上报规约告警日志
 
@@ -7203,29 +6642,25 @@ Class字段：Class未在范围值时，数据帧可以正常解析，上报规�
 
 畸形检查日志
 
-> ENIP_CIP协议Size of Additional Status设置错误，ENIP_CIP报文显示如下
+> ENIP\_CIP协议Size of Additional Status设置错误，ENIP\_CIP报文显示如下
 >
-> <img src="产品质量_li_img/media/image294.png"
-> style="width:5.76806in;height:2.45694in" />
+> <img src="产品质量_li_img/media/image294.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image295.png"
-> style="width:5.76806in;height:0.95833in" />
+> <img src="产品质量_li_img/media/image295.png" alt="" data-size="original">
 
 规约检查日志
 
-> ENIP_CIP协议Class非法，ENIP_CIP报文显示如下
+> ENIP\_CIP协议Class非法，ENIP\_CIP报文显示如下
 >
-> <img src="产品质量_li_img/media/image296.png"
-> style="width:5.76806in;height:2.49514in" />
+> <img src="产品质量_li_img/media/image296.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image297.png"
-> style="width:5.76806in;height:0.99722in" />
+> <img src="产品质量_li_img/media/image297.png" alt="" data-size="original">
 
-#### 1.5.2.5. Goose
+**1.5.2.5. Goose**
 
 支持25个字段的畸形和规约检测，具体字段如下所示：
 
@@ -7269,7 +6704,7 @@ Goose-allData
 
 Goose-numDatSetEntries
 
-bit_string_length
+bit\_string\_length
 
 utc-time
 
@@ -7299,27 +6734,23 @@ Goose-APPID字段：Goose-APPID字段不在规范值0x0000\~0x3fff内时，数�
 
 > Goose协议timeAllowedtoLivet非法，Goose报文显示如下
 >
-> <img src="产品质量_li_img/media/image298.png"
-> style="width:5.76806in;height:3.29792in" />
+> <img src="产品质量_li_img/media/image298.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image299.png"
-> style="width:5.76806in;height:0.9125in" />
+> <img src="产品质量_li_img/media/image299.png" alt="" data-size="original">
 
 规约检查日志
 
 > Goose协议APPID非法，Goose报文显示如下
 >
-> <img src="产品质量_li_img/media/image300.png"
-> style="width:5.76806in;height:3.06667in" />
+> <img src="产品质量_li_img/media/image300.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image301.png"
-> style="width:5.76806in;height:0.98542in" />
+> <img src="产品质量_li_img/media/image301.png" alt="" data-size="original">
 
-#### 1.5.2.6. IEC104
+**1.5.2.6. IEC104**
 
 支持15个字段的畸形和规约检测，具体字段如下所示：
 
@@ -7341,11 +6772,11 @@ Day
 
 Month
 
-control_field3
+control\_field3
 
-control_field2
+control\_field2
 
-control_field4
+control\_field4
 
 Addr
 
@@ -7373,47 +6804,43 @@ CauseTx字段：CauseTx字段的值未在规范内时，数据帧可以正常解
 
 > IEC104协议Addr字段缺失，IEC104报文显示如下
 >
-> <img src="产品质量_li_img/media/image302.png"
-> style="width:5.76806in;height:1.59306in" />
+> <img src="产品质量_li_img/media/image302.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image303.png"
-> style="width:5.76806in;height:1.10347in" />
+> <img src="产品质量_li_img/media/image303.png" alt="" data-size="original">
 
 规约检查日志
 
 > IEC104协议CauseTx非法，IEC104报文显示如下
 >
-> <img src="产品质量_li_img/media/image304.png"
-> style="width:5.76806in;height:1.45694in" />
+> <img src="产品质量_li_img/media/image304.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image305.png"
-> style="width:5.76806in;height:1.12083in" />
+> <img src="产品质量_li_img/media/image305.png" alt="" data-size="original">
 
-#### 1.5.2.7. Modbus
+**1.5.2.7. Modbus**
 
 支持43个字段的畸形和规约检测，具体字段如下所示：
 
 Address
 
-Quantity of coils(Bit_Count)
+Quantity of coils(Bit\_Count)
 
 Byte count
 
 Coils status
 
-Exception_Code
+Exception\_Code
 
-Quantity of Inputs(Bit_Count)
+Quantity of Inputs(Bit\_Count)
 
 Inputs status
 
-Quantity of Registe(Word_Count)
+Quantity of Registe(Word\_Count)
 
-Quantity of Input Registers(Word_Count)
+Quantity of Input Registers(Word\_Count)
 
 Input registers
 
@@ -7431,11 +6858,11 @@ Event Count
 
 Status
 
-Quantity of Outputs(Bit_Count)
+Quantity of Outputs(Bit\_Count)
 
 Output value
 
-Quantity of registers(Bit_Count)
+Quantity of registers(Bit\_Count)
 
 Registers value
 
@@ -7449,9 +6876,9 @@ Request data length
 
 Reference address
 
-and_mask
+and\_mask
 
-or_Mask
+or\_Mask
 
 Quantity to read
 
@@ -7467,13 +6894,13 @@ FIFO value register
 
 MEI type
 
-payload_error
+payload\_error
 
-Modbus_length_error
+Modbus\_length\_error
 
-Protocol_Identifier
+Protocol\_Identifier
 
-function_code
+function\_code
 
 Reference Type
 
@@ -7495,7 +6922,7 @@ Object Value
 
 Address字段：Address字段缺失时，数据帧无法解析，上报畸形告警日志
 
-Protocol_Identifier字段：Protocol_Identifier字段不为0x0000时，数据帧可以正常解析，上报规约告警日志
+Protocol\_Identifier字段：Protocol\_Identifier字段不为0x0000时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
@@ -7503,47 +6930,43 @@ Protocol_Identifier字段：Protocol_Identifier字段不为0x0000时，数据帧
 
 > Modbus协议Address字段缺失，Modbus报文显示如下
 >
-> <img src="产品质量_li_img/media/image306.png"
-> style="width:5.76806in;height:1.27778in" />
+> <img src="产品质量_li_img/media/image306.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image307.png"
-> style="width:5.76806in;height:0.93264in" />
+> <img src="产品质量_li_img/media/image307.png" alt="" data-size="original">
 
 规约检查日志
 
-> Modbus协议Protocol_Identifier非法，Modbus报文显示如下
+> Modbus协议Protocol\_Identifier非法，Modbus报文显示如下
 >
-> <img src="产品质量_li_img/media/image308.png"
-> style="width:5.76806in;height:1.35347in" />
+> <img src="产品质量_li_img/media/image308.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image309.png"
-> style="width:5.76806in;height:0.93611in" />
+> <img src="产品质量_li_img/media/image309.png" alt="" data-size="original">
 
-#### 1.5.2.8. Modbus_UDP
+**1.5.2.8. Modbus\_UDP**
 
 支持43个字段的畸形和规约检测，具体字段如下所示：
 
 Address
 
-Quantity of coils(Bit_Count)
+Quantity of coils(Bit\_Count)
 
 Byte count
 
 Coils status
 
-Exception_Code
+Exception\_Code
 
-Quantity of Inputs(Bit_Count)
+Quantity of Inputs(Bit\_Count)
 
 Inputs status
 
-Quantity of Registe(Word_Count)
+Quantity of Registe(Word\_Count)
 
-Quantity of Input Registers(Word_Count)
+Quantity of Input Registers(Word\_Count)
 
 Input registers
 
@@ -7561,11 +6984,11 @@ Event Count
 
 Status
 
-Quantity of Outputs(Bit_Count)
+Quantity of Outputs(Bit\_Count)
 
 Output value
 
-Quantity of registers(Bit_Count)
+Quantity of registers(Bit\_Count)
 
 Registers value
 
@@ -7579,9 +7002,9 @@ Request data length
 
 Reference address
 
-and_mask
+and\_mask
 
-or_Mask
+or\_Mask
 
 Quantity to read
 
@@ -7597,13 +7020,13 @@ FIFO value register
 
 MEI type
 
-payload_error
+payload\_error
 
-Modbus_length_error
+Modbus\_length\_error
 
-Protocol_Identifier
+Protocol\_Identifier
 
-function_code
+function\_code
 
 Reference Type
 
@@ -7625,7 +7048,7 @@ Object Value
 
 Address字段：Address字段缺失时，数据帧无法解析，上报畸形告警日志
 
-Protocol_Identifier字段：Protocol_Identifier字段不为0x0000时，数据帧可以正常解析，上报规约告警日志
+Protocol\_Identifier字段：Protocol\_Identifier字段不为0x0000时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
@@ -7633,27 +7056,23 @@ Protocol_Identifier字段：Protocol_Identifier字段不为0x0000时，数据帧
 
 > Modbus UDP协议Address字段缺失，Modbus UDP报文显示如下
 >
-> <img src="产品质量_li_img/media/image310.png"
-> style="width:5.76806in;height:1.18542in" />
+> <img src="产品质量_li_img/media/image310.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image311.png"
-> style="width:5.76806in;height:0.94097in" />
+> <img src="产品质量_li_img/media/image311.png" alt="" data-size="original">
 
 规约检查日志
 
-> Modbus UDP协议Protocol_Identifier非法，Modbus UDP报文显示如下
+> Modbus UDP协议Protocol\_Identifier非法，Modbus UDP报文显示如下
 >
-> <img src="产品质量_li_img/media/image312.png"
-> style="width:5.76806in;height:1.52014in" />
+> <img src="产品质量_li_img/media/image312.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image313.png"
-> style="width:5.76806in;height:0.92361in" />
+> <img src="产品质量_li_img/media/image313.png" alt="" data-size="original">
 
-#### 1.5.2.9. Omron_TCP
+**1.5.2.9. Omron\_TCP**
 
 支持32个字段的畸形和规约检测，具体字段如下所示：
 
@@ -7731,8 +7150,7 @@ BeginingWord
 
 例如：
 
-OmronFins Command字段：OmronFins
-Command字段不为有效功能码时，数据帧无法解析，上报畸形告警日志
+OmronFins Command字段：OmronFins Command字段不为有效功能码时，数据帧无法解析，上报畸形告警日志
 
 ICF字段：ICF字段有效值为第8位为1，第2到6位为0，当ICF字段值与有效值不一致时，数据帧可以正常解析，上报规约告警日志
 
@@ -7740,29 +7158,25 @@ ICF字段：ICF字段有效值为第8位为1，第2到6位为0，当ICF字段值
 
 畸形检查日志
 
-> Omron_tcp协议Command非法，Omron_tcp报文显示如下
+> Omron\_tcp协议Command非法，Omron\_tcp报文显示如下
 >
-> <img src="产品质量_li_img/media/image314.png"
-> style="width:5.76806in;height:1.46736in" />
+> <img src="产品质量_li_img/media/image314.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image315.png"
-> style="width:5.76806in;height:0.95625in" />
+> <img src="产品质量_li_img/media/image315.png" alt="" data-size="original">
 
 规约检查日志
 
-> Omron_tcp协议ICF非法，Omron_tcp报文显示如下
+> Omron\_tcp协议ICF非法，Omron\_tcp报文显示如下
 >
-> <img src="产品质量_li_img/media/image316.png"
-> style="width:5.76806in;height:1.60833in" />
+> <img src="产品质量_li_img/media/image316.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image317.png"
-> style="width:5.76806in;height:0.93681in" />
+> <img src="产品质量_li_img/media/image317.png" alt="" data-size="original">
 
-#### 1.5.2.10. Omron_UDP
+**1.5.2.10. Omron\_UDP**
 
 支持32个字段的畸形和规约检测，具体字段如下所示：
 
@@ -7840,8 +7254,7 @@ BeginingWord
 
 例如：
 
-OmronFins Command字段：OmronFins
-Command字段不为有效功能码时，数据帧无法解析，上报畸形告警日志
+OmronFins Command字段：OmronFins Command字段不为有效功能码时，数据帧无法解析，上报畸形告警日志
 
 ICF字段：ICF字段有效值为第8位为1，第2到6位为0，当ICF字段值与有效值不一致时，数据帧可以正常解析，上报规约告警日志
 
@@ -7849,29 +7262,25 @@ ICF字段：ICF字段有效值为第8位为1，第2到6位为0，当ICF字段值
 
 畸形检查日志
 
-> Omron_tcp协议Command非法，Omron_udp报文显示如下
+> Omron\_tcp协议Command非法，Omron\_udp报文显示如下
 >
-> <img src="产品质量_li_img/media/image318.png"
-> style="width:5.76806in;height:1.35417in" />
+> <img src="产品质量_li_img/media/image318.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image319.png"
-> style="width:5.76806in;height:0.91458in" />
+> <img src="产品质量_li_img/media/image319.png" alt="" data-size="original">
 
 规约检查日志
 
-> Omron_tcp协议ICF非法，Omron_udp报文显示如下
+> Omron\_tcp协议ICF非法，Omron\_udp报文显示如下
 >
-> <img src="产品质量_li_img/media/image320.png"
-> style="width:5.76806in;height:1.53611in" />
+> <img src="产品质量_li_img/media/image320.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image321.png"
-> style="width:5.76806in;height:0.91458in" />
+> <img src="产品质量_li_img/media/image321.png" alt="" data-size="original">
 
-#### 1.5.2.11. OPC DA
+**1.5.2.11. OPC DA**
 
 支持12个字段的畸形和规约检测，具体字段如下所示：
 
@@ -7893,11 +7302,11 @@ UUID
 
 OPNum
 
-pdu_type
+pdu\_type
 
-context_id
+context\_id
 
-stringbinding_NetwordAddr
+stringbinding\_NetwordAddr
 
 畸形和规约检测的条件和标准
 
@@ -7911,8 +7320,7 @@ stringbinding_NetwordAddr
 
 UUID字段：UUID字段为非法值时，数据帧无法解析，上报畸形告警日志
 
-Character字段：Data
-Representation的Character的值不为0时，数据帧可以正常解析，上报规约告警日志
+Character字段：Data Representation的Character的值不为0时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
@@ -7920,27 +7328,23 @@ Representation的Character的值不为0时，数据帧可以正常解析，上�
 
 > OPCDA协议UUID非法，OPCDA报文显示如下
 >
-> <img src="产品质量_li_img/media/image322.png"
-> style="width:5.76806in;height:1.24236in" />
+> <img src="产品质量_li_img/media/image322.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image323.png"
-> style="width:5.76806in;height:1.31042in" />
+> <img src="产品质量_li_img/media/image323.png" alt="" data-size="original">
 
 规约检查日志
 
 > OPCDA协议Data Representation的Character不为0，OPCDA报文显示如下
 >
-> <img src="产品质量_li_img/media/image324.png"
-> style="width:5.76806in;height:1.62153in" />
+> <img src="产品质量_li_img/media/image324.png" alt="" data-size="original">
 >
 > 回放的OPCDA协议报文，ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image325.png"
-> style="width:5.76806in;height:1.11667in" />
+> <img src="产品质量_li_img/media/image325.png" alt="" data-size="original">
 
-#### 1.5.2.12. OPC UA
+**1.5.2.12. OPC UA**
 
 支持23个字段的畸形和规约检测，具体字段如下所示：
 
@@ -8000,11 +7404,9 @@ encodingMask
 
 例如：
 
-Message Type字段：Message Type字段不为
-“HEL”、“ACK“、”ERR“、”RHE“、”OPN“、”CLO“、”MSG“时，数据帧无法解析，上报畸形告警日志
+Message Type字段：Message Type字段不为 “HEL”、“ACK“、”ERR“、”RHE“、”OPN“、”CLO“、”MSG“时，数据帧无法解析，上报畸形告警日志
 
-Reserved/isFinal字段：Reserved/isFinal字段不为值
-“F”、“C“、”A“时，数据帧可以正常解析，上报规约告警日志
+Reserved/isFinal字段：Reserved/isFinal字段不为值 “F”、“C“、”A“时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
@@ -8012,27 +7414,23 @@ Reserved/isFinal字段：Reserved/isFinal字段不为值
 
 > OPCUA协议Message Type不在范围内，OPCUA报文显示如下
 >
-> <img src="产品质量_li_img/media/image326.png"
-> style="width:5.76806in;height:2.60903in" />
+> <img src="产品质量_li_img/media/image326.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image327.png"
-> style="width:5.76806in;height:1.28611in" />
+> <img src="产品质量_li_img/media/image327.png" alt="" data-size="original">
 
 规约检查日志
 
 > OPCUA协议Reserved/isFinal不在范围内，OPCUA报文显示如下
 >
-> <img src="产品质量_li_img/media/image328.png"
-> style="width:5.76806in;height:3.26528in" />
+> <img src="产品质量_li_img/media/image328.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image329.png"
-> style="width:5.76806in;height:1.28264in" />
+> <img src="产品质量_li_img/media/image329.png" alt="" data-size="original">
 
-#### 1.5.2.13. S7
+**1.5.2.13. S7**
 
 支持38个字段的畸形和规约检测，具体字段如下所示：
 
@@ -8124,8 +7522,7 @@ PiService
 
 ROSCTR字段：ROSCTR字段不为值1、2、3、7时，数据帧无法解析，上报畸形告警日志
 
-Error Class字段：Error
-Class字段不为值0x00、0x81-0x85、0x87时，数据帧可以正常解析，上报规约告警日志
+Error Class字段：Error Class字段不为值0x00、0x81-0x85、0x87时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
@@ -8133,27 +7530,23 @@ Class字段不为值0x00、0x81-0x85、0x87时，数据帧可以正常解析，�
 
 > S7协议ROSCTR不在范围内，S7报文显示如下
 >
-> <img src="产品质量_li_img/media/image330.png"
-> style="width:5.76806in;height:2.64931in" />
+> <img src="产品质量_li_img/media/image330.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image331.png"
-> style="width:5.76806in;height:1.16042in" />
+> <img src="产品质量_li_img/media/image331.png" alt="" data-size="original">
 
 规约检查日志
 
 > S7协议Error Class不在范围内，S7报文显示如下
 >
-> <img src="产品质量_li_img/media/image332.png"
-> style="width:5.76806in;height:1.19236in" />
+> <img src="产品质量_li_img/media/image332.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image333.png"
-> style="width:5.76806in;height:0.92708in" />
+> <img src="产品质量_li_img/media/image333.png" alt="" data-size="original">
 
-#### 1.5.2.14. SV
+**1.5.2.14. SV**
 
 支持15个字段的畸形和规约检测，具体字段如下所示：
 
@@ -8207,27 +7600,23 @@ SV-APPID字段：SV-APPID字段不为0x4000-0x7fff时，数据帧可以正常解
 
 > SV协议SV-savPdu-seqASDU-ASDU非法，SV报文显示如下
 >
-> <img src="产品质量_li_img/media/image334.png"
-> style="width:5.76806in;height:2.44375in" />
+> <img src="产品质量_li_img/media/image334.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image335.png"
-> style="width:5.76806in;height:0.93472in" />
+> <img src="产品质量_li_img/media/image335.png" alt="" data-size="original">
 
 规约检查日志
 
 > SV协议SV-APPID非法，SV报文显示如下
 >
-> <img src="产品质量_li_img/media/image336.png"
-> style="width:5.76806in;height:2.65833in" />
+> <img src="产品质量_li_img/media/image336.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image337.png"
-> style="width:5.76806in;height:0.92083in" />
+> <img src="产品质量_li_img/media/image337.png" alt="" data-size="original">
 
-#### 1.5.2.15. Coap
+**1.5.2.15. Coap**
 
 支持2个字段的畸形和规约检测，具体字段如下所示：
 
@@ -8255,35 +7644,31 @@ Code字段：Code字段不为值0、2、4、5时，数据帧可以正常解析�
 
 > Coap协议version非法，Coap报文显示如下
 >
-> <img src="产品质量_li_img/media/image338.png"
-> style="width:5.76806in;height:2.05694in" />
+> <img src="产品质量_li_img/media/image338.png" alt="" data-size="original">
 >
 > 回放的Coap协议报文，ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image339.png"
-> style="width:5.76806in;height:0.91111in" />
+> <img src="产品质量_li_img/media/image339.png" alt="" data-size="original">
 
 规约检查日志
 
 > Coap协议code非法，Coap报文显示如下
 >
-> <img src="产品质量_li_img/media/image340.png"
-> style="width:5.76806in;height:2.13889in" />
+> <img src="产品质量_li_img/media/image340.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image341.png"
-> style="width:5.76806in;height:1.10208in" />
+> <img src="产品质量_li_img/media/image341.png" alt="" data-size="original">
 
-#### 1.5.2.16. DICOM
+**1.5.2.16. DICOM**
 
 支持5个字段的畸形和规约检测，具体字段如下所示：
 
-pdu_type
+pdu\_type
 
-pdu_len
+pdu\_len
 
-pdv_len
+pdv\_len
 
 result
 
@@ -8299,7 +7684,7 @@ Item Type
 
 例如：
 
-pdu_type字段：pdu_type字段取值不是1，2，3，4，5，6，7时，数据帧无法解析，上报畸形告警日志
+pdu\_type字段：pdu\_type字段取值不是1，2，3，4，5，6，7时，数据帧无法解析，上报畸形告警日志
 
 result字段：presentation中的result字段取值不为0，1，2，3，4时，数据帧可以正常解析，上报规约告警日志
 
@@ -8307,29 +7692,25 @@ result字段：presentation中的result字段取值不为0，1，2，3，4时，
 
 畸形检查日志
 
-> DICOM协议pdu_type取值不在范围内，DICOM报文显示如下
+> DICOM协议pdu\_type取值不在范围内，DICOM报文显示如下
 >
-> <img src="产品质量_li_img/media/image342.png"
-> style="width:5.76806in;height:1.39236in" />
+> <img src="产品质量_li_img/media/image342.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image343.png"
-> style="width:5.76806in;height:0.925in" />
+> <img src="产品质量_li_img/media/image343.png" alt="" data-size="original">
 
 规约检查日志
 
 > DICOM协议presentation中的result取值不在范围内，DICOM报文显示如下
 >
-> <img src="产品质量_li_img/media/image344.png"
-> style="width:5.76806in;height:3.28056in" />
+> <img src="产品质量_li_img/media/image344.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image345.png"
-> style="width:5.76806in;height:0.94722in" />
+> <img src="产品质量_li_img/media/image345.png" alt="" data-size="original">
 
-#### 1.5.2.17. EtherCat
+**1.5.2.17. EtherCat**
 
 支持1个字段的规约检测，具体字段如下所示：
 
@@ -8353,15 +7734,13 @@ cmd字段：cmd字段值取值不在0x00-0x0E范围内时，数据帧可以正�
 
 > EtherCat协议cmd不在范围内，EtherCat报文显示如下
 >
-> <img src="产品质量_li_img/media/image346.png"
-> style="width:5.76806in;height:0.87778in" />
+> <img src="产品质量_li_img/media/image346.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image347.png"
-> style="width:5.76806in;height:0.91806in" />
+> <img src="产品质量_li_img/media/image347.png" alt="" data-size="original">
 
-#### 1.5.2.18. Etrol
+**1.5.2.18. Etrol**
 
 支持4个字段的畸形和规约检测，具体字段如下所示：
 
@@ -8393,27 +7772,23 @@ preamble字段：preamble字段不为0x0189时，数据帧可以正常解析，�
 
 > Etrol协议protocol字段缺失，Etrol报文显示如下
 >
-> <img src="产品质量_li_img/media/image348.png"
-> style="width:5.76806in;height:1.4in" />
+> <img src="产品质量_li_img/media/image348.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image349.png"
-> style="width:5.76806in;height:0.92083in" />
+> <img src="产品质量_li_img/media/image349.png" alt="" data-size="original">
 
 规约检查日志
 
 > Etrol协议preamble不为0x0189，Etrol报文显示如下
 >
-> <img src="产品质量_li_img/media/image350.png"
-> style="width:5.76806in;height:1.39306in" />
+> <img src="产品质量_li_img/media/image350.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image351.png"
-> style="width:5.76806in;height:0.92153in" />
+> <img src="产品质量_li_img/media/image351.png" alt="" data-size="original">
 
-#### 1.5.2.19. Focas
+**1.5.2.19. Focas**
 
 支持4个字段的规约检测，具体字段如下所示：
 
@@ -8443,19 +7818,17 @@ FLAG1字段：FLAG1字段不为0xa0a0a0a0时，数据帧可以正常解析，上
 
 > Focas协议FLAG1不为0xa0a0a0a0，Focas报文显示如下
 >
-> <img src="产品质量_li_img/media/image352.png"
-> style="width:5.76806in;height:1.54306in" />
+> <img src="产品质量_li_img/media/image352.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image353.png"
-> style="width:5.76806in;height:0.93889in" />
+> <img src="产品质量_li_img/media/image353.png" alt="" data-size="original">
 
-#### 1.5.2.20. GDW 376.1
+**1.5.2.20. GDW 376.1**
 
 支持3个字段的畸形检测，具体字段如下所示：
 
-start_field
+start\_field
 
 protocol id
 
@@ -8471,31 +7844,29 @@ Length
 
 例如：
 
-start_field字段：start_field字段不为0x68时，数据帧无法解析，上报畸形告警日志
+start\_field字段：start\_field字段不为0x68时，数据帧无法解析，上报畸形告警日志
 
 测试用例举例说明
 
 畸形检查日志
 
-> GDW 376.1 协议start_field不为0x68，GDW 376.1报文显示如下
+> GDW 376.1 协议start\_field不为0x68，GDW 376.1报文显示如下
 >
-> <img src="产品质量_li_img/media/image354.png"
-> style="width:5.76806in;height:1.28611in" />
+> <img src="产品质量_li_img/media/image354.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image355.png"
-> style="width:5.76806in;height:1.12986in" />
+> <img src="产品质量_li_img/media/image355.png" alt="" data-size="original">
 
-#### 1.5.2.21. GE-SRTP
+**1.5.2.21. GE-SRTP**
 
 支持3个字段的规约检测，具体字段如下所示：
 
-message_type
+message\_type
 
-service_request_code
+service\_request\_code
 
-segment_selector
+segment\_selector
 
 畸形和规约检测的条件和标准
 
@@ -8507,29 +7878,27 @@ segment_selector
 
 例如：
 
-service_request_code字段：service_request_code字段值取值未在协议规范范围内，数据帧可以正常解析，上报规约告警日志
+service\_request\_code字段：service\_request\_code字段值取值未在协议规范范围内，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
 规约检查日志
 
-> GE-SRTP协议service_request_code字段值取值未在协议规范范围内，GE-SRTP报文显示如下
+> GE-SRTP协议service\_request\_code字段值取值未在协议规范范围内，GE-SRTP报文显示如下
 >
-> <img src="产品质量_li_img/media/image356.png"
-> style="width:5.76806in;height:1.6in" />
+> <img src="产品质量_li_img/media/image356.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image357.png"
-> style="width:5.76806in;height:0.925in" />
+> <img src="产品质量_li_img/media/image357.png" alt="" data-size="original">
 
-#### 1.5.2.22. GSK（error code错误导致后面两个字段没有值）
+**1.5.2.22. GSK（error code错误导致后面两个字段没有值）**
 
 支持2个字段的畸形检测，具体字段如下所示：
 
-send_to_id
+send\_to\_id
 
-recv_from_id
+recv\_from\_id
 
 畸形和规约检测的条件和标准
 
@@ -8541,23 +7910,21 @@ recv_from_id
 
 例如：
 
-send_to_id字段：send_to_id字段缺失时，数据帧无法解析，上报畸形告警日志
+send\_to\_id字段：send\_to\_id字段缺失时，数据帧无法解析，上报畸形告警日志
 
 测试用例举例说明
 
 畸形检查日志
 
-> GSK协议send_to_id字段缺失，GSK报文显示如下
+> GSK协议send\_to\_id字段缺失，GSK报文显示如下
 >
-> <img src="产品质量_li_img/media/image358.png"
-> style="width:5.76806in;height:1.71875in" />
+> <img src="产品质量_li_img/media/image358.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image359.png"
-> style="width:5.76806in;height:1.12083in" />
+> <img src="产品质量_li_img/media/image359.png" alt="" data-size="original">
 
-#### 1.5.2.23. HartIP_TCP
+**1.5.2.23. HartIP\_TCP**
 
 支持4个字段的畸形和规约检测，具体字段如下所示：
 
@@ -8579,39 +7946,33 @@ Byte Count
 
 例如：
 
-Byte Count字段：Byte Count字段实际剩余长度减1 小于
-length长度，数据帧无法解析，上报畸形告警日志
+Byte Count字段：Byte Count字段实际剩余长度减1 小于 length长度，数据帧无法解析，上报畸形告警日志
 
-Message Type字段：Message
-Type字段值未在范围(0，1，2，3，15)内时，数据帧可以正常解析，上报规约告警日志
+Message Type字段：Message Type字段值未在范围(0，1，2，3，15)内时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
 畸形检查日志
 
-> HartIP_TCP协议Byte Count实际剩余长度错误，HartIP_TCP报文显示如下
+> HartIP\_TCP协议Byte Count实际剩余长度错误，HartIP\_TCP报文显示如下
 >
-> <img src="产品质量_li_img/media/image360.png"
-> style="width:5.76806in;height:1.88125in" />
+> <img src="产品质量_li_img/media/image360.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image361.png"
-> style="width:5.76806in;height:0.92639in" />
+> <img src="产品质量_li_img/media/image361.png" alt="" data-size="original">
 
 规约检查日志
 
-> HartIP_TCP协议Message Type不在预定范围内，HartIP_TCP报文显示如下
+> HartIP\_TCP协议Message Type不在预定范围内，HartIP\_TCP报文显示如下
 >
-> <img src="产品质量_li_img/media/image362.png"
-> style="width:5.76806in;height:1.29722in" />
+> <img src="产品质量_li_img/media/image362.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image363.png"
-> style="width:5.76806in;height:1.10833in" />
+> <img src="产品质量_li_img/media/image363.png" alt="" data-size="original">
 
-#### 1.5.2.24. HartIP_UDP
+**1.5.2.24. HartIP\_UDP**
 
 支持4个字段的畸形和规约检测，具体字段如下所示：
 
@@ -8633,69 +7994,63 @@ Byte Count
 
 例如：
 
-Byte Count字段：Byte Count字段实际剩余长度减1 小于
-length长度，数据帧无法解析，上报畸形告警日志
+Byte Count字段：Byte Count字段实际剩余长度减1 小于 length长度，数据帧无法解析，上报畸形告警日志
 
-Message Type字段：Message
-Type字段值未在范围(0，1，2，3，15)内时，数据帧可以正常解析，上报规约告警日志
+Message Type字段：Message Type字段值未在范围(0，1，2，3，15)内时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
 畸形检查日志
 
-> HartIP_UDP协议Byte Count实际剩余长度错误，HartIP_UDP报文显示如下
+> HartIP\_UDP协议Byte Count实际剩余长度错误，HartIP\_UDP报文显示如下
 >
-> <img src="产品质量_li_img/media/image364.png"
-> style="width:5.76806in;height:1.52431in" />
+> <img src="产品质量_li_img/media/image364.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image365.png"
-> style="width:5.76806in;height:0.94861in" />
+> <img src="产品质量_li_img/media/image365.png" alt="" data-size="original">
 
 规约检查日志
 
-> HartIP_UDP协议Message Type不在预定范围内，HartIP_UDP报文显示如下
+> HartIP\_UDP协议Message Type不在预定范围内，HartIP\_UDP报文显示如下
 >
-> <img src="产品质量_li_img/media/image366.png"
-> style="width:5.76806in;height:1.55625in" />
+> <img src="产品质量_li_img/media/image366.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image367.png"
-> style="width:5.76806in;height:1.11458in" />
+> <img src="产品质量_li_img/media/image367.png" alt="" data-size="original">
 
-#### 1.5.2.25. HL7
+**1.5.2.25. HL7**
 
 支持14个字段的畸形和规约检测，具体字段如下所示：
 
-start_byte
+start\_byte
 
-end_byte
+end\_byte
 
-not_MSH
+not\_MSH
 
-unknow_seg_separator
+unknow\_seg\_separator
 
-exist_invalid_char
+exist\_invalid\_char
 
-segment_name_len
+segment\_name\_len
 
-msh_field2_len
+msh\_field2\_len
 
-msh_field9_len
+msh\_field9\_len
 
-not_trigger_event
+not\_trigger\_event
 
-not_message_type
+not\_message\_type
 
-mult_MSH
+mult\_MSH
 
-segment_name
+segment\_name
 
-message_type
+message\_type
 
-trigger_event
+trigger\_event
 
 畸形和规约检测的条件和标准
 
@@ -8707,43 +8062,39 @@ trigger_event
 
 例如：
 
-start_byte字段：start_byte字段为0x0B时，数据帧无法解析，上报畸形告警日志
+start\_byte字段：start\_byte字段为0x0B时，数据帧无法解析，上报畸形告警日志
 
-segment_name字段：segment_name字段超出定义范围时，数据帧可以正常解析，上报规约告警日志
+segment\_name字段：segment\_name字段超出定义范围时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
 畸形检查日志
 
-> HL7协议start_byte字段不为0x0B，HL7报文显示如下
+> HL7协议start\_byte字段不为0x0B，HL7报文显示如下
 >
-> <img src="产品质量_li_img/media/image368.png"
-> style="width:5.76806in;height:1.78194in" />
+> <img src="产品质量_li_img/media/image368.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image369.png"
-> style="width:5.76806in;height:0.96597in" />
+> <img src="产品质量_li_img/media/image369.png" alt="" data-size="original">
 
 规约检查日志
 
-> HL7协议segment_name超出定义范围，HL7报文显示如下
+> HL7协议segment\_name超出定义范围，HL7报文显示如下
 >
-> <img src="产品质量_li_img/media/image370.png"
-> style="width:5.76806in;height:2.86528in" />
+> <img src="产品质量_li_img/media/image370.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image371.png"
-> style="width:5.76806in;height:0.9625in" />
+> <img src="产品质量_li_img/media/image371.png" alt="" data-size="original">
 
-#### 1.5.2.26. HNC
+**1.5.2.26. HNC**
 
 支持2个字段的畸形检测，具体字段如下所示：
 
-HncHead_length_error
+HncHead\_length\_error
 
-HncSpackHead_length_error
+HncSpackHead\_length\_error
 
 畸形和规约检测的条件和标准
 
@@ -8763,25 +8114,23 @@ HncHead字段：HncHead字段的长度小于10时，数据帧无法解析，上�
 
 > HNC协议HncHead的长度小于10，HNC报文显示如下
 >
-> <img src="产品质量_li_img/media/image372.png"
-> style="width:5.76806in;height:1.48472in" />
+> <img src="产品质量_li_img/media/image372.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image373.png"
-> style="width:5.76806in;height:0.92361in" />
+> <img src="产品质量_li_img/media/image373.png" alt="" data-size="original">
 
-#### 1.5.2.27. Honeywell
+**1.5.2.27. Honeywell**
 
 支持4个字段的畸形和规约检测，具体字段如下所示：
 
-body_len
+body\_len
 
-item_len
+item\_len
 
-item_seq_no
+item\_seq\_no
 
-item_num
+item\_num
 
 畸形和规约检测的条件和标准
 
@@ -8793,41 +8142,37 @@ item_num
 
 例如：
 
-body_len字段：body_len字段值和实际body的长度不一致时，数据帧无法解析，上报畸形告警日志
+body\_len字段：body\_len字段值和实际body的长度不一致时，数据帧无法解析，上报畸形告警日志
 
-item_seq_no字段：item_seq_no字段不连续递增时，数据帧可以正常解析，上报规约告警日志
+item\_seq\_no字段：item\_seq\_no字段不连续递增时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
 畸形检查日志
 
-> Honeywell协议body_len非法，Honeywell报文显示如下
+> Honeywell协议body\_len非法，Honeywell报文显示如下
 >
-> <img src="产品质量_li_img/media/image374.png"
-> style="width:5.76806in;height:1.91319in" />
+> <img src="产品质量_li_img/media/image374.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image375.png"
-> style="width:5.76806in;height:0.94583in" />
+> <img src="产品质量_li_img/media/image375.png" alt="" data-size="original">
 
 规约检查日志
 
-> Honeywell协议item_seq_no不连续递增，Honeywell报文显示如下
+> Honeywell协议item\_seq\_no不连续递增，Honeywell报文显示如下
 >
-> <img src="产品质量_li_img/media/image376.png"
-> style="width:5.76806in;height:1.93194in" />
+> <img src="产品质量_li_img/media/image376.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image377.png"
-> style="width:5.76806in;height:0.94236in" />
+> <img src="产品质量_li_img/media/image377.png" alt="" data-size="original">
 
-#### 1.5.2.28. HT2000R
+**1.5.2.28. HT2000R**
 
 支持1个字段的规约检测，具体字段如下所示：
 
-func_code
+func\_code
 
 畸形和规约检测的条件和标准
 
@@ -8839,29 +8184,27 @@ func_code
 
 例如：
 
-func_code字段：func_code字段值未在取值范围0x05，0x06时，数据帧可以正常解析，上报规约告警日志
+func\_code字段：func\_code字段值未在取值范围0x05，0x06时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
 规约检查日志
 
-> HT2000R协议func_code字段值未在取值范围0x05，0x06，HT2000R报文显示如下
+> HT2000R协议func\_code字段值未在取值范围0x05，0x06，HT2000R报文显示如下
 >
-> <img src="产品质量_li_img/media/image378.png"
-> style="width:5.76806in;height:1.175in" />
+> <img src="产品质量_li_img/media/image378.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image379.png"
-> style="width:5.76806in;height:0.95903in" />
+> <img src="产品质量_li_img/media/image379.png" alt="" data-size="original">
 
-#### 1.5.2.29. JX300
+**1.5.2.29. JX300**
 
 支持2个字段的规约检测，具体字段如下所示：
 
 FLAG
 
-function_code
+function\_code
 
 畸形和规约检测的条件和标准
 
@@ -8879,21 +8222,19 @@ FLAG字段：FLAG字段未在范围值(0/1)时，数据帧可以正常解析，�
 
 规约检查日志
 
-> JX300协议FLAG以及function_code非法，JX300报文显示如下
+> JX300协议FLAG以及function\_code非法，JX300报文显示如下
 >
-> <img src="产品质量_li_img/media/image380.png"
-> style="width:5.76806in;height:2.29722in" />
+> <img src="产品质量_li_img/media/image380.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image381.png"
-> style="width:5.76806in;height:2.20972in" />
+> <img src="产品质量_li_img/media/image381.png" alt="" data-size="original">
 
-#### 1.5.2.30. Melsec
+**1.5.2.30. Melsec**
 
 支持2个字段的畸形和规约检测，具体字段如下所示：
 
-frame_header
+frame\_header
 
 command
 
@@ -8907,7 +8248,7 @@ command
 
 例如：
 
-frame_header字段：frame_header字段不为0x5400、0xD400时，数据帧无法解析，上报畸形告警日志
+frame\_header字段：frame\_header字段不为0x5400、0xD400时，数据帧无法解析，上报畸形告警日志
 
 command字段：command字段取值不在协议规范范围内时，数据帧可以正常解析，上报规约告警日志
 
@@ -8915,35 +8256,31 @@ command字段：command字段取值不在协议规范范围内时，数据帧可
 
 畸形检查日志
 
-> Melsec协议frame_header不在预定范围内，Melsec报文显示如下
+> Melsec协议frame\_header不在预定范围内，Melsec报文显示如下
 >
-> <img src="产品质量_li_img/media/image382.png"
-> style="width:5.76806in;height:1.50764in" />
+> <img src="产品质量_li_img/media/image382.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image383.png"
-> style="width:5.76806in;height:0.94236in" />
+> <img src="产品质量_li_img/media/image383.png" alt="" data-size="original">
 
 规约检查日志
 
 > Melsec协议command不在预定范围内，Melsec报文显示如下
 >
-> <img src="产品质量_li_img/media/image384.png"
-> style="width:5.76806in;height:1.43611in" />
+> <img src="产品质量_li_img/media/image384.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image385.png"
-> style="width:5.76806in;height:0.98403in" />
+> <img src="产品质量_li_img/media/image385.png" alt="" data-size="original">
 
-#### 1.5.2.31. NA_RTU
+**1.5.2.31. NA\_RTU**
 
 支持2个字段的规约检测，具体字段如下所示：
 
 preamble
 
-func_code
+func\_code
 
 畸形和规约检测的条件和标准
 
@@ -8961,21 +8298,19 @@ Preamble字段：preamble字段值不为0x55时，数据帧可以正常解析，
 
 规约检查日志
 
-> NA_RTU协议preamble不为0x55，NA_RTU报文显示如下
+> NA\_RTU协议preamble不为0x55，NA\_RTU报文显示如下
 >
-> <img src="产品质量_li_img/media/image386.png"
-> style="width:5.76806in;height:1.95556in" />
+> <img src="产品质量_li_img/media/image386.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image387.png"
-> style="width:5.76806in;height:1.16319in" />
+> <img src="产品质量_li_img/media/image387.png" alt="" data-size="original">
 
-#### 1.5.2.32. Ovation_TCP
+**1.5.2.32. Ovation\_TCP**
 
 支持1个字段的规约检测，具体字段如下所示：
 
-func_code
+func\_code
 
 畸形和规约检测的条件和标准
 
@@ -8987,23 +8322,21 @@ func_code
 
 例如：
 
-func_code字段：func_code字段不为0x0008或0x000c或0x0010时，数据帧可以正常解析，上报规约告警日志
+func\_code字段：func\_code字段不为0x0008或0x000c或0x0010时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
 规约检查日志
 
-> Ovation_TCP协议func_code非法，Ovation_TCP报文显示如下
+> Ovation\_TCP协议func\_code非法，Ovation\_TCP报文显示如下
 >
-> <img src="产品质量_li_img/media/image388.png"
-> style="width:5.76806in;height:1.85556in" />
+> <img src="产品质量_li_img/media/image388.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image389.png"
-> style="width:5.76806in;height:1.91319in" />
+> <img src="产品质量_li_img/media/image389.png" alt="" data-size="original">
 
-#### 1.5.2.33. Profinetdcp
+**1.5.2.33. Profinetdcp**
 
 支持2个字段的规约检测，具体字段如下所示：
 
@@ -9021,8 +8354,7 @@ SerivceType
 
 例如：
 
-ServiceID字段：ServiceID字段未在范围值(0x03, 0x04, 0x05,
-0x06)时，数据帧可以正常解析，上报规约告警日志
+ServiceID字段：ServiceID字段未在范围值(0x03, 0x04, 0x05, 0x06)时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
@@ -9030,19 +8362,17 @@ ServiceID字段：ServiceID字段未在范围值(0x03, 0x04, 0x05,
 
 > Profinetdcp协议ServiceID不在范围内，Profinetdcp报文显示如下
 >
-> <img src="产品质量_li_img/media/image390.png"
-> style="width:5.76806in;height:1.17986in" />
+> <img src="产品质量_li_img/media/image390.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image391.png"
-> style="width:5.76806in;height:0.93472in" />
+> <img src="产品质量_li_img/media/image391.png" alt="" data-size="original">
 
-#### 1.5.2.34. Profinetmrp
+**1.5.2.34. Profinetmrp**
 
 支持1个字段的规约检测，具体字段如下所示：
 
-MRP_TLVHeader.Type
+MRP\_TLVHeader.Type
 
 畸形和规约检测的条件和标准
 
@@ -9054,23 +8384,21 @@ MRP_TLVHeader.Type
 
 例如：
 
-MRP_TLVHeader.Type字段：MRP_TLVHeader.Type字段未在范围值(0x00,0x01,0x02,0x03,0x04,0x05,0x7f)时，数据帧可以正常解析，上报规约告警日志
+MRP\_TLVHeader.Type字段：MRP\_TLVHeader.Type字段未在范围值(0x00,0x01,0x02,0x03,0x04,0x05,0x7f)时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
 规约检查日志
 
-> Profinetmrp协议MRP_TLVHeader.Type未在范围内，Profinetmrp报文显示如下
+> Profinetmrp协议MRP\_TLVHeader.Type未在范围内，Profinetmrp报文显示如下
 >
-> <img src="产品质量_li_img/media/image392.png"
-> style="width:5.76806in;height:0.97083in" />
+> <img src="产品质量_li_img/media/image392.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image393.png"
-> style="width:5.76806in;height:0.91806in" />
+> <img src="产品质量_li_img/media/image393.png" alt="" data-size="original">
 
-#### 1.5.2.35. Profinetmrrt
+**1.5.2.35. Profinetmrrt**
 
 支持1个字段的规约检测，具体字段如下所示：
 
@@ -9094,15 +8422,13 @@ Type字段：Type字段未在范围值(0x00,0x01,0x02)时，数据帧可以正�
 
 > Profinetmrrt协议Type未在范围内，Profinetmrrt报文显示如下
 >
-> <img src="产品质量_li_img/media/image394.png"
-> style="width:5.76806in;height:2.56389in" />
+> <img src="产品质量_li_img/media/image394.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image395.png"
-> style="width:5.76806in;height:0.94583in" />
+> <img src="产品质量_li_img/media/image395.png" alt="" data-size="original">
 
-#### 1.5.2.36. Profinet_PTCP
+**1.5.2.36. Profinet\_PTCP**
 
 支持1个字段的畸形检测，具体字段如下所示：
 
@@ -9120,34 +8446,29 @@ FrameID
 
 FrameID字段：
 
-1：FrameID在范围（frame_id \>= 0x0100 && frame_id < 0xFF00或者frame_id
-\> 0xFF5F）内时,被识别为其他profinet协议进行解析
+1：FrameID在范围（frame\_id >= 0x0100 && frame\_id < 0xFF00或者frame\_id > 0xFF5F）内时,被识别为其他profinet协议进行解析
 
-2：FrameID未在范围(（frame_id \>= 0x0100 && frame_id <
-0xFF00或者frame_id \>
-0xFF5F)内，且未在范围(0x0020、0x0021、0x0080、0x0081、0xff00、0xff01、0xff20、0xff21、0xff40、0xff41、0xff42、0xff43)时，数据帧不可以正常解析，上报畸形告警日志
+2：FrameID未在范围(（frame\_id >= 0x0100 && frame\_id < 0xFF00或者frame\_id > 0xFF5F)内，且未在范围(0x0020、0x0021、0x0080、0x0081、0xff00、0xff01、0xff20、0xff21、0xff40、0xff41、0xff42、0xff43)时，数据帧不可以正常解析，上报畸形告警日志
 
 测试用例举例说明
 
 畸形检查日志
 
-> Profinet_PTCP协议FrameID不符合条件，Profinet_PTCP报文显示如下
+> Profinet\_PTCP协议FrameID不符合条件，Profinet\_PTCP报文显示如下
 >
-> <img src="产品质量_li_img/media/image396.png"
-> style="width:5.76806in;height:3.28542in" />
+> <img src="产品质量_li_img/media/image396.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image397.png"
-> style="width:5.76806in;height:0.94375in" />
+> <img src="产品质量_li_img/media/image397.png" alt="" data-size="original">
 
-#### 1.5.2.37. RSSP-1
+**1.5.2.37. RSSP-1**
 
 支持2个字段的规约检测，具体字段如下所示：
 
-interaction_type
+interaction\_type
 
-protocol_type
+protocol\_type
 
 畸形和规约检测的条件和标准
 
@@ -9159,23 +8480,21 @@ protocol_type
 
 例如：
 
-interaction_type字段：interaction_type未在范围值(0x01，0x02)时，数据帧可以正常解析，上报规约告警日志
+interaction\_type字段：interaction\_type未在范围值(0x01，0x02)时，数据帧可以正常解析，上报规约告警日志
 
 测试用例举例说明
 
 规约检查日志
 
-> RSSP-1协议interaction_type未在范围值，RSSP-1报文显示如下
+> RSSP-1协议interaction\_type未在范围值，RSSP-1报文显示如下
 >
-> <img src="产品质量_li_img/media/image398.png"
-> style="width:5.76806in;height:1.82361in" />
+> <img src="产品质量_li_img/media/image398.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image399.png"
-> style="width:5.76806in;height:1.09861in" />
+> <img src="产品质量_li_img/media/image399.png" alt="" data-size="original">
 
-#### 1.5.2.38. S7Plus
+**1.5.2.38. S7Plus**
 
 支持3个字段的规约检测，具体字段如下所示：
 
@@ -9203,15 +8522,13 @@ ProtocolId字段：ProtocolId不为值0x72时，数据帧可以正常解析，�
 
 > S7Plus 协议ProtocolId不为值0x72，S7Plus报文显示如下
 >
-> <img src="产品质量_li_img/media/image400.png"
-> style="width:5.76806in;height:2.14653in" />
+> <img src="产品质量_li_img/media/image400.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image401.png"
-> style="width:5.76806in;height:1.12014in" />
+> <img src="产品质量_li_img/media/image401.png" alt="" data-size="original">
 
-#### 1.5.2.39. XHICAN
+**1.5.2.39. XHICAN**
 
 支持2个字段的规约检测，具体字段如下所示：
 
@@ -9237,27 +8554,25 @@ preamble字段：preamble字段值取值非0x413541354135时，数据帧可以�
 
 > XHICAN协议preamble不为0x413541354135，XHICAN报文显示如下
 >
-> <img src="产品质量_li_img/media/image402.png"
-> style="width:5.76806in;height:1.53333in" />
+> <img src="产品质量_li_img/media/image402.png" alt="" data-size="original">
 >
 > ISTP Web显示结果如下图所示
 >
-> <img src="产品质量_li_img/media/image403.png"
-> style="width:5.76806in;height:0.93264in" />
+> <img src="产品质量_li_img/media/image403.png" alt="" data-size="original">
 
-## 1.6. 工业IPS
+### 1.6. 工业IPS
 
-### 1.6.1. 功能说明
+#### 1.6.1. 功能说明
 
 工业IPS规则可以告警漏洞攻击，针对系统漏洞攻击的公开漏洞、私有漏洞、关键事件、协议异常等进行防护。
 
-### 1.6.2. 发布的标准
+#### 1.6.2. 发布的标准
 
 工业IPS功能支持8种工业协议、52款设备、32款软件的254个漏洞的入侵检测。
 
 IPS引擎支持19种工业协议的入侵检测。
 
-#### 1.6.2.1. S7
+**1.6.2.1. S7**
 
 IPS规则测试发布标准
 
@@ -9271,17 +8586,13 @@ IPS规则测试发布标准
 
 S7协议拒绝服务漏洞攻击报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image404.png"
-style="width:5.76806in;height:1.612in"
-alt="C:\Users\zhengqiang01\Desktop\test02.png" />
+![C:\Users\zhengqiang01\Desktop\test02.png](产品质量\_li\_img/media/image404.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image405.png"
-style="width:5.76806in;height:1.22345in"
-alt="C:\Users\zhengqiang01\Desktop\test01.png" />
+![C:\Users\zhengqiang01\Desktop\test01.png](产品质量\_li\_img/media/image405.png)
 
-#### 1.6.2.2. MODBUS
+**1.6.2.2. MODBUS**
 
 IPS规则测试发布标准
 
@@ -9295,17 +8606,13 @@ IPS规则测试发布标准
 
 MODBUS协议Restart Communications Option漏洞攻击报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image406.png"
-style="width:5.76806in;height:1.47083in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-03.jpg" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-03.jpg](产品质量\_li\_img/media/image406.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image407.png"
-style="width:5.76806in;height:1.22678in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-01.jpg" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-01.jpg](产品质量\_li\_img/media/image407.png)
 
-#### 1.6.2.3. DNP3
+**1.6.2.3. DNP3**
 
 IPS规则测试发布标准
 
@@ -9319,17 +8626,13 @@ IPS规则测试发布标准
 
 DNP3协议Cold Restart From Authorized Client漏洞攻击报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image408.png"
-style="width:5.76806in;height:1.88611in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-08.jpg" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-08.jpg](产品质量\_li\_img/media/image408.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image409.png"
-style="width:5.76806in;height:1.52813in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-07.jpg" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-07.jpg](产品质量\_li\_img/media/image409.png)
 
-#### 1.6.2.4. ENIP_CIP
+**1.6.2.4. ENIP\_CIP**
 
 IPS规则测试发布标准
 
@@ -9341,18 +8644,15 @@ IPS规则测试发布标准
 
 测试用例举例说明
 
-ENIP_CIP协议Reset IP of ControlLogix_1756-EN2TD漏洞攻击报文情况，如下图所示
+ENIP\_CIP协议Reset IP of ControlLogix\_1756-EN2TD漏洞攻击报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image410.png"
-style="width:5.76806in;height:2.15139in" />
+![](产品质量\_li\_img/media/image410.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image411.png"
-style="width:5.76806in;height:1.44049in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-09.jpg" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-09.jpg](产品质量\_li\_img/media/image411.png)
 
-#### 1.6.2.5. OMRON
+**1.6.2.5. OMRON**
 
 IPS规则测试发布标准
 
@@ -9366,17 +8666,13 @@ IPS规则测试发布标准
 
 OMRON协议可编程逻辑控制器存在内存破坏型漏洞攻击报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image412.png"
-style="width:5.76806in;height:1.79653in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-14.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-14.png](产品质量\_li\_img/media/image412.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image413.png"
-style="width:5.76806in;height:1.46004in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-13.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-13.png](产品质量\_li\_img/media/image413.png)
 
-#### 1.6.2.6. MELSEC
+**1.6.2.6. MELSEC**
 
 IPS规则测试发布标准
 
@@ -9390,17 +8686,13 @@ IPS规则测试发布标准
 
 MELSEC协议拒绝服务漏洞攻击报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image414.png"
-style="width:5.76806in;height:2.09236in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-16.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-16.png](产品质量\_li\_img/media/image414.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image415.png"
-style="width:5.76806in;height:1.47741in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-15.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-15.png](产品质量\_li\_img/media/image415.png)
 
-#### 1.6.2.7. IEC104
+**1.6.2.7. IEC104**
 
 IPS规则测试发布标准
 
@@ -9414,17 +8706,13 @@ IPS规则测试发布标准
 
 IEC104协议重置进程命令敏感操作漏洞攻击报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image416.png"
-style="width:5.76806in;height:1.76945in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\ISTP-340-指标10\截图\test-54.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\ISTP-340-指标10\截图\test-54.png](产品质量\_li\_img/media/image416.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image417.png"
-style="width:5.76806in;height:1.22788in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\ISTP-340-指标10\截图\test-53.PNG" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\ISTP-340-指标10\截图\test-53.PNG](产品质量\_li\_img/media/image417.png)
 
-#### 1.6.2.8. OPC_DA
+**1.6.2.8. OPC\_DA**
 
 IPS规则测试发布标准
 
@@ -9436,35 +8724,31 @@ IPS规则测试发布标准
 
 测试用例举例说明
 
-OPC_DA协议IOPCItemIO WriteVQT命令敏感操作漏洞攻击报文情况，如下图所示
+OPC\_DA协议IOPCItemIO WriteVQT命令敏感操作漏洞攻击报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image418.png"
-style="width:5.76806in;height:1.77431in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\ISTP-340-指标10\截图\test-56.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\ISTP-340-指标10\截图\test-56.png](产品质量\_li\_img/media/image418.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image419.png"
-style="width:5.76806in;height:1.11132in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\ISTP-340-指标10\截图\test-55.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\ISTP-340-指标10\截图\test-55.png](产品质量\_li\_img/media/image419.png)
 
-## 1.7. 异常行为检测
+### 1.7. 异常行为检测
 
-### 1.7.1. 功能说明
+#### 1.7.1. 功能说明
 
 多种协议字段的flood和scan攻击等异常行为的检测，目前支持15种协议的异常行为检测。
 
-### 1.7.2. 发布的标准
+#### 1.7.2. 发布的标准
 
-#### 1.7.2.1. DNP3
+**1.7.2.1. DNP3**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称    |
-|--------|-------------|
-| 1      | Function    |
-| 2      | Source      |
-| 3      | Destination |
+| 字段ID | 字段名称        |
+| ---- | ----------- |
+| 1    | Function    |
+| 2    | Source      |
+| 3    | Destination |
 
 异常行为检测发布标准
 
@@ -9478,24 +8762,20 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\ISTP-340-指�
 
 DNP3协议 “Function”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image420.png"
-style="width:5.76806in;height:1.8365in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-18.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-18.png](产品质量\_li\_img/media/image420.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image421.png"
-style="width:5.76806in;height:1.31092in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-19.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-19.png](产品质量\_li\_img/media/image421.png)
 
-#### 1.7.2.2. ENIP_CIP
+**1.7.2.2. ENIP\_CIP**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称 |
-|--------|----------|
-| 1      | service  |
-| 2      | commond  |
+| 字段ID | 字段名称    |
+| ---- | ------- |
+| 1    | service |
+| 2    | commond |
 
 异常行为检测发布标准
 
@@ -9507,25 +8787,21 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-19.png" /
 
 测试用例举例说明
 
-ENIP_CIP协议
-“service”字段和“commond”字段异常行为检测报文情况，如下图所示
+ENIP\_CIP协议 “service”字段和“commond”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image422.png"
-style="width:5.76806in;height:2.09306in" />
+![](产品质量\_li\_img/media/image422.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image423.png"
-style="width:5.76806in;height:1.37561in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-20.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-20.png](产品质量\_li\_img/media/image423.png)
 
-#### 1.7.2.3. IEC104
+**1.7.2.3. IEC104**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称 |
-|--------|----------|
-| 1      | type_id  |
+| 字段ID | 字段名称     |
+| ---- | -------- |
+| 1    | type\_id |
 
 异常行为检测发布标准
 
@@ -9537,27 +8813,23 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-20.png" /
 
 测试用例举例说明
 
-IEC104协议“type_id”字段异常行为检测报文情况，如下图所示
+IEC104协议“type\_id”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image424.png"
-style="width:5.76806in;height:1.82058in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-24.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-24.png](产品质量\_li\_img/media/image424.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image425.png"
-style="width:5.76806in;height:1.37291in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-23.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-23.png](产品质量\_li\_img/media/image425.png)
 
-#### 1.7.2.4. Modbus_TCP
+**1.7.2.4. Modbus\_TCP**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称 |
-|--------|----------|
-| 1      | Function |
-| 2      | address  |
-| 3      | value    |
+| 字段ID | 字段名称     |
+| ---- | -------- |
+| 1    | Function |
+| 2    | address  |
+| 3    | value    |
 
 异常行为检测发布标准
 
@@ -9569,27 +8841,23 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-23.png" /
 
 测试用例举例说明
 
-Modbus_TCP协议“Function”字段、“address”字段和“value”字段异常行为检测报文情况，如下图所示
+Modbus\_TCP协议“Function”字段、“address”字段和“value”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image426.png"
-style="width:5.76806in;height:1.53844in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-26.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-26.png](产品质量\_li\_img/media/image426.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image427.png"
-style="width:5.76806in;height:1.45764in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-25.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-25.png](产品质量\_li\_img/media/image427.png)
 
-#### 1.7.2.5. Modbus_UDP
+**1.7.2.5. Modbus\_UDP**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称 |
-|--------|----------|
-| 1      | Function |
-| 2      | address  |
-| 3      | value    |
+| 字段ID | 字段名称     |
+| ---- | -------- |
+| 1    | Function |
+| 2    | address  |
+| 3    | value    |
 
 异常行为检测发布标准
 
@@ -9601,25 +8869,21 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-25.png" /
 
 测试用例举例说明
 
-Modbus_UDP协议“Function”字段、“address”字段和“value”字段异常行为检测报文情况，如下图所示
+Modbus\_UDP协议“Function”字段、“address”字段和“value”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image428.png"
-style="width:5.76806in;height:1.78719in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-28.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-28.png](产品质量\_li\_img/media/image428.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image429.png"
-style="width:5.76806in;height:1.4764in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-27.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-27.png](产品质量\_li\_img/media/image429.png)
 
-#### 1.7.2.6. Modbus_UMAS
+**1.7.2.6. Modbus\_UMAS**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称 |
-|--------|----------|
-| 1      | Function |
+| 字段ID | 字段名称     |
+| ---- | -------- |
+| 1    | Function |
 
 异常行为检测发布标准
 
@@ -9631,26 +8895,22 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-27.png" /
 
 测试用例举例说明
 
-Modbus_UMAS协议“Function”字段异常行为检测报文情况，如下图所示
+Modbus\_UMAS协议“Function”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image430.png"
-style="width:5.76806in;height:1.40608in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-29.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-29.png](产品质量\_li\_img/media/image430.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image431.png"
-style="width:5.76806in;height:1.32303in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-30.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-30.png](产品质量\_li\_img/media/image431.png)
 
-#### 1.7.2.7. OPC_DA
+**1.7.2.7. OPC\_DA**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称      |
-|--------|---------------|
-| 1      | Interface     |
-| 2      | Function Code |
+| 字段ID | 字段名称          |
+| ---- | ------------- |
+| 1    | Interface     |
+| 2    | Function Code |
 
 异常行为检测发布标准
 
@@ -9662,25 +8922,21 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-30.png" /
 
 测试用例举例说明
 
-OPC_DA协议“Interface”字段异常行为检测报文情况，如下图所示
+OPC\_DA协议“Interface”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image432.png"
-style="width:5.76806in;height:2.42659in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-32.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-32.png](产品质量\_li\_img/media/image432.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image433.png"
-style="width:5.76806in;height:1.30208in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-31.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-31.png](产品质量\_li\_img/media/image433.png)
 
-#### 1.7.2.8. S7
+**1.7.2.8. S7**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称      |
-|--------|---------------|
-| 1      | Function Code |
+| 字段ID | 字段名称          |
+| ---- | ------------- |
+| 1    | Function Code |
 
 异常行为检测发布标准
 
@@ -9694,24 +8950,20 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-31.png" /
 
 S7协议“Function Code”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image434.png"
-style="width:5.76806in;height:1.95602in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-33.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-33.png](产品质量\_li\_img/media/image434.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image435.png"
-style="width:5.76806in;height:1.30088in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-34.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-34.png](产品质量\_li\_img/media/image435.png)
 
-#### 1.7.2.9. HartIP
+**1.7.2.9. HartIP**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称   |
-|--------|------------|
-| 1      | Command    |
-| 2      | Frame Type |
+| 字段ID | 字段名称       |
+| ---- | ---------- |
+| 1    | Command    |
+| 2    | Frame Type |
 
 异常行为检测发布标准
 
@@ -9725,24 +8977,20 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-34.png" /
 
 HartIP协议“Command”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image436.png"
-style="width:5.76806in;height:1.95213in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-22.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-22.png](产品质量\_li\_img/media/image436.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image437.png"
-style="width:5.76806in;height:1.37098in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-21.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-21.png](产品质量\_li\_img/media/image437.png)
 
-#### 1.7.2.10. Profinet-DCP
+**1.7.2.10. Profinet-DCP**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称    |
-|--------|-------------|
-| 1      | ServiceType |
-| 2      | ServiceID   |
+| 字段ID | 字段名称        |
+| ---- | ----------- |
+| 1    | ServiceType |
+| 2    | ServiceID   |
 
 异常行为检测发布标准
 
@@ -9756,23 +9004,19 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-21.png" /
 
 Profinet-DCP协议“ServiceType”字段和“ServiceID”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image438.png"
-style="width:5.76806in;height:1.31159in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-37.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-37.png](产品质量\_li\_img/media/image438.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image439.png"
-style="width:5.76806in;height:1.14383in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-36.PNG" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-36.PNG](产品质量\_li\_img/media/image439.png)
 
-#### 1.7.2.11. Profinet-MRP
+**1.7.2.11. Profinet-MRP**
 
 支持的异常检测字段如下
 
 | 字段ID | 字段名称 |
-|--------|----------|
-| 1      | Type     |
+| ---- | ---- |
+| 1    | Type |
 
 异常行为检测发布标准
 
@@ -9786,23 +9030,19 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-36.PNG" /
 
 Profinet-MRP协议“Type”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image440.png"
-style="width:5.76806in;height:1.2521in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-39.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-39.png](产品质量\_li\_img/media/image440.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image441.png"
-style="width:5.76806in;height:1.04539in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-38.PNG" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-38.PNG](产品质量\_li\_img/media/image441.png)
 
-#### 1.7.2.12. Profinet-MRRT
+**1.7.2.12. Profinet-MRRT**
 
 支持的异常检测字段如下
 
 | 字段ID | 字段名称 |
-|--------|----------|
-| 1      | Type     |
+| ---- | ---- |
+| 1    | Type |
 
 异常行为检测发布标准
 
@@ -9816,23 +9056,19 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-38.PNG" /
 
 Profinet-MRRT协议“Type”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image442.png"
-style="width:5.76806in;height:1.86367in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-40.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-40.png](产品质量\_li\_img/media/image442.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image443.png"
-style="width:5.76806in;height:1.0357in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-41.PNG" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-41.PNG](产品质量\_li\_img/media/image443.png)
 
-#### 1.7.2.13. Profinet-PTCP
+**1.7.2.13. Profinet-PTCP**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称   |
-|--------|------------|
-| 1      | SequenceID |
+| 字段ID | 字段名称       |
+| ---- | ---------- |
+| 1    | SequenceID |
 
 异常行为检测发布标准
 
@@ -9846,23 +9082,19 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-41.PNG" /
 
 Profinet-PTCP协议“SequenceID”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image444.png"
-style="width:5.76806in;height:1.37718in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-42.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-42.png](产品质量\_li\_img/media/image444.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image445.png"
-style="width:5.76806in;height:1.02739in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-43.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-43.png](产品质量\_li\_img/media/image445.png)
 
-#### 1.7.2.14. Profinet-RTC1
+**1.7.2.14. Profinet-RTC1**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称    |
-|--------|-------------|
-| 1      | data_status |
+| 字段ID | 字段名称         |
+| ---- | ------------ |
+| 1    | data\_status |
 
 异常行为检测发布标准
 
@@ -9874,25 +9106,21 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-43.png" /
 
 测试用例举例说明
 
-Profinet-RTC1协议“data_status”字段异常行为检测报文情况，如下图所示
+Profinet-RTC1协议“data\_status”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image446.png"
-style="width:5.76806in;height:1.38311in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-44.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-44.png](产品质量\_li\_img/media/image446.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image447.png"
-style="width:5.76806in;height:1.02671in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-45.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-45.png](产品质量\_li\_img/media/image447.png)
 
-#### 1.7.2.15. Profinet-RTC3
+**1.7.2.15. Profinet-RTC3**
 
 支持的异常检测字段如下
 
-| 字段ID | 字段名称    |
-|--------|-------------|
-| 1      | data_status |
+| 字段ID | 字段名称         |
+| ---- | ------------ |
+| 1    | data\_status |
 
 异常行为检测发布标准
 
@@ -9904,159 +9132,155 @@ alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-45.png" /
 
 测试用例举例说明
 
-Profinet-RTC3协议“data_status”字段异常行为检测报文情况，如下图所示
+Profinet-RTC3协议“data\_status”字段异常行为检测报文情况，如下图所示
 
-<img src="产品质量_li_img/media/image448.png"
-style="width:5.76806in;height:1.45119in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-49.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-49.png](产品质量\_li\_img/media/image448.png)
 
 ISTP检测情况，如下图所示
 
-<img src="产品质量_li_img/media/image449.png"
-style="width:5.76806in;height:1.69453in"
-alt="C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-48.png" />
+![C:\Users\zhengqiang01\Desktop\ISTP-第8期结项相关工作\test-48.png](产品质量\_li\_img/media/image449.png)
 
-## 1.8. 资产被动识别
+### 1.8. 资产被动识别
 
-### 1.8.1. 功能说明
+#### 1.8.1. 功能说明
 
 资产被动识别通过对数据包中的资产指纹特征进行检测分析，检测流量中是否包含与预置资产特征相匹配的资产信息，从而实现对工业资产的识别。
 
-### 1.8.2. 发布的标准 
+#### 1.8.2. 发布的标准
 
 ISTP支持47厂商129款设备的识别，如下表所示。支持1种识别方式。
 
-| 序号 | 厂商                | 资产                                                      |
-|------|---------------------|-----------------------------------------------------------|
-| 1    | 3S                  | 3s.CODESYS                                                |
-| 2    | ABB                 | ABB.AC800F.PM802F                                         |
-| 3    |                     | ABB.AC800M.PM856                                          |
-| 4    |                     | ABB AC500.PM573-ETH                                       |
-| 5    | ADVANTECH           | ADVANTECH.ADAM-4571L-DE                                   |
-| 6    |                     | ADVANTECH.ADAM-5510EKW/TP                                 |
-| 7    | Beckhoff            | Beckhoff.CX.CX1500-M310                                   |
-| 8    |                     | Beckhoff.CX8000.CX8091                                    |
-| 9    | BR                  | BR.X20.CP1484                                             |
-| 10   |                     | B&R.X20.X20CP1301                                         |
-| 11   | COTRUST             | COTRUST.CTH300-H.CTH3 H31-000S1                           |
-| 12   | Delta               | Delta.DVP-ES2.DVP20ES200TE                                |
-| 13   | DCCE                | DCCE.MAC.MAC1000ProgramableController                     |
-| 14   |                     | DCCE.MAC.MAC1100                                          |
-| 15   | Etrol               | Etrol.RTU_PLC.Super32                                     |
-| 16   |                     | Etrol.RTU.SuperE32L601                                    |
-| 17   |                     | Etrol.super32.L206                                        |
-| 18   |                     | Etrol.RTU.SL304                                           |
-| 19   | Emerson             | Bristol Babcock.ControlWave® Micro                        |
-| 20   |                     | Emerson.ROC800.CPU Series 2                               |
-| 21   |                     | Emerson.DELTAV.MQ controller. CTLR-32DD94 KJ2005X1-MQ2    |
-| 22   | Fanuc               | FANUC.Series 0i                                           |
-| 23   | Sunway ForceControl | Sunway ForceControl                                       |
-| 24   | GE                  | GE.VerMax_IC200CPUE05.Private                             |
-| 25   |                     | PAC_RX3iIC695CPE302                                       |
-| 26   | HIKVSION            | DS-IPC-B12V2-I                                            |
-| 27   | HIKVSION(萤石）     | CS-C3W-1C2WFR                                             |
-| 28   | HITACHI             | HITACHI.MICRO-EHV.MVH-A40DR                               |
-| 29   | HollySys            | HollySys.DCS.MACS                                         |
-| 30   |                     | HollySys.NuclearPower.HEROS_RTS                           |
-| 31   |                     | HollySys.NuclearPower.NB220                               |
-| 32   |                     | HollySys.NuclearPower.NM-DP                               |
-| 33   |                     | HollySys.NuclearPower.NM220                               |
-| 34   |                     | HollySys.PLC.LK220                                        |
-| 35   |                     | HOLLiAS MACS-K.K-CU01                                     |
-| 36   | HoneyWell           | Honey.Controller.C300                                     |
-| 37   |                     | Honey.Firewall.FTE_Control_Firewall                       |
-| 38   | HUATONG             | HUATONG.2000R_CS                                          |
-| 39   | IDEC(和泉)          | IDEC(和泉).MicroSmart_FC6A.FC6A-D16R4CEE                  |
-| 40   | Inovance            | Inovance.AM600.AM600-CPU1608TP                            |
-| 41   | KEYENCE(基恩士)     | KEYENCE.KV-7000.KV-7500                                   |
-| 42   | KLAND               | Newpre3000Newpre3000-P121-M3-D1-G0                        |
-| 43   | Koyo(光洋)          | kostacSJ-12DD2EP-D                                        |
-| 44   | Kinco               | Kinco.K2.CPU204ET.K204ET-16DT                             |
-| 45   | LT                  | LT.GJ303.GHMSL                                            |
-| 46   | MITSUBISHI          | MITSUBISHI.LCPU.L06CPU                                    |
-| 47   |                     | MITSUBISHI.MELSEC-L.L02CPU                                |
-| 48   |                     | MITSUBISHI.QCPU.Q02HCPU                                   |
-| 49   |                     | MITSUBISHI.QCPU.Q03UDECPU                                 |
-| 50   |                     | MITSUBISHI.MELSEC-FX5U-32MR/ES                            |
-| 51   | Moxa                | Moxa.EDS-405A                                             |
-| 52   |                     | NPort52005230                                             |
-| 53   |                     | MOXA.RemoteIO.E1242                                       |
-| 54   | NA                  | NA.PLC.CPU401-0401                                        |
-| 55   |                     | NA.RTU.CPU401.1101                                        |
-| 56   |                     | NA200H.CPU201-1101                                        |
-| 57   |                     | NA400.CPU401-0201                                         |
-| 58   | OMRON               | OMRON.CJ2M.CPU31                                          |
-| 59   |                     | OMRON.CP.CP1H-XA40DT-D                                    |
-| 60   |                     | Omron.CP.CP1H.XA40DR_A                                    |
-| 61   |                     | OMRON.CJ2M.CJ2M-CPU35                                     |
-| 62   |                     | OMRON.CP.CP1L-EL20DR-D                                    |
-| 63   |                     | Omron.CP1L-EL20DT-D                                       |
-| 64   |                     | Omron.CP1L-EM40DR-D                                       |
-| 65   | OPTO22              | OPTO22.SNAP PAC R.SNAP-PAC-R2                             |
-| 66   | Phoenix             | Phoenix.100.ILC330ETH                                     |
-| 67   | 　                  | Phoenix.Inline.ILC131 ETH                                 |
-| 68   | Progea              | ProgeaMovicon Power HMI                                   |
-| 69   | RedLine             | redlion-crimson3_Crimson3                                 |
-| 70   |                     | RedLion.Graphite.GRAC0001                                 |
-| 71   | RockWell_AB         | RockWell_AB.CompactLogix_1769-L33ER                       |
-| 72   |                     | RockWell_AB.CompactLogix_1769-L35E                        |
-| 73   |                     | RockWell_AB.ControlLogix_1756_EN2T_C                      |
-| 74   |                     | RockWell_AB.ControlLogix_1756-EN2T_D                      |
-| 75   |                     | RockWell_AB.ControlLogix_1756-EN2T_D\_CASIA               |
-| 76   |                     | RockWell_AB.Controllogix.1756-L71/B Logix5571             |
-| 77   |                     | RockWell_AB.CompactLogix 5380.5069-L306ER                 |
-| 78   |                     | RockWell_AB.Micro800.Micro850.2080-LC50-24QWB             |
-| 79   |                     | RockWell_AB.Micrologix14001766-L32BWA                     |
-| 80   |                     | RockWell_AB.SLC 5_05 CPU.1747-L551C                       |
-| 81   |                     | RockWell_AB.SoftLogix5800.1789-L60/A                      |
-| 82   |                     | RockWell_AB.1756-ENBT/A                                   |
-| 83   | Schneider           | Schneider.M218_LDAE40DRPHN                                |
-| 84   |                     | Schneider.M340_BMXP342020（M340_CPU340-20）               |
-| 85   |                     | Schneider.M340.NOE0100                                    |
-| 86   |                     | Schneider.M340_BMXP3420102                                |
-| 87   |                     | Schneider.M580.BMEP582040                                 |
-| 88   |                     | Schneider.Quantum_CPU_31110                               |
-| 89   |                     | Schneider.Quantum_CPU_65150                               |
-| 90   |                     | Schneider.Premium.TSXP571634M                             |
-| 91   |                     | Schneider.Vijeo Citect                                    |
-| 92   | Siemens             | Siemens.CP_343-1_advanced                                 |
-| 93   |                     | Siemens.CP_343-1                                          |
-| 94   |                     | Siemens.CP_443-1_advanced                                 |
-| 95   |                     | Siemens.CP_443-1                                          |
-| 96   |                     | Siemens.CP_1543-1                                         |
-| 97   |                     | Siemens.S7-200_SMART.CPU_ST20                             |
-| 98   |                     | Siemens.S7_200_Smart_CPU_st30                             |
-| 99   |                     | Siemens.S7_200_Smart_CPU_st40                             |
-| 100  |                     | Siemens.s7_200 \_smart.CPU SR30                           |
-| 101  |                     | Siemens.S7_300_CPU_314c-2_PNDP                            |
-| 102  |                     | Siemens.S7_300_CPU_314c-2                                 |
-| 103  |                     | Siemens.S7_300_CPU_315-2_PNDP                             |
-| 104  |                     | Siemens.S7_300_CPU_315F-2                                 |
-| 105  |                     | Siemens.S7_300_CPU_317-2_PNDP                             |
-| 106  |                     | Siemens.S7_400_CPU_412-5h_PNDP                            |
-| 107  |                     | Siemens.S7_400_CPU_412-5H                                 |
-| 108  |                     | Siemens.S7_400_CPU_414-5h                                 |
-| 109  |                     | Siemens.S7-400_CPU417-5H PN/DP                            |
-| 110  |                     | Siemens.S7_1200_CPU_1212c_DCDCRly                         |
-| 111  |                     | Siemens.SIMATIC S7-1500.CPU 1515-2 PN.6ES7 515-2AM02-0AB0 |
-| 112  |                     | Siemens.S7_1200_CPU_1214C_ACDCRLY                         |
-| 113  |                     | Siemens.S7_1200_CPU_1214c_DCDCDC                          |
-| 114  |                     | Siemens.S7_1200_CPU_1215c_DCDCDC                          |
-| 115  |                     | Siemens.S7-1500_CPU_1516-3_PNDP（CP 1516_3）              |
-| 116  |                     | Siemens.SINUMERIK_808D                                    |
-| 117  |                     | Siemens.HMI.smartline.1000v3 ie                           |
-| 118  | Supcon              | Supcon.GCS.GCS-3                                          |
-| 119  |                     | Supcon.JX-300                                             |
-| 120  |                     | Supcon.TCS-900(SCnet100)                                  |
-| 121  | WAGO                | WAGO.750.750-832                                          |
-| 122  | XINHUA              | XINHUA.XDC800.XCU-net                                     |
-| 123  | Yokogawa            | Yokogawa.FACTORY ACE.F3LE12-1T.(F3SP22-OS)                |
-| 124  | 大华                | 大华.TP7                                                  |
-| 125  | 国电智深            | 国电智深.DCS.EDPF-DPU3（GPS）                             |
-| 126  | 腾控科技            | 腾控科技.T900.T920                                        |
-| 127  | 燕山电子            | Yanshan.401.008                                           |
-| 128  | 亚控科技            | KingView                                                  |
-| 129  | KEP                 | KEP.ware.KEP.ServerEx.V.4                                 |
+| 序号  | 厂商                  | 资产                                                        |
+| --- | ------------------- | --------------------------------------------------------- |
+| 1   | 3S                  | 3s.CODESYS                                                |
+| 2   | ABB                 | ABB.AC800F.PM802F                                         |
+| 3   |                     | ABB.AC800M.PM856                                          |
+| 4   |                     | ABB AC500.PM573-ETH                                       |
+| 5   | ADVANTECH           | ADVANTECH.ADAM-4571L-DE                                   |
+| 6   |                     | ADVANTECH.ADAM-5510EKW/TP                                 |
+| 7   | Beckhoff            | Beckhoff.CX.CX1500-M310                                   |
+| 8   |                     | Beckhoff.CX8000.CX8091                                    |
+| 9   | BR                  | BR.X20.CP1484                                             |
+| 10  |                     | B\&R.X20.X20CP1301                                        |
+| 11  | COTRUST             | COTRUST.CTH300-H.CTH3 H31-000S1                           |
+| 12  | Delta               | Delta.DVP-ES2.DVP20ES200TE                                |
+| 13  | DCCE                | DCCE.MAC.MAC1000ProgramableController                     |
+| 14  |                     | DCCE.MAC.MAC1100                                          |
+| 15  | Etrol               | Etrol.RTU\_PLC.Super32                                    |
+| 16  |                     | Etrol.RTU.SuperE32L601                                    |
+| 17  |                     | Etrol.super32.L206                                        |
+| 18  |                     | Etrol.RTU.SL304                                           |
+| 19  | Emerson             | Bristol Babcock.ControlWave® Micro                        |
+| 20  |                     | Emerson.ROC800.CPU Series 2                               |
+| 21  |                     | Emerson.DELTAV.MQ controller. CTLR-32DD94 KJ2005X1-MQ2    |
+| 22  | Fanuc               | FANUC.Series 0i                                           |
+| 23  | Sunway ForceControl | Sunway ForceControl                                       |
+| 24  | GE                  | GE.VerMax\_IC200CPUE05.Private                            |
+| 25  |                     | PAC\_RX3iIC695CPE302                                      |
+| 26  | HIKVSION            | DS-IPC-B12V2-I                                            |
+| 27  | HIKVSION(萤石）        | CS-C3W-1C2WFR                                             |
+| 28  | HITACHI             | HITACHI.MICRO-EHV.MVH-A40DR                               |
+| 29  | HollySys            | HollySys.DCS.MACS                                         |
+| 30  |                     | HollySys.NuclearPower.HEROS\_RTS                          |
+| 31  |                     | HollySys.NuclearPower.NB220                               |
+| 32  |                     | HollySys.NuclearPower.NM-DP                               |
+| 33  |                     | HollySys.NuclearPower.NM220                               |
+| 34  |                     | HollySys.PLC.LK220                                        |
+| 35  |                     | HOLLiAS MACS-K.K-CU01                                     |
+| 36  | HoneyWell           | Honey.Controller.C300                                     |
+| 37  |                     | Honey.Firewall.FTE\_Control\_Firewall                     |
+| 38  | HUATONG             | HUATONG.2000R\_CS                                         |
+| 39  | IDEC(和泉)            | IDEC(和泉).MicroSmart\_FC6A.FC6A-D16R4CEE                   |
+| 40  | Inovance            | Inovance.AM600.AM600-CPU1608TP                            |
+| 41  | KEYENCE(基恩士)        | KEYENCE.KV-7000.KV-7500                                   |
+| 42  | KLAND               | Newpre3000Newpre3000-P121-M3-D1-G0                        |
+| 43  | Koyo(光洋)            | kostacSJ-12DD2EP-D                                        |
+| 44  | Kinco               | Kinco.K2.CPU204ET.K204ET-16DT                             |
+| 45  | LT                  | LT.GJ303.GHMSL                                            |
+| 46  | MITSUBISHI          | MITSUBISHI.LCPU.L06CPU                                    |
+| 47  |                     | MITSUBISHI.MELSEC-L.L02CPU                                |
+| 48  |                     | MITSUBISHI.QCPU.Q02HCPU                                   |
+| 49  |                     | MITSUBISHI.QCPU.Q03UDECPU                                 |
+| 50  |                     | MITSUBISHI.MELSEC-FX5U-32MR/ES                            |
+| 51  | Moxa                | Moxa.EDS-405A                                             |
+| 52  |                     | NPort52005230                                             |
+| 53  |                     | MOXA.RemoteIO.E1242                                       |
+| 54  | NA                  | NA.PLC.CPU401-0401                                        |
+| 55  |                     | NA.RTU.CPU401.1101                                        |
+| 56  |                     | NA200H.CPU201-1101                                        |
+| 57  |                     | NA400.CPU401-0201                                         |
+| 58  | OMRON               | OMRON.CJ2M.CPU31                                          |
+| 59  |                     | OMRON.CP.CP1H-XA40DT-D                                    |
+| 60  |                     | Omron.CP.CP1H.XA40DR\_A                                   |
+| 61  |                     | OMRON.CJ2M.CJ2M-CPU35                                     |
+| 62  |                     | OMRON.CP.CP1L-EL20DR-D                                    |
+| 63  |                     | Omron.CP1L-EL20DT-D                                       |
+| 64  |                     | Omron.CP1L-EM40DR-D                                       |
+| 65  | OPTO22              | OPTO22.SNAP PAC R.SNAP-PAC-R2                             |
+| 66  | Phoenix             | Phoenix.100.ILC330ETH                                     |
+| 67  | 　                   | Phoenix.Inline.ILC131 ETH                                 |
+| 68  | Progea              | ProgeaMovicon Power HMI                                   |
+| 69  | RedLine             | redlion-crimson3\_Crimson3                                |
+| 70  |                     | RedLion.Graphite.GRAC0001                                 |
+| 71  | RockWell\_AB        | RockWell\_AB.CompactLogix\_1769-L33ER                     |
+| 72  |                     | RockWell\_AB.CompactLogix\_1769-L35E                      |
+| 73  |                     | RockWell\_AB.ControlLogix\_1756\_EN2T\_C                  |
+| 74  |                     | RockWell\_AB.ControlLogix\_1756-EN2T\_D                   |
+| 75  |                     | RockWell\_AB.ControlLogix\_1756-EN2T\_D\_CASIA            |
+| 76  |                     | RockWell\_AB.Controllogix.1756-L71/B Logix5571            |
+| 77  |                     | RockWell\_AB.CompactLogix 5380.5069-L306ER                |
+| 78  |                     | RockWell\_AB.Micro800.Micro850.2080-LC50-24QWB            |
+| 79  |                     | RockWell\_AB.Micrologix14001766-L32BWA                    |
+| 80  |                     | RockWell\_AB.SLC 5\_05 CPU.1747-L551C                     |
+| 81  |                     | RockWell\_AB.SoftLogix5800.1789-L60/A                     |
+| 82  |                     | RockWell\_AB.1756-ENBT/A                                  |
+| 83  | Schneider           | Schneider.M218\_LDAE40DRPHN                               |
+| 84  |                     | Schneider.M340\_BMXP342020（M340\_CPU340-20）               |
+| 85  |                     | Schneider.M340.NOE0100                                    |
+| 86  |                     | Schneider.M340\_BMXP3420102                               |
+| 87  |                     | Schneider.M580.BMEP582040                                 |
+| 88  |                     | Schneider.Quantum\_CPU\_31110                             |
+| 89  |                     | Schneider.Quantum\_CPU\_65150                             |
+| 90  |                     | Schneider.Premium.TSXP571634M                             |
+| 91  |                     | Schneider.Vijeo Citect                                    |
+| 92  | Siemens             | Siemens.CP\_343-1\_advanced                               |
+| 93  |                     | Siemens.CP\_343-1                                         |
+| 94  |                     | Siemens.CP\_443-1\_advanced                               |
+| 95  |                     | Siemens.CP\_443-1                                         |
+| 96  |                     | Siemens.CP\_1543-1                                        |
+| 97  |                     | Siemens.S7-200\_SMART.CPU\_ST20                           |
+| 98  |                     | Siemens.S7\_200\_Smart\_CPU\_st30                         |
+| 99  |                     | Siemens.S7\_200\_Smart\_CPU\_st40                         |
+| 100 |                     | Siemens.s7\_200 \_smart.CPU SR30                          |
+| 101 |                     | Siemens.S7\_300\_CPU\_314c-2\_PNDP                        |
+| 102 |                     | Siemens.S7\_300\_CPU\_314c-2                              |
+| 103 |                     | Siemens.S7\_300\_CPU\_315-2\_PNDP                         |
+| 104 |                     | Siemens.S7\_300\_CPU\_315F-2                              |
+| 105 |                     | Siemens.S7\_300\_CPU\_317-2\_PNDP                         |
+| 106 |                     | Siemens.S7\_400\_CPU\_412-5h\_PNDP                        |
+| 107 |                     | Siemens.S7\_400\_CPU\_412-5H                              |
+| 108 |                     | Siemens.S7\_400\_CPU\_414-5h                              |
+| 109 |                     | Siemens.S7-400\_CPU417-5H PN/DP                           |
+| 110 |                     | Siemens.S7\_1200\_CPU\_1212c\_DCDCRly                     |
+| 111 |                     | Siemens.SIMATIC S7-1500.CPU 1515-2 PN.6ES7 515-2AM02-0AB0 |
+| 112 |                     | Siemens.S7\_1200\_CPU\_1214C\_ACDCRLY                     |
+| 113 |                     | Siemens.S7\_1200\_CPU\_1214c\_DCDCDC                      |
+| 114 |                     | Siemens.S7\_1200\_CPU\_1215c\_DCDCDC                      |
+| 115 |                     | Siemens.S7-1500\_CPU\_1516-3\_PNDP（CP 1516\_3）            |
+| 116 |                     | Siemens.SINUMERIK\_808D                                   |
+| 117 |                     | Siemens.HMI.smartline.1000v3 ie                           |
+| 118 | Supcon              | Supcon.GCS.GCS-3                                          |
+| 119 |                     | Supcon.JX-300                                             |
+| 120 |                     | Supcon.TCS-900(SCnet100)                                  |
+| 121 | WAGO                | WAGO.750.750-832                                          |
+| 122 | XINHUA              | XINHUA.XDC800.XCU-net                                     |
+| 123 | Yokogawa            | Yokogawa.FACTORY ACE.F3LE12-1T.(F3SP22-OS)                |
+| 124 | 大华                  | 大华.TP7                                                    |
+| 125 | 国电智深                | 国电智深.DCS.EDPF-DPU3（GPS）                                   |
+| 126 | 腾控科技                | 腾控科技.T900.T920                                            |
+| 127 | 燕山电子                | Yanshan.401.008                                           |
+| 128 | 亚控科技                | KingView                                                  |
+| 129 | KEP                 | KEP.ware.KEP.ServerEx.V.4                                 |
 
 ISTP识别的资产信息维度包括资产IP地址、MAC 地址、厂商、系列、型号。
 
@@ -10064,28 +9288,25 @@ ISTP识别的资产信息维度包括资产IP地址、MAC 地址、厂商、系�
 
 > 开发实现范围内的资产，可正常识别，不存在误识别、不识别情况
 >
-> 识别的资产信息及维度（IP地址、MAC
-> 地址、厂商、系列、型号）与实际流量指纹特征相匹配
+> 识别的资产信息及维度（IP地址、MAC 地址、厂商、系列、型号）与实际流量指纹特征相匹配
 
 测试用例举例说明
 
 > 以资产ABB.AC800M.PM856识别为例，报文内容如下图所示。
 >
-> <img src="产品质量_li_img/media/image450.png"
-> style="width:5.76806in;height:2.61389in" />
+> <img src="产品质量_li_img/media/image450.png" alt="" data-size="original">
 >
 > ISTP识别结果，如下图所示。
 >
-> <img src="产品质量_li_img/media/image451.png"
-> style="width:5.75208in;height:1.84792in" />
+> <img src="产品质量_li_img/media/image451.png" alt="" data-size="original">
 
-## 1.9. 资产主动识别
+### 1.9. 资产主动识别
 
-### 1.9.1. 功能说明
+#### 1.9.1. 功能说明
 
 通过主动识别收发报文引擎功能，检测流量中是否包含与资产相匹配的资产信息，从而实现对目标设备的资产主动识别探测功能。
 
-### 1.9.2. 发布的标准
+#### 1.9.2. 发布的标准
 
 资产主动识别功能支持基于61种协议来识别60个厂商的121款设备，支持1种识别方式，支持17种服务类型。
 
@@ -10103,21 +9324,19 @@ ISTP识别的资产信息维度包括资产IP地址、MAC 地址、厂商、系�
 
 > Schneider.Modicon M580设备报文情况，如下图所示
 >
-> <img src="产品质量_li_img/media/image452.png"
-> style="width:5.75972in;height:2.20347in" />
+> <img src="产品质量_li_img/media/image452.png" alt="" data-size="original">
 >
 > Schneider.Modicon M580设备资产主动识别情况，如下图所示
 
-<img src="产品质量_li_img/media/image453.png"
-style="width:5.76111in;height:3.17083in" />
+![](产品质量\_li\_img/media/image453.png)
 
-## 1.10. 漏洞映射
+### 1.10. 漏洞映射
 
-### 1.10.1. 功能说明
+#### 1.10.1. 功能说明
 
 通过资产信息匹配cpe工业漏洞信息库中的漏洞信息，可通过设备型号和固件版本信息匹配漏洞。
 
-### 1.10.2. 发布的标准
+#### 1.10.2. 发布的标准
 
 漏洞映射功能支持4691个漏洞的映射
 
@@ -10137,57 +9356,52 @@ style="width:5.76111in;height:3.17083in" />
 
 Siemens.S7-300.CPU315-2 PN/DP设备不同版本漏洞映射情况，如下图所示
 
-<img src="产品质量_li_img/media/image454.png"
-style="width:5.76806in;height:0.59792in" />
+![](产品质量\_li\_img/media/image454.png)
 
-<img src="产品质量_li_img/media/image455.png"
-style="width:5.76806in;height:0.59722in" />
+![](产品质量\_li\_img/media/image455.png)
 
-# 2. 健壮性
+## 2. 健壮性
 
 目前针对ISTP各模块的健壮性质量特性进行了健壮性测试（特别是协议相关模块）。为确保ISTP各模块的健壮性符合标准，在测试过程中利用Fuzzing等测试技术来构造有针对性的异常输入数据。
 
-目前ISTP通过了绿盟漏扫、中京漏挖、博智漏挖等多款产品在OPC
-UA、FINS、DNP3、CIP等32种协议模块的Fuzzing测试，同时通过了OPC
-DA、Focas、CIP
-PCCC等15种协议基于白名单和畸形字段的72种变形的针对性健壮性测试，测试未发现dp挂死等阻断性问题，符合健壮性发布标准，涉及的协议如下表所示。
+目前ISTP通过了绿盟漏扫、中京漏挖、博智漏挖等多款产品在OPC UA、FINS、DNP3、CIP等32种协议模块的Fuzzing测试，同时通过了OPC DA、Focas、CIP PCCC等15种协议基于白名单和畸形字段的72种变形的针对性健壮性测试，测试未发现dp挂死等阻断性问题，符合健壮性发布标准，涉及的协议如下表所示。
 
-| **协议**            | **绿盟漏扫** | **中京漏挖** | **博智漏挖** | **Peach** | **BooFuzz** | **beStorm** | **kittyfuzz** | **科来** |
-|---------------------|--------------|--------------|--------------|-----------|-------------|-------------|---------------|----------|
-| **OPC DA**          |              |              |              | √         |             |             |               | √        |
-| **Focas**           |              |              |              | √         |             |             |               |          |
-| **CIP PCCC**        |              |              |              | √         |             |             |               |          |
-| **CIP Logix5000**   |              |              |              | √         |             |             |               |          |
-| **BACnet**          |              |              | √            |           | √           |             |               |          |
-| **CIP**             |              |              | √            |           |             |             |               |          |
-| **DNP3-TCP**        | √            | √            | √            |           |             |             |               |          |
-| **DNP3-UDP**        |              |              | √            |           |             |             |               |          |
-| **Ethernet/IP-TCP** |              | √            | √            |           |             |             |               |          |
-| **Ethernet/IP-UDP** |              |              | √            |           |             |             |               |          |
-| **FINS-TCP/UDP**    |              |              | √            |           |             |             |               |          |
-| **GOOSE**           |              |              | √            |           |             |             |               |          |
-| **IEC104**          | √            | √            | √            |           |             |             |               |          |
-| **MMS**             | √            | **√**        | √            |           |             |             |               |          |
-| **Modbus TCP**      | √            | √            | √            | √         | √           | √           | √             |          |
-| **Modbus UDP**      |              |              |              | √         |             |             |               |          |
-| **Modbus UMAS**     |              |              |              | √         |             |             |               |          |
-| **OPC UA**          |              | √            | √            |           |             |             |               |          |
-| **Profinet DCP**    | √            |              | √            |           |             |             |               |          |
-| **Profinet MRP**    |              |              | √            |           |             |             |               |          |
-| **Profinet PTCP**   |              |              |              | √         |             |             |               |          |
-| **S7-Plus**         |              |              |              | √         |             |             |               |          |
-| **SV**              |              |              | √            |           |             |             |               |          |
-| **HartIP_TCP/UDP**  |              |              | √            | √         |             |             |               |          |
-| **NRIEC103**        |              |              |              | √         |             |             |               |          |
-| **MELSEC TCP**      |              | √            |              | √         |             |             |               |          |
-| **RSSP-1**          |              |              |              | √         |             |             |               |          |
-| **S7**              | √            | √            | √            | √         |             |             |               |          |
-| **HTTP**            |              | √            |              | √         |             |             |               |          |
-| **S7**              | √            | √            | √            | √         |             |             |               |          |
-| **Modbus RTU**      |              |              |              |           |             |             |               | √        |
-| **Modbus ASCII**    |              |              |              |           |             |             |               | √        |
+| **协议**              | **绿盟漏扫** | **中京漏挖** | **博智漏挖** | **Peach** | **BooFuzz** | **beStorm** | **kittyfuzz** | **科来** |
+| ------------------- | -------- | -------- | -------- | --------- | ----------- | ----------- | ------------- | ------ |
+| **OPC DA**          |          |          |          | √         |             |             |               | √      |
+| **Focas**           |          |          |          | √         |             |             |               |        |
+| **CIP PCCC**        |          |          |          | √         |             |             |               |        |
+| **CIP Logix5000**   |          |          |          | √         |             |             |               |        |
+| **BACnet**          |          |          | √        |           | √           |             |               |        |
+| **CIP**             |          |          | √        |           |             |             |               |        |
+| **DNP3-TCP**        | √        | √        | √        |           |             |             |               |        |
+| **DNP3-UDP**        |          |          | √        |           |             |             |               |        |
+| **Ethernet/IP-TCP** |          | √        | √        |           |             |             |               |        |
+| **Ethernet/IP-UDP** |          |          | √        |           |             |             |               |        |
+| **FINS-TCP/UDP**    |          |          | √        |           |             |             |               |        |
+| **GOOSE**           |          |          | √        |           |             |             |               |        |
+| **IEC104**          | √        | √        | √        |           |             |             |               |        |
+| **MMS**             | √        | **√**    | √        |           |             |             |               |        |
+| **Modbus TCP**      | √        | √        | √        | √         | √           | √           | √             |        |
+| **Modbus UDP**      |          |          |          | √         |             |             |               |        |
+| **Modbus UMAS**     |          |          |          | √         |             |             |               |        |
+| **OPC UA**          |          | √        | √        |           |             |             |               |        |
+| **Profinet DCP**    | √        |          | √        |           |             |             |               |        |
+| **Profinet MRP**    |          |          | √        |           |             |             |               |        |
+| **Profinet PTCP**   |          |          |          | √         |             |             |               |        |
+| **S7-Plus**         |          |          |          | √         |             |             |               |        |
+| **SV**              |          |          | √        |           |             |             |               |        |
+| **HartIP\_TCP/UDP** |          |          | √        | √         |             |             |               |        |
+| **NRIEC103**        |          |          |          | √         |             |             |               |        |
+| **MELSEC TCP**      |          | √        |          | √         |             |             |               |        |
+| **RSSP-1**          |          |          |          | √         |             |             |               |        |
+| **S7**              | √        | √        | √        | √         |             |             |               |        |
+| **HTTP**            |          | √        |          | √         |             |             |               |        |
+| **S7**              | √        | √        | √        | √         |             |             |               |        |
+| **Modbus RTU**      |          |          |          |           |             |             |               | √      |
+| **Modbus ASCII**    |          |          |          |           |             |             |               | √      |
 
-# 3. 稳定性
+## 3. 稳定性
 
 目前针对ISTP的如下功能模块的稳定性质量特性进行了长期稳定测试，在为期3天/周的长期测试下，内存占用率约30%、cpu占用率约为40%，丢包率为2%以下；各轮次测试结果均保持一致，未出现功能使用阻塞性问题。
 
@@ -10205,6 +9419,6 @@ PCCC等15种协议基于白名单和畸形字段的72种变形的针对性健壮
 
 资产被动识别：包含47个厂商129款资产
 
-# 4. 产品兼容性
+## 4. 产品兼容性
 
 目前ISTP各模块已合入工业防火墙、ISD、工业网闸、漏扫、IETC、移动堡垒机等数款产品的多个版本，且已通过工业防火墙、IETC、ISD、漏扫等产品的联调测试，目前相关产品可正常工作。
